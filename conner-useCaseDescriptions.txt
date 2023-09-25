@@ -1,0 +1,104 @@
+Use Case: Process Fees 
+
+Context: Acme Accounting wants to generate the report of ChocAn membership fees for payment 
+
+Actors: Acme Accounting, ChocAn Data Center 
+
+Main Success Scenario: 
+
+Acme Accounting contacts the ChocAn data center 
+
+The ChocAn data center generates a report of services provided during the week 
+
+The ChocAn data center uses said report to calculate the total amount due 
+
+The report and amount due is sent to Acme Accounting 
+
+The EFT data for each provider is written to a disk 
+
+This disk is submitted to the bank for processing and payment 
+
+Extensions: 
+
+n/a 
+
+------------------------------- 
+
+Use Case: Verify Member’s Info 
+
+Context: The provider wants to know if a patient’s membership is valid. 
+
+Actors: Provider, ChocAn Data Center 
+
+Main Success Scenario: 
+
+The provider swipes their card to enter the provider terminal 
+
+The provider slides the member’s card or enters the member number on their terminal 
+
+The ChocAn data center accesses their member record to determine their membership status and their payment status 
+
+The provider’s terminal displays ‘validated’ to indicate the patient is a member in good standing 
+
+The provider closes out of the member’s page to provide services 
+
+Extensions: 
+
+4a. The provider’s terminal displays “invalid number” 
+
+	4a.1. The provider informs the patient their membership is invalid 
+
+	4a.2. Use case terminates 
+
+4b. The provider’s terminal displays “member suspended” 
+
+	4b.1. The provider informs the patient they have unpaid dues 
+
+	4b.2. Use case terminates 
+
+ 
+
+-------------------------------------- 
+
+Use Case: Record Services 
+
+Context: The provider wants to record services they just provided to a member. 
+
+Actors: Provider, ChocAn Data Center 
+
+Main Success Scenario: 
+
+The provider swipes their card to enter the provider terminal 
+
+The provider swipes the member’s card or keys in their member number 
+
+The provider selects that they are recording a service provided 
+
+The provider enters the date the service was provided 
+
+The provider indicates the service provided 
+
+They first look up the service in the provider directory 
+
+They then enter the service’s given 6-digit code 
+
+The terminal contacts the ChocAn data center to determine the service code’s equivalent 
+
+The provider confirms the service description displayed matches what they provided 
+
+The provider has the optional opportunity to enter a comment about the service 
+
+The ChocAn data center takes this data and writes it to a disk 
+
+The provider closes out the service record 
+
+Extensions: 
+
+6a. The provider enters an invalid service code 
+
+	6a.1. The terminal displays an error message containing the code and noting that it is invalid 
+
+	6a.2. Use case continues at step 5 
+----------------------------------------
+
+ 
