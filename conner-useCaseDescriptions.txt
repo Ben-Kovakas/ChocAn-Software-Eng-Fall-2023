@@ -1,4 +1,4 @@
-Use Case: Process Fees 
+Use Case: Process Fees extends Calculate Fees 
 
 Context: Acme Accounting wants to generate the report of ChocAn membership fees for payment 
 
@@ -99,6 +99,52 @@ Extensions:
 	6a.1. The terminal displays an error message containing the code and noting that it is invalid 
 
 	6a.2. Use case continues at step 5 
-----------------------------------------
 
+-------------------------------------- 
+
+Use Case: Access Provider Directory extends Record Services 
+
+Context: The provider wants to determine the service code that corresponds to their current service. 
+
+Actors: Provider 
+
+Main Success Scenario: 
+
+The provider clicks to request a copy of the provider directory. 
+
+They receive the alphabetized list of services with corresponding service codes as an email attachment from the ChocAn terminal. 
+
+The provider determines which service code is applicable. 
+
+The provider closes out of the provider directory. 
+
+Extensions: n/a 
+
+---------------------------------------- 
+
+Use Case: Bill Services 
+
+Context: The provider receives a list of services they provided that week to know how much they are owed. 
+
+Actors: Provider, ChocAn Data Center 
+
+Main Success Scenario: 
+
+The ChocAn data center writes identifying information about the provider to a file. 
+
+The ChocAn data center rewrites the provider’s report for each service they provided that week to said file. 
+
+The ChocAn system counts the total number of consultations that week and writes it to the file. 
+
+The ChocAn system calculates the total fee owed to the provider for the services they provided that week and writes it to the file. 
+
+The ChocAn data system sends this file to the provider as an email attachment. 
+
+The provider verifies this report is correct. 
+
+The provider closes out the report. 
+
+Extensions: 
+
+n/a 
  
