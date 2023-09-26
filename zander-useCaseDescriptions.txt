@@ -9,7 +9,7 @@ Main Success Scenario:
 5. The system saves the updates to the Data Center's records
 6. The Data Center maintains records for both current and past members, allowing for historical reference and auditing
 7. The system closes the member records until requested
-Extensions:
+Exceptions:
 3a. The member records info has no positive match
     3a.1 The system creates new member entry
     3a.2 The system writes data to new member entry
@@ -25,7 +25,7 @@ Main Success Scenario:
 4. The ChocAn Data Center confirms the service's proper match
 5. The system records the service's data log to a disk
 6. The system closes the service record
-Extensions:
+Exceptions:
 4a. An invalid code has no service match
     4a.1 The system displays an error message containing the code and noting that it is invalid
     4a.2 Use case continues from step 1
@@ -39,7 +39,7 @@ Main Success Scenario:
 3. The system consults the member records to find a match to the member number
 4. The system uses the match to verify the member number as valid
 5. The system sends a valid message back to the ChocAn Data Center
-Extensions:
+Exceptions:
 3a. The number does not match that of a valid member
     3a.1 The system returns an invalid verification
     3a.2 The system requests for the number to be reread
@@ -53,7 +53,7 @@ Main Success Scenario:
 2. Using the service codes and associated fee structures, the Data Center calculates the fees for each service.
 3. The Data Center totals the fees for all services provided by the provider during a specified time frame.
 4. The Data Center logs the fees with the provider's service records.
-Extensions: N/A
+Exceptions: N/A
 -----------
 Use Case: Generate Report
 Context: The ChocAn Data Center must sort and generate reports to summarize member and provieer activities, services, and fees
@@ -63,7 +63,7 @@ Main Success Scenario:
 2. The Data Center accesses the service record for the specified report
 2. The Data Center sorts and generates the requested reports based on the available data
 3. The Data Center sends the generated reports to the party that requested it via email attachment
-Extensions: 
+Exceptions: 
 2a. The report does not match an entry in the service record
     2a.1 The system returns an invalid request message and prompts for reentry
     2a.2 Use case continues from step 1
