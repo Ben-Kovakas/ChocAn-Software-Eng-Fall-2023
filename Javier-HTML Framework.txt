@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>JavierCaldwellTeam5Report</title>  
+	</head>
+    
+<!--Style: -->
+
+	<style>
+    
+    .center {
+    text.align: center;
+    }
+    
+    table, th, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+	}
+    
+    table.center {
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    
+    #myDIV {
+    	margin: auto;
+  		width: 80%;
+  		height: 40%;
+  		border: 15px solid tan;
+  		animation: mymove 5s infinite;
+	}
+
+	@keyframes mymove {
+  		50% {border-color: brown;}
+	}
+    </style>
+
+<!--Body: -->
+
+	<body>
+    	<div id="myDIV">
+    	<h1 style="text-align:center">Team 5 Individual Report</h1>
+		<h2 style="text-align:center">Javier Caldwell</h2>
+        </div>
+        
+        <p></p>
+        
+<!-- formatting a table -->
+
+	<h3 style="text-align:center">Header Table</h3>
+        
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>CWID</th>
+            <th>Crimson Email</th>
+            <th>Hours</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>12278113</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+  		<tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>12274984</td>
+            <td>jbkovakas@crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>12227882</td>
+            <td>rmmilsap@crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>12215700</td>
+            <td>cchall5@crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Alexander Steffey</td>
+    	 	<td>12251132</td>
+            <td>arsteffey@crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Dj Dierking</td>
+    	 	<td>12063001</td>
+            <td>dddierking@crimson.ua.edu</td>
+            <td></td>
+  		</tr>
+	</table>
+	
+    <h3 style="text-align:center">Task Distribution Table</h3>
+    
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>Tasks</th>
+            <th>Percentage</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>Use Case Descriptions/Paragraph</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+  		</tr>
+  		<tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>Use Case Descriptions</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>DJ Dierking</td>
+    	 	<td>Compiled UML Diagrams/Glossaries, Submitter</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>General Security User Stories</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>Story Selection matrix</td>
+            <td></td>
+  		</tr>
+        <tr>
+    	 	<td>Zander Steffey</td>
+    	 	<td>Use Case Description</td>
+            <td></td>
+  		</tr>
+	</table>
+    
+<!--Header and Image -->
+
+	<h3 style="text-align:center"><strong>UMLentino Use Case Diagram</strong></h3>
+	<p>
+    <!-- Put in use-case diagram file name -->
+		<img src = "PNGNAME" Width = "1200" Height = "300">
+	</p>
+
+
+	</body>
+
+</html>
+
+
+
