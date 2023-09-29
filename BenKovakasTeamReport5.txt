@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        .my-div {
+            background-color: #ADD8E6; /*
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-div">
+
+    <h1 style="font-family:Fantasy;">Header Table</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>CWID</th>
+            <th>Crimson Email</th>
+            <th>Hours</th>
+        </tr>
+        <tr>
+            <td>Ben Kovakas</td>
+            <td>12274984</td>
+            <td>jbkovakas@crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Javier Caldwell</td>
+            <td>12278113</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Conner Hall</td>
+            <td>12215700</td>
+            <td>cchall5@crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Ryan Milsap</td>
+            <td>12227882</td> 
+            <td>rmmilsap@crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Alexander Steffey</td>
+            <td>12251132</td>
+            <td>arsteffey@crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>DJ Dierking</td>
+            <td>12063001</td>
+            <td>dddierking@crimson.ua.edu</td>
+            <td>5</td>
+        </tr>
+    </table>
+    
+    <!DOCTYPE html>
+<html>
+
+
+
+
+    <h1 style="font-family:Fantasy;">Task Distribution Table</h1>
+
+    <table border=1>
+        <tr>
+            <th>Name</th>
+            <th>Tasks</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>Ben Kovakas</td>
+            <td>General Security User Stories</td>
+            <td>16.6%</td>
+        </tr>
+        <tr>
+            <td>Javier Caldwell</td>
+            <td>Use Case Descriptions/Paragraph</td>
+            <td>16.6%</td>
+        </tr>
+        <tr>
+            <td>Conner Hall</td>
+            <td>Use Case Descriptions</td>
+            <td>16.6%</td>
+        </tr>
+        <tr>
+            <td>Ryan Milsap</td>
+            <td>Story Selection matrix</td>
+            <td>16.6%</td>
+        </tr>
+        <tr>
+            <td>Alexander Steffey</td>
+            <td>Use Case Description</td>
+            <td>16.6%</td>
+        </tr>
+        <tr>
+            <td>DJ Dierking</td>
+            <td>Compiled UML Diagrams/Glossaries, Submitter</td>
+            <td>16.7%</td>
+        </tr>
+    </table>
+
+
+</html>
+
+<h1 style="font-family:Fantasy;">UML Diagram</h1>
+
+    
+<img src= "ben_kovakas-UML.png"
+width= "500"
+height= "500"
+/>
+
+<a href="https://www.youtube.com/watch?v=T-U5qSMlWM8">If you dont watch this you're glad Alabama lost to Texas!!!!</a>
+    </div>
+</body>
+
+</html>
