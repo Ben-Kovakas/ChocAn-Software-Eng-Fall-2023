@@ -1,46 +1,727 @@
 <!DOCTYPE html>
 
-
-
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS 201 Team 5</title>
-    <style>
-        body {
-            text-align: center;
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            font-size: 24px;
-            margin: 10px 0;
-        }
+	<head>
+		<meta charset = "utf-8">
+		<title>Team5Report</title>  
+	</head>
+    
+<!--Style: -->
+
+	<style>
+    
+    .center {
+    text.align: center;
+    }
+    
+    table, th, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+	}
+    
+    table.center {
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    img {
+      	display: block;
+  		object-fit: contain;
+  		width: 80%;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    #myDIV {
+    	margin: auto;
+  		width: 80%;
+  		height: 40%;
+  		border: 15px solid black;
+  		animation: mymove 5s infinite;
+	}
+
+	@keyframes mymove {
+  		50% {border-color: white;}
+	}
     </style>
-</head>
-<body>
-    <header>
-        <h1>CS 201 Team 5</h1>
-    </header>
-    <ul>
-        <li>DJ Dierking</li>
-        <li>Conner Hall</li>
-        <li>Group Member 3</li>
-        <li>Group Member 4</li>
-        <li>Group Member 5</li>
-        <li>Group Member 6</li>
-        <!-- Add more group members as needed -->
-    </ul>
-</body>
+
+<!--Body: -->
+
+	<body>
+    	<div id="myDIV">
+    	<h1 style="text-align:center">Team 5 Report: Project 1</h1>
+        </div>
+        
+        <p></p>
+        
+<!-- formatting a table -->
+
+	<h3 style="text-align:center">Header Table</h3>
+        
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>CWID</th>
+            <th>Crimson Email</th>
+            <th>Hours</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>12278113</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+  		<tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>12274984</td>
+            <td>jbkovakas@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>12227882</td>
+            <td>rmmilsap@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>12215700</td>
+            <td>cchall5@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Alexander Steffey</td>
+    	 	<td>12251132</td>
+            <td>arsteffey@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Dj Dierking</td>
+    	 	<td>12063001</td>
+            <td>dddierking@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+	</table>
+	
+    <h3 style="text-align:center">Task Distribution Table</h3>
+    
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>Tasks</th>
+            <th>Percentage</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>Use Case Descriptions/Paragraph</td>
+            <td>16.7%</td>
+  		</tr>
+  		<tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>Use Case Descriptions</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>DJ Dierking</td>
+    	 	<td>Compiled UML Diagrams/Glossaries, Submitter</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>General Security User Stories</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>Story Selection matrix</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Zander Steffey</td>
+    	 	<td>Use Case Description</td>
+            <td>16.7%</td>
+  		</tr>
+	</table>
+    
+<!--Header and Image -->
+	<h3 style="text-align:center">Bitbucket Statistics Table</h3>
+		<p>
+			<img src = "bitbucket.png" Width = auto Height = auto>
+		</p>
+	<h3 style="text-align:center">Short Paragraph</h3>
+		<p>
+	    The name of the project was Chocoholics Anonymous. The customer of this project was the Chocoholics Anonymous (ChocAn) organization. The names of the team members assigned to this project were Javier Caldwell, Conner Hall, DJ Dierking, Ben Kovakas, Ryan Milsap, and Zander Steffey. The time of the project was ten days. There was no programming language used for this project, and the information for this project was submitted using HTML files. The submitter for this project was DJ Dierking. The inital UML diagrams are in the files: 'DierkingUML.png' for DJ Dierking, 'Javier-UML.png' for Javier Caldwell, 'PersonalUseCaseRMM (1).png' for Ryan Milsap, 'ZandersUCD.png' for Zander Steffey, 'ben_kovakas-UML.png' for Ben Kovakas, and 'connorUML.png' for Conner Hall. The HTML files for each member are 'JavierCaldwellTeam5Report1.html' for Javier Caldwell, 'RyanMilsapTeam5Report' for Ryan Milsap, 'AlexanderSteffeyTeam5Report.html' for Zander Steffey, 'BenKovakasTeamReport5.html' for Ben Kovakas, and 'ConnerHallTeam5Report.html' for Conner Hall. DJ Dierking's HTML file is the overall Team 5 project report file. The security matrix file is 'SecurityMatrix.pdf'. The user stories file is “User Stories for Security.pdf'. For this webpage, screenshots have been saved as “glossary.png”, “matrix1.png”, “matrix2.png”, “story1.png”, and “story2.png”.
+	    </p>
+	<h3 style="text-align:center">Glossary</h3>
+		<p>
+			<img src = "glossary.png" Width = auto Height = auto>
+		</p>
+	<h3 style="text-align:center">Use Case Diagram</h3>
+		<p>
+	    <!-- Put in use-case diagram file name -->
+			<img src = "connerUML.png" Width = auto Height = auto>
+		</p>
+	<h3 style="text-align:center">Use Case Descriptions</h3>
+		<p>
+		<div class=WordSection1>
+
+<p class=MsoNormal>Use Case: Store Member Records<o:p></o:p></p>
+
+<p class=MsoNormal>Context: Member records and service histories must be
+securely store and managed by the ChocAn system<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The ChocAn Data Center receives member records from
+various sources<o:p></o:p></p>
+
+<p class=MsoNormal>2. The ChocAn Data Center runs member records against the
+data base for a match<o:p></o:p></p>
+
+<p class=MsoNormal>3. The system matches data provided to the given member<o:p></o:p></p>
+
+<p class=MsoNormal>4. The system updates the members info with the given data<o:p></o:p></p>
+
+<p class=MsoNormal>5. The system saves the updates to the Data Center's records<o:p></o:p></p>
+
+<p class=MsoNormal>6. The Data Center maintains records for both current and
+past members, allowing for historical reference and auditing<o:p></o:p></p>
+
+<p class=MsoNormal>7. The system closes the member records until requested<o:p></o:p></p>
+
+<p class=MsoNormal>Exceptions:<o:p></o:p></p>
+
+<p class=MsoNormal>3a. The member records info has no positive <span
+class=GramE>match</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.1 The system
+creates new member <span class=GramE>entry</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.2 The system
+writes data to new member <span class=GramE>entry</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.3 Use case
+continues from step <span class=GramE>5</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Record Services<o:p></o:p></p>
+
+<p class=MsoNormal>Context: The ChocAn Data Center wants to update the record
+of services provided to a member and their <u>corresponding</u> service fees<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The ChocAn Data Center <u>receives</u> a request to
+record services of a provider's member<o:p></o:p></p>
+
+<p class=MsoNormal>2. The ChocAn Data Center's retrieves the request's member
+number, service code, date provided, and any additional comments data<o:p></o:p></p>
+
+<p class=MsoNormal>3. The system determines the service code equivalent<o:p></o:p></p>
+
+<p class=MsoNormal>4. The ChocAn Data Center confirms the service's proper
+match<o:p></o:p></p>
+
+<p class=MsoNormal>5. The system records the service's data log to a disk<o:p></o:p></p>
+
+<p class=MsoNormal>6. The system closes the service record<o:p></o:p></p>
+
+<p class=MsoNormal>Exceptions:<o:p></o:p></p>
+
+<p class=MsoNormal>4a. An invalid code has no service <span class=GramE>match</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>4a.1 The system
+displays an error message containing the code and noting that it is <span
+class=GramE>invalid</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>4a.2 Use case
+continues from step <span class=GramE>1</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Validate Member<o:p></o:p></p>
+
+<p class=MsoNormal>Context: The ChocAn Data Center wants to validate a member's
+information, possibly at the request of provider's request to verify said
+member's information<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The ChocAn Data Center receives the member number from
+the card reading system<o:p></o:p></p>
+
+<p class=MsoNormal>2. The ChocAn Data Center requests for the number to be
+verified by the system<o:p></o:p></p>
+
+<p class=MsoNormal>3. The system consults the member records to find a match to
+the member number<o:p></o:p></p>
+
+<p class=MsoNormal>4. The system uses the match to verify the member number as
+valid<o:p></o:p></p>
+
+<p class=MsoNormal>5. The system sends a valid message back to the ChocAn Data
+Center<o:p></o:p></p>
+
+<p class=MsoNormal>Exceptions:<o:p></o:p></p>
+
+<p class=MsoNormal>3a. The number does not match that of a valid <span
+class=GramE>member</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.1 The system
+returns an invalid <span class=GramE>verification</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.2 The system
+requests for the number to be <span class=GramE>reread</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>3a.3 Use case
+continues from step <span class=GramE>1</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Calculate Fees<o:p></o:p></p>
+
+<p class=MsoNormal>Context: The ChocAn Data Center must calculate service fees
+based on the recorded <u>healthcare</u> services provided to members<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The Data Center retrieves the recorded service data for a
+specific provider.<o:p></o:p></p>
+
+<p class=MsoNormal>2. Using the service codes and associated fee structures,
+the Data Center calculates the fees for each service.<o:p></o:p></p>
+
+<p class=MsoNormal>3. The Data Center totals the fees for all services provided
+by the provider during a specified time frame.<o:p></o:p></p>
+
+<p class=MsoNormal>4. The Data Center logs the fees with the provider's service
+records.<o:p></o:p></p>
+
+<p class=MsoNormal>Exceptions: N/A<o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Generate Report<o:p></o:p></p>
+
+<p class=MsoNormal>Context: The ChocAn Data Center must sort and generate
+reports to summarize member and <u>provider</u> activities, services, and fees<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The Data Center <u>receives</u> a request for a specific
+report (e.g., <u>member</u> service summaries, provider service summaries)<o:p></o:p></p>
+
+<p class=MsoNormal>2. The Data Center accesses the service record for the
+specified report<o:p></o:p></p>
+
+<p class=MsoNormal>2. The Data Center sorts and generates the requested reports
+based on the available data<o:p></o:p></p>
+
+<p class=MsoNormal>3. The Data Center sends the generated reports to the party
+that requested it via email attachment<o:p></o:p></p>
+
+<p class=MsoNormal>Exceptions: <o:p></o:p></p>
+
+<p class=MsoNormal>2a. The report does not match an entry in the service <span
+class=GramE>record</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>2a.1 The system
+returns an invalid request message and prompts for <span class=GramE><u>reentry</u></span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>    </span>2a.2 Use case
+continues from step <span class=GramE>1</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Update Member Records<o:p></o:p></p>
+
+<p class=MsoNormal>Context: Acme updates the <u>financial</u> records of
+members within the ChocAn system<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: ACME Accounting Services, ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. ACME Accounting Services contacts ChocAn Data Center at
+9:00 PM<o:p></o:p></p>
+
+<p class=MsoNormal>2. ChocAn Data Center receives updated membership records
+from ACME Accounting Services<o:p></o:p></p>
+
+<p class=MsoNormal>3. ChocAn saves the updated membership records<o:p></o:p></p>
+
+<p class=MsoNormal>Extensions:<o:p></o:p></p>
+
+<p class=MsoNormal>N/A<o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Update ChocAn Records<o:p></o:p></p>
+
+<p class=MsoNormal>Context: <span class=GramE>A</span> Operator wishes to
+update records<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Operator, ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The Operator views their terminal<o:p></o:p></p>
+
+<p class=MsoNormal>2. The terminal prompts the Operator for their credentials<o:p></o:p></p>
+
+<p class=MsoNormal>3. The Operator inputs their credentials<o:p></o:p></p>
+
+<p class=MsoNormal>4. The terminal validates the inputted credentials<o:p></o:p></p>
+
+<p class=MsoNormal>5. The terminal displays a menu for member and provider
+records<o:p></o:p></p>
+
+<p class=MsoNormal>6. The Operator selects a record or creates a new record<o:p></o:p></p>
+
+<p class=MsoNormal>7. The terminal contacts the ChocAn Data Center for the
+selected records' file<o:p></o:p></p>
+
+<p class=MsoNormal>8. The ChocAn Data Center sends the requested file to the
+terminal<o:p></o:p></p>
+
+<p class=MsoNormal>9. The terminal displays the file for edit to the Operator<o:p></o:p></p>
+
+<p class=MsoNormal>10. The Operator changes the file<o:p></o:p></p>
+
+<p class=MsoNormal>11. The terminal sends the updated file to the ChocAn Data
+Center<o:p></o:p></p>
+
+<p class=MsoNormal>12. The ChocAn Data Center saves the file<o:p></o:p></p>
+
+<p class=MsoNormal>Extensions:<o:p></o:p></p>
+
+<p class=MsoNormal>4a. The inputted credentials are <span class=GramE>incorrect</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.1. The
+terminal displays &quot;incorrect credentials&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.2. The
+Use Case continues from step <span class=GramE>2</span><o:p></o:p></p>
+
+<p class=MsoNormal>7a. The selected record does not <span class=GramE>exist</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>7a.1. The
+terminal displays &quot;Record does not <span class=GramE>exist</span>&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>7a.2. The
+Use Case continues from step <span class=GramE>5</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Generate Member Reports<o:p></o:p></p>
+
+<p class=MsoNormal>Context: A Manager wishes to print a specific report<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Manager, ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The Manager views the terminal<o:p></o:p></p>
+
+<p class=MsoNormal>2. The terminal prompts the Manager to enter their
+credentials<o:p></o:p></p>
+
+<p class=MsoNormal>3. The Manager enters their credentials<o:p></o:p></p>
+
+<p class=MsoNormal>4. The terminal authenticates the inputted credentials<o:p></o:p></p>
+
+<p class=MsoNormal>5. The terminal displays a menu of reports for the Manager<o:p></o:p></p>
+
+<p class=MsoNormal>6. The Manager selects a report<o:p></o:p></p>
+
+<p class=MsoNormal>7. The terminal contacts ChocAn Data Center for the report
+file selected by the Manager<o:p></o:p></p>
+
+<p class=MsoNormal>8. The ChocAn Data Center sends the file to the terminal<o:p></o:p></p>
+
+<p class=MsoNormal>9. The terminal prints the report<o:p></o:p></p>
+
+<p class=MsoNormal>10. The Manager receives the report<o:p></o:p></p>
+
+<p class=MsoNormal>Extensions:<o:p></o:p></p>
+
+<p class=MsoNormal>4a. The inputted credentials are <span class=GramE>incorrect</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.1. The
+terminal displays &quot;incorrect credentials&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.2. The
+Use Case continues from step <span class=GramE>2</span><o:p></o:p></p>
+
+<p class=MsoNormal>7a. The selected report does not <span class=GramE>exist</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>7a.1. The
+ChocAn Data Center returns an invalid request message to the <span class=GramE>terminal</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>7a.2. The
+terminal displays &quot;Record does not <span class=GramE>exist</span>&quot;<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>7a.3. The
+Use Case continues from step <span class=GramE>6</span><o:p></o:p></p>
+
+<p class=MsoNormal>-----------<o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Request Services<o:p></o:p></p>
+
+<p class=MsoNormal>Context: A Member would like to receive health care services
+from ChocAn<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Member, Provider, ChocAn Data Center<o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario:<o:p></o:p></p>
+
+<p class=MsoNormal>1. The Member hands their card to the Provider<o:p></o:p></p>
+
+<p class=MsoNormal>2. The Provider inserts the card or the Members number into
+the terminal<o:p></o:p></p>
+
+<p class=MsoNormal>3. The terminal contacts the ChocAn Data Center with the inputted
+number<o:p></o:p></p>
+
+<p class=MsoNormal>4. The ChocAn Data Center verifies the member number<o:p></o:p></p>
+
+<p class=MsoNormal>5. The terminal displays &quot;<span class=GramE>Validated</span>&quot;<o:p></o:p></p>
+
+<p class=MsoNormal>Extensions:<o:p></o:p></p>
+
+<p class=MsoNormal>4a. The number is <span class=GramE>invalid</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.1. The
+ChocAn Data Center determines the reason for the <span class=GramE>invalidation</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.2. The
+ChocAn Data Center sends the reason to the <span class=GramE>terminal</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.3. The
+terminal displays the reason for the <span class=GramE>invalidation</span><o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.4. The
+Use Case continues from step <span class=GramE>2</span></p>
+
+<p class=MsoNormal>---------------------------------------- <o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Process Fees extends Calculate Fees <o:p></o:p></p>
+
+<p class=MsoNormal>Context: Acme Accounting wants to generate the report of
+ChocAn membership fees for payment <o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Acme Accounting, ChocAn Data Center <o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario: <o:p></o:p></p>
+
+<p class=MsoNormal>1. Acme Accounting contacts the ChocAn data center <o:p></o:p></p>
+
+<p class=MsoNormal>2. The ChocAn data center generates a report of services
+provided during the week <o:p></o:p></p>
+
+<p class=MsoNormal>3. The ChocAn data center uses said report to calculate the
+total amount due <o:p></o:p></p>
+
+<p class=MsoNormal>4. The report and amount due is sent to Acme Accounting <o:p></o:p></p>
+
+<p class=MsoNormal>5. The EFT data for each provider is written to a disk <o:p></o:p></p>
+
+<p class=MsoNormal>6. This disk is submitted to the bank for processing and
+payment <o:p></o:p></p>
+
+<p class=MsoNormal>Extensions: <o:p></o:p></p>
+
+<p class=MsoNormal>n/a <o:p></o:p></p>
+
+<p class=MsoNormal>------------------------------- <o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Verify Member’s Info <o:p></o:p></p>
+
+<p class=MsoNormal>Context: The provider wants to know if a patient’s
+membership is valid. <o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Provider, ChocAn Data Center <o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario: <o:p></o:p></p>
+
+<p class=MsoNormal>1. The provider swipes their card to enter the provider
+terminal <o:p></o:p></p>
+
+<p class=MsoNormal>2. The provider slides the member’s card or enters the
+member number on their terminal <o:p></o:p></p>
+
+<p class=MsoNormal>3. The ChocAn data center accesses their member record to
+determine their membership status and their payment status <o:p></o:p></p>
+
+<p class=MsoNormal>4. The provider’s terminal displays ‘validated’ to indicate
+the patient is a member in good standing <o:p></o:p></p>
+
+<p class=MsoNormal>5. The provider closes out of the member’s page to provide
+services <o:p></o:p></p>
+
+<p class=MsoNormal>Extensions: <o:p></o:p></p>
+
+<p class=MsoNormal>4a. The provider’s terminal displays “invalid <span
+class=GramE>number</span>” <o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.1. The
+provider informs the patient their membership is <span class=GramE>invalid</span>
+<o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4a.2. Use
+case <span class=GramE>terminates</span> <o:p></o:p></p>
+
+<p class=MsoNormal>4b. The provider’s terminal displays “member <span
+class=GramE>suspended</span>” <o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4b.1. The
+provider informs the patient they have unpaid <span class=GramE>dues</span> <o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4b.2. Use
+case <span class=GramE>terminates</span> <o:p></o:p></p>
+
+<p class=MsoNormal>-------------------------------------- <o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Record Services <o:p></o:p></p>
+
+<p class=MsoNormal>Context: The provider wants to record services they just
+provided to a member. <o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Provider, ChocAn Data Center <o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario: <o:p></o:p></p>
+
+<p class=MsoNormal>1. The provider swipes their card to enter the provider
+terminal <o:p></o:p></p>
+
+<p class=MsoNormal>2. The provider swipes the member’s card or keys in their
+member number <o:p></o:p></p>
+
+<p class=MsoNormal>3. The provider selects that they are recording a service
+provided <o:p></o:p></p>
+
+<p class=MsoNormal>4. The provider enters the date the service was provided <o:p></o:p></p>
+
+<p class=MsoNormal>5. The provider indicates the service provided <o:p></o:p></p>
+
+<p class=MsoNormal>6. They first look up the service in the provider directory <o:p></o:p></p>
+
+<p class=MsoNormal>7. They then enter the service’s given 6-digit code <o:p></o:p></p>
+
+<p class=MsoNormal>8. The terminal contacts the ChocAn data center to determine
+the service code’s equivalent <o:p></o:p></p>
+
+<p class=MsoNormal>9. The provider confirms the service description displayed
+matches what they provided <o:p></o:p></p>
+
+<p class=MsoNormal>10. The provider has the optional opportunity to enter a
+comment about the service <o:p></o:p></p>
+
+<p class=MsoNormal>11. The ChocAn data center takes this data and writes it to
+a disk <o:p></o:p></p>
+
+<p class=MsoNormal>12. The provider closes out the service record <o:p></o:p></p>
+
+<p class=MsoNormal>Extensions: <o:p></o:p></p>
+
+<p class=MsoNormal>6a. The provider enters an invalid service <span
+class=GramE>code</span> <o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6a.1. The
+terminal displays an error message containing the code and noting that it is <span
+class=GramE>invalid</span> <o:p></o:p></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6a.2. Use
+case continues at step <span class=GramE>5</span> <o:p></o:p></p>
+
+<p class=MsoNormal>-------------------------------------- <o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Access Provider Directory extends Record Services <o:p></o:p></p>
+
+<p class=MsoNormal>Context: The provider wants to determine the service code
+that corresponds to their current service.<o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Provider <o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario: <o:p></o:p></p>
+
+<p class=MsoNormal>1. The provider clicks to request a copy of the provider
+directory. <o:p></o:p></p>
+
+<p class=MsoNormal>2. They receive the alphabetized list of services with
+corresponding service codes as an email attachment from the ChocAn terminal. <o:p></o:p></p>
+
+<p class=MsoNormal>3. The provider determines which service code is applicable.
+<o:p></o:p></p>
+
+<p class=MsoNormal>4. The provider closes out of the provider directory. <o:p></o:p></p>
+
+<p class=MsoNormal>Extensions: n/a <o:p></o:p></p>
+
+<p class=MsoNormal>---------------------------------------- <o:p></o:p></p>
+
+<p class=MsoNormal>Use Case: Bill Services <o:p></o:p></p>
+
+<p class=MsoNormal>Context: The provider receives a list of services they <span
+class=GramE>provided that</span> week to know how much they are owed. <o:p></o:p></p>
+
+<p class=MsoNormal>Actors: Provider, ChocAn Data Center <o:p></o:p></p>
+
+<p class=MsoNormal>Main Success Scenario: <o:p></o:p></p>
+
+<p class=MsoNormal>1. The ChocAn data center writes identifying information
+about the provider to a file. <o:p></o:p></p>
+
+<p class=MsoNormal>2. The ChocAn data center rewrites the provider’s report for
+each service they <span class=GramE>provided that</span> week to said file.<o:p></o:p></p>
+
+<p class=MsoNormal>3. The ChocAn system counts the total number of
+consultations that week and writes it to the file. <o:p></o:p></p>
+
+<p class=MsoNormal>4. The ChocAn system calculates the total fee owed to the
+provider for the services they <span class=GramE>provided that</span> week and
+writes it to the file. <o:p></o:p></p>
+
+<p class=MsoNormal>5. The ChocAn data system sends this file to the provider as
+an email attachment. <o:p></o:p></p>
+
+<p class=MsoNormal>6. The provider verifies this report is correct. <o:p></o:p></p>
+
+<p class=MsoNormal>7. The provider closes out the report. <o:p></o:p></p>
+
+<p class=MsoNormal>Extensions: <o:p></o:p></p>
+
+<p class=MsoNormal>n/a </p>
+
+</div>
+		
+		</p>
+	<h3 style="text-align:center">Story Selection Matrix</h3>
+		<p>
+			<img src = "matrix1.png" Width = auto Height = auto>
+		</p>
+		<p>
+			<img src = "matrix2.png" Width = auto Height = auto>
+		</p>
+	<h3 style="text-align:center">2 Generic Security User Stories</h3>
+		<p>
+			<img src = "story1.png" Width = auto Height = auto>
+		</p>
+		<p>
+			<img src = "story2.png" Width = auto Height = auto>
+		</p>
+
+
+	</body>
+
 </html>
+
