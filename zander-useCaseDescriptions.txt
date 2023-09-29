@@ -1,0 +1,69 @@
+Use Case: Store Member Records
+Context: Member records and service histories must be securely store and managed by the ChocAn system
+Actors: ChocAn Data Center
+Main Success Scenario:
+1. The ChocAn Data Center receives member records from various sources
+2. The ChocAn Data Center runs member records against the data base for a match
+3. The system matches data provided to the given member
+4. The system updates the members info with the given data
+5. The system saves the updates to the Data Center's records
+6. The Data Center maintains records for both current and past members, allowing for historical reference and auditing
+7. The system closes the member records until requested
+Exceptions:
+3a. The member records info has no positive match
+    3a.1 The system creates new member entry
+    3a.2 The system writes data to new member entry
+    3a.3 Use case continues from step 5
+-----------
+Use Case: Record Services
+Context: The ChocAn Data Center wants to update the record of services provided to a member and their coresponding service fees
+Actors: ChocAn Data Center
+Main Success Scenario:
+1. The ChocAn Data Center recieves a request to record services of a provider's member
+2. The ChocAn Data Center's retrieves the request's member number, service code, date provided, and any additional comments data
+3. The system determines the service code equivalent
+4. The ChocAn Data Center confirms the service's proper match
+5. The system records the service's data log to a disk
+6. The system closes the service record
+Exceptions:
+4a. An invalid code has no service match
+    4a.1 The system displays an error message containing the code and noting that it is invalid
+    4a.2 Use case continues from step 1
+-----------
+Use Case: Validate Member
+Context: The ChocAn Data Center wants to validate a member's information, possibly at the request of provider's request to verify said member's information
+Actors: ChocAn Data Center
+Main Success Scenario:
+1. The ChocAn Data Center receives the member number from the card reading system
+2. The ChocAn Data Center requests for the number to be verified by the system
+3. The system consults the member records to find a match to the member number
+4. The system uses the match to verify the member number as valid
+5. The system sends a valid message back to the ChocAn Data Center
+Exceptions:
+3a. The number does not match that of a valid member
+    3a.1 The system returns an invalid verification
+    3a.2 The system requests for the number to be reread
+    3a.3 Use case continues from step 1
+-----------
+Use Case: Calculate Fees
+Context: The ChocAn Data Center must calculate service fees based on the recorded healthcare services provided to members
+Actors: ChocAn Data Center
+Main Success Scenario:
+1. The Data Center retrieves the recorded service data for a specific provider.
+2. Using the service codes and associated fee structures, the Data Center calculates the fees for each service.
+3. The Data Center totals the fees for all services provided by the provider during a specified time frame.
+4. The Data Center logs the fees with the provider's service records.
+Exceptions: N/A
+-----------
+Use Case: Generate Report
+Context: The ChocAn Data Center must sort and generate reports to summarize member and provieer activities, services, and fees
+Actors: ChocAn Data Center
+Main Success Scenario:
+1. The Data Center recieves a request for a specific report (e.g., meber service summaries, provider service summaries)
+2. The Data Center accesses the service record for the specified report
+2. The Data Center sorts and generates the requested reports based on the available data
+3. The Data Center sends the generated reports to the party that requested it via email attachment
+Exceptions: 
+2a. The report does not match an entry in the service record
+    2a.1 The system returns an invalid request message and prompts for reentry
+    2a.2 Use case continues from step 1
