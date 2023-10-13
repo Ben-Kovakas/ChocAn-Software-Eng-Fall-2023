@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Team5Report</title>  
+	</head>
+    
+<!--Style: -->
+
+	<style>
+    
+    /*Dropdown: settings for the dropdown menu*/
+	ul {
+  		list-style-type: none;  
+  		margin: 0;
+  		padding: 0;
+  		overflow: hidden;
+  		background-color: darkred;
+	}
+
+	/*Makes text appear on left of site*/
+	li {
+  		float: left;
+	}
+
+	/*Changes background and text color when hovered*/
+	li a, .dropbtn {
+  		display: inline-block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+	}
+
+	li a:hover, .dropdown:hover .dropbtn {
+  		background-color: white;
+        	color: black;
+	}
+
+	li.dropdown {
+  		display: inline-block;
+	}
+	
+    /*Settings for content in dropdown*/
+	.dropdown-content {
+  		display: none;
+  		position: absolute;
+  		background-color: white;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
+	}
+
+	.dropdown-content a {
+  		color: black;
+  		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;
+	}
+	
+    /*Hover color*/
+	.dropdown-content a:hover {background-color: grey;}
+
+	/*Hover display style*/
+	.dropdown:hover .dropdown-content {
+  		display: block;
+	}
+    
+    
+    .center {
+    	text.align: center;
+    }
+    
+    /*Table: settings for the tables*/
+    table, th, td {
+  		border: 1px solid black;
+	}
+    
+    /*Settings for overall table*/
+    table {
+  		border-collapse: collapse;
+  		/*width: 100%; To set table size here, remove width from table style in body*/
+	}
+    
+    /*Settings for table header row*/
+    th {
+        background-color: #e6e6e6;
+        background-image: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+        height: 25px;
+    }
+
+	/*Makes table striped*/
+    tr:nth-child(odd) {
+            background-color: #f9f9f9;
+    }
+    
+    /*Makes background change when highlighted*/
+    td:hover {
+    	background-color: lightgray;
+    }
+    
+    /*Centers*/
+    table.center {
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    
+    /*Image settings*/
+    img {
+      	display: block;
+  		object-fit: contain;
+  		width: 80%;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    
+    /*Settings for body portion, for potential edits*/
+    body{    	
+    }
+    
+    /*Underlines h3 text*/
+    h3{
+    	text-decoration-line: underline;
+    }
+    
+    /*Makes Title border change color, could be set to other borders*/
+    #myDIV {
+    	margin: auto;
+  		width: 80%;
+  		height: 40%;
+  		border: 15px solid black;
+  		animation: mymove 5s infinite;
+	}
+
+	@keyframes mymove {
+  		50% {border-color: lightgray;}
+	}
+    
+    /*Settings for 'Scroll to Top' button*/
+    #myBtn {
+  		display: none;
+  		position: fixed;
+  		bottom: 20px;
+  		right: 30px;
+  		z-index: 99;
+  		font-size: 18px;
+  		border: none;
+  		outline: none;
+  		background-color: darkred;
+  		color: white;
+  		cursor: pointer;
+  		padding: 15px;
+  		border-radius: 4px;
+        transition-duration: 0.4s;
+	}
+	
+    /*Settings for button when hovered over*/
+	#myBtn:hover {
+  		background-color: #555;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+    
+    </style>
+
+<!--Body: -->
+
+	<body>
+    
+    <!--Start of Button implementation -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+	<script>
+	/*Get the button*/
+	let mybutton = document.getElementById("myBtn");
+
+	/*When the user scrolls down 20px from the top of the document, show the button*/
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+  		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    		mybutton.style.display = "block";
+  		} else {
+    		mybutton.style.display = "none";
+  		}
+	}
+
+	/*When the user clicks on the button, scroll to the top of the document*/
+	function topFunction() {
+  		document.body.scrollTop = 0;
+	  	document.documentElement.scrollTop = 0;
+	}
+	</script>
+    <!--End of Button implementation-->
+    
+    <!--Dropdown content-->
+    <ul>
+    	<li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Home</a>
+		<div class="dropdown-content">  
+      	<a href="#S1">Header Table</a>  <!-- add spots here -->
+      	<a href="#S2">Task Distribution Table</a>  
+      	<a href="#S3">Bitbucket Statistics Table</a>
+        <a href="#S4">Operation Paragraph</a> 
+        <a href="#S5">Stereotype Diagram</a> 
+        <a href="#S6">Main Activity Diagram</a>
+        <a href="#S7">Use Case Activity Diagrams</a>
+        </div>
+		</li>
+        
+  		<li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Projects</a>
+		<div class="dropdown-content">  
+      	<a href="Project1/Report.html">Project 1</a>  <!-- add Project-Report file names here -->
+        </div>
+		</li>
+        
+        <li class="dropdown">
+    	<a href="javascript:void(0)" class="dropbtn">Reports</a>
+    	<div class="dropdown-content">
+      	<a href="BenKovakasTeam5Report .html">Ben Kovakas</a> <!--Make sure to include a space if file-names have one-->
+        <a href="RyanMilsapTeam5ReportP2.html">Ryan Milsap</a>
+      	<a href="ConnerHallTeam5Report.html">Conner Hall</a>
+        <a href="AlexanderSteffeyTeam5Report.html">Alexander Steffey</a>
+        <a href="DJDierkingTeam5Report.html">Dj Dierking</a>
+    	</div>
+  		</li>
+        
+	</ul>
+    
+    	<div id="myDIV"> <!--Sets border the change color-->
+    	<h1 style="text-align:center">Team 5 Report: Project 2</h1>
+        </div>
+        
+        <p></p>
+        
+        
+        
+<!-- formatting a table -->
+
+	<h3 id="S1" style="text-align:center">Header Table</h3>
+        
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>CWID</th>
+            <th>Crimson Email</th>
+            <th>Hours</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>12278113</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+  		<tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>12274984</td>
+            <td>jbkovakas@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>12227882</td>
+            <td>rmmilsap@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>12215700</td>
+            <td>cchall5@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Alexander Steffey</td>
+    	 	<td>12251132</td>
+            <td>arsteffey@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr>
+    	 	<td>Dj Dierking</td>
+    	 	<td>12063001</td>
+            <td>dddierking@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+	</table>
+	
+    <h3 id="S2" style="text-align:center">Task Distribution Table</h3>
+    
+    <table style ="width:60%" class="center">
+  		<tr>
+   		 	<th>Name</th>
+  		 	<th>Tasks</th>
+            <th>Percentage</th>
+  		</tr>
+  		<tr>
+    	 	<td>Javier Caldwell</td>
+    	 	<td>Submitter</td>
+            <td>16.7%</td>
+  		</tr>
+  		<tr>
+    	 	<td>Ben Kovakas</td>
+    	 	<td>Paragraph</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Ryan Milsap</td>
+    	 	<td>Use Case Activity Diagrams</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Conner Hall</td>
+    	 	<td>Use Case Activity Diagrams </td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Alexander Steffey</td>
+    	 	<td>Stereotype Diagram/Main Activity Diagram</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr>
+    	 	<td>Dj Dierking</td>
+    	 	<td>Revised Use Case Diagram</td>
+            <td>16.7%</td>
+  		</tr>
+	</table>
+    
+<!--Header and Image -->
+	<h3 id="S3" style="text-align:center">Bitbucket Statistics Table</h3>
+		<p>
+			<img src = "bitbucket.png" Width = auto Height = auto>
+		</p>
+        
+	<h3 id="S4" style="text-align:center">Operation Paragraph</h3>
+		<p> <!--&emsp: adds a space-->
+	    &emsp;&emsp;Billing, reports, service validation, membership data storage, and billing are thecChocAn system components that will be computerized. To ensure data integrity and accessibility, data will be kept in a central ChocAn Data Center, perhaps on secure servers. Hardware needs will include networking hardware for communication, a central server for data processing, and computer terminals for providers. The system will communicate with other systems, such as banking systems for electronic fund transfers and Acme Accounting Services for fee payments. Users—including members and healthcare providers—will interact with the system through specialized terminals and a user-friendly interface that leads them through tasks including card validation, service recording, and report production.
+	    </p>
+        
+	<h3 id="S5" style="text-align:center">Stereotype Diagram</h3>
+		<p>
+			<img src = "FinalStereotypeV3.png" Width=500px Height=600px>
+		</p>
+        
+	<h3 id="S6" style="text-align:center">Main Activity Diagram</h3>
+		<p>
+			<img src = "FinalActivityDiagramVF.png" Width=500px Height=600px>
+		</p>
+        
+	<h3 id="S7" style="text-align:center">Use Case Activity Diagrams</h3>
+		<p>
+			<img src = "EditMemberStatusUCAD.png" Width=500px Height=600px>
+        </p>
+        <p>
+            <img src = "EditProviderStatusUCAD.png" Width=500px Height=600px>
+		</p>
+		<p>
+            <img src = "MainAccountProcUCAD.png" Width=500px Height=600px>
+		</p>
+		<p>
+            <img src = "RequestReportsUCAD.png" Width=500px Height=600px>
+		</p>
+		<p>
+            <img src = "billChocAn.png" Width=500px Height=600px>
+		</p>
+        <p>
+            <img src = "providerDirectory.png" Width=500px Height=600px>
+		</p>
+        <p>
+            <img src = "validateMember.png" Width=500px Height=600px>
+		</p>
+		</body>
+
+</html>
+
