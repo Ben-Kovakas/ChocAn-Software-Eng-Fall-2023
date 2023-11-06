@@ -220,10 +220,10 @@
     	<a href="javascript:void(0)" class="dropbtn">Reports</a>
     	<div class="dropdown-content">
       	<a href="BenKovakasTeam5Report.html">Ben Kovakas</a> <!--Make sure to include a space if file-names have one-->
-        <a href="RyanMilsapTeam5ReportP2.html">Ryan Milsap</a>
-      	<a href="ConnerHallTeam5Report.html">Conner Hall</a>
+        <a href="RyanMilsapTeam5Report.html">Ryan Milsap</a>
+      	<a href="JavierCaldwellTeam5Report.html">Javier Caldwell</a>
         <a href="AlexanderSteffeyTeam5Report.html">Alexander Steffey</a>
-        <a href="DJDierkingTeam5Report.html">Dj Dierking</a>
+        <a href="DJDierkingTeam5Report.html">DJ Dierking</a>
     	</div>
   		</li>
         
@@ -325,16 +325,18 @@
             <td>16.7%</td>
   		</tr>
 	</table>
+	<h4 style="text-align:center"><p>All members of the team attended 3 meetings during the duration of this project.</p></h4>
     
 <!--Header and Image -->
 	<h3 id="S3" style="text-align:center">Bitbucket Statistics Table</h3>
 		<p>
-			<img src = "bitbucket.png" border="2" Width = auto Height = auto>
+			<img src = "bitbucket1.png" border="2" Width = auto Height = auto>
+			<img src = "bitbucket2.png" border="2" Width = auto Height = auto>
 		</p>
         
 	<h3 id="S4" style="text-align:center">Design/Architecture Discussion</h3>
 		<p> <!--&emsp: adds a space-->
-	    &emsp;&emsp;
+	    &emsp;&emsp;The design that we feel would be best for our project is the Object Oriented Organization software architecture. In this software architecture, the data representations, as well as their primitive operations, are associated and contained within abstract data types, or objects. The intent of this architecture is to allow the objects to interact with each other through their method calls, and additionally to allow for easily maintainable and highly organized systems. For the ChocAn system, we can see from the Stereotype Diagram in Project 2 how itemized each aspect of the project is. Each of the users and functions generally operates independently of the rest of the functions. This tends towards an object oriented approach since we can encapsulate each of the uses, data, and method calls to each specific use case. To go into greater detail, we will look at the Class Diagram below. The Main Menu is the general interface for the user, of which all of our terminals for the users are housed. Each of the user terminals have their own distinct purposes which do not conflict with each other. The operator terminal is responsible for Updating Member or provider information. The Provider terminal is responsible for processing service records. The manager terminal is responsible for requesting and generating reports. The Timer is responsible for generating all reports at a specified time. This all links to global data stored in system records which is easily accessible through specific sequences of method calls. This hierarchy and organization of information leads to low coupling and high cohesion which is what we are aiming for with this object oriented approach to the ChocAn project problem.
 	    </p>
         
 	<h3 id="S5" style="text-align:center">Class Diagram</h3>
@@ -344,12 +346,32 @@
         
 	<h3 id="S6" style="text-align:center">Sequence Diagrams</h3>
 		<p>
-			<h4 style="text-align:center">Timer</h4>
+			<h4 style="text-align:center">Timer Run Main Accounting Procedure</h4>
 			<img src = "TimerUCSeqDiagram.png" border="2" Width=500px Height=600px>
         </p>
         <p>
-			<h4 style="text-align:center">Manager</h4>
-			<img src = "TimerUCSeqDiagram.png" border="2" Width=500px Height=600px>
+			<h4 style="text-align:center">Manager Generate Reports</h4>
+			<img src = "ManagerUCSeqDiagram.png" border="2" Width=500px Height=600px>
+        </p>
+        <p>
+			<h4 style="text-align:center">Edit Member Status</h4>
+			<img src = "EditMemberStatusSequence.png" border="2" Width=500px Height=600px>
+        </p>
+        <p>
+			<h4 style="text-align:center">Edit Provider Status</h4>
+			<img src = "EditProviderStatusSequence.png" border="2" Width=500px Height=600px>
+        </p>
+        <p>
+			<h4 style="text-align:center">Request Provider Directory</h4>
+			<img src = "RequestProviderDirectorySequence.png" border="2" Width=500px Height=600px>
+        </p>
+        <p>
+			<h4 style="text-align:center">Validate Member</h4>
+			<img src = "ValidateMemberSequence.png" border="2" Width=500px Height=600px>
+        </p>
+        <p>
+			<h4 style="text-align:center">Bill ChocAn</h4>
+			<img src = "BillChocAnSequence.png" border="2" Width=500px Height=600px>
         </p>
 		</body>
 
