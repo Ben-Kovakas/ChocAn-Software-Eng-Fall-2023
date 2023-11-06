@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>JavierIndividualReport</title>  
+	</head>
+    
+<!--Style: -->
+
+	<style>
+    
+    /*Dropdown: settings for the dropdown menu*/
+	ul {
+  		list-style-type: none;  
+  		margin: 0;
+  		padding: 0;
+  		overflow: hidden;
+  		background-color: #aa39e3;
+	}
+
+	/*Makes text appear on left of site*/
+	li {
+  		float: left;
+	}
+
+	/*Changes background and text color when hovered*/
+	li a, .dropbtn {
+  		display: inline-block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+	}
+	
+    /*Settings for Drop-Down Menu Hover*/
+	li a:hover, .dropdown:hover .dropbtn {
+  		background-color: white;
+        	color: black;
+	}
+	
+    /*Settings for dropdown shape*/
+	li.dropdown {
+  		display: inline-block;
+	}
+	
+    /*Settings for content in dropdown*/
+	.dropdown-content {
+  		display: none;
+  		position: absolute;
+  		background-color: white;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
+	}
+
+	.dropdown-content a {
+  		color: black;
+  		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;
+	}
+	
+    /*Hover color*/
+	.dropdown-content a:hover {background-color: grey;}
+
+	/*Hover display style*/
+	.dropdown:hover .dropdown-content {
+  		display: block;
+	}
+    
+    /*Centers text and other objects*/
+    .center {
+    	text.align: center;
+    }
+    
+    /*Table: settings for the tables*/
+    table, th, td {
+  		border: 1px solid black;
+	}
+
+    /*Settings for overall table*/
+    table {
+  		border-collapse: collapse;
+  		/*width: 100%; To set table size here, remove width from table style in body*/
+        margin-left: auto;
+  		margin-right: auto;
+	}
+    
+    /*Settings for table header row*/
+    th {
+        background-color: #e6e6e6;/*#e6e6e6*/
+        background-image: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+        height: 25px;
+    }
+    
+    /*Table Header Dark Mode Settings*//*Not Implemented*/
+    .darkModeTh{
+    	background-color: purple;/*verylightgray*/
+        color: black;
+    }
+
+	/*Makes table striped*/
+    tr:nth-child(odd) {
+        background-color: #f9f9f9;
+        color: black;
+    }
+    
+    /*Table Row Dark Mode Settings*//*TOBEF*//*Not Implemented*/
+    .darkModeTr {
+    	background-color: green;/*TO-BE-DETERMINED*/
+        color: blue;
+    }
+    
+    /*Makes table cell background change when highlighted*/
+    td:hover {
+    	background-color: lightgray;
+        color: black;
+    }
+    
+    /*Image settings*/
+    img {
+      	display: block;
+  		object-fit: contain;
+  		width: 80%;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+    
+    /*Allows image to be responsive to screen size*/
+    .responsive {
+  		max-width: 100%;
+  		height: auto;
+	}
+    
+    /*Settings for body*/
+    body{
+     	background-color: white;
+  		color: black;
+    }
+    
+    /*Body Dark Mode Settings*/
+    .dark-mode {
+  		background-color: black;
+  		color: white;
+	}
+    
+    /*Underlines h3 text*/
+    h3{
+    	text-decoration-line: underline;
+    }
+    
+    /*Makes Title border change color, could be set to other borders*/
+    #myDIV {
+    	margin: auto;
+  		width: 80%;
+  		height: 40%;
+  		border: 15px solid black;
+  		animation: mymove 5s infinite;
+	}
+
+	@keyframes mymove {
+  		50% {border-color: #bfa3cc;}
+	}
+    
+    /*Settings for 'Scroll to Top' button*/
+    #myBtn {
+  		display: none;
+  		position: fixed;
+  		bottom: 20px;
+  		right: 30px;
+  		z-index: 99;
+  		font-size: 18px;
+  		border: none;
+  		outline: none;
+  		background-color: #aa39e3;
+  		color: white;
+  		cursor: pointer;
+  		padding: 15px;
+  		border-radius: 4px;
+        transition-duration: 0.4s;
+	}
+	
+    /*Settings for button when hovered over*/
+	#myBtn:hover {
+  		background-color: #555;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+    
+    /*Settings for 'Dark Mode' button*/
+    .buttonD{
+  		background-color: white;
+  		border: light;
+ 		color: black;
+ 		padding: 15px 32px;/*15px 32px*/
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;/*16px*/
+	}
+	
+    /*Settings for button when hovered over*/
+	.buttonD:hover {
+  		background-color: #555;
+        color: white;
+	}
+    
+    </style>
+
+<!--Body: -->
+
+	<body>
+    
+    <!--Start of Button implementation -->
+    <!--Sets button to go to top when clicked-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+	<script>
+	/*Get the button*/
+	let mybutton = document.getElementById("myBtn");
+
+	/*When the user scrolls down 20px from the top of the document, show the button*/
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+  		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    		mybutton.style.display = "block";
+  		} else {
+    		mybutton.style.display = "none";
+  		}
+	}
+
+	/*When the user clicks on the button, scroll to the top of the document*/
+	function topFunction() {
+  		document.body.scrollTop = 0;
+	  	document.documentElement.scrollTop = 0;
+	}
+	</script>
+    <!--End of Scroll-To-Top Button implementation-->
+    
+    <!--Dark Mode function--><!--TOBEF-->
+    <script>
+		function darkMode() {
+   			var element = document.body;
+   			element.classList.toggle("dark-mode");
+            var x = document.geElementById("table1");
+            x.classList.toggle("tableDark");
+            x = document.getElementById("headerRow")
+            x.classList.toggle("darkModeTh");
+            x = document.getElementById("headerRow2")
+            x.classList.toggle("darkModeTh");
+           	x = document.getElementById("tr1");
+            x.classList.toggle("darkModeTr");
+            x = document.getElementById("tr3");
+            x.classList.toggle("darkModeTr");
+            x = document.getElementById("tr5");
+            x.classList.toggle("darkModeTr");
+            x = document.getElementById("tr7");
+            x.classList.toggle("darkModeTr");
+            x = document.getElementById("tr9");
+            x.classList.toggle("darkModeTr");
+            x = document.getElementById("tr11");
+            x.classList.toggle("darkModeTr");
+		}
+	</script>
+    <!--End of Dark Mode function-->
+    
+    <!--Dropdown content-->
+    <ul>
+    	<!--Home Dropdown Settings-->
+    	<li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Home</a>
+		<div class="dropdown-content">  
+      	<a href="#S1">Header Table</a>  <!-- add spots here -->
+      	<a href="#S2">Task Distribution Table</a>  
+      	<a href="#S3">Individual Class Diagram</a>
+        </div>
+		</li>
+        
+        <!--Options Dropdown Settings-->
+        <li class="dropdown" style="float:right;">
+        <a href="javascript:void(0)" class="dropbtn">Options</a>
+		<div class="dropdown-content" style="right:0;">  
+      	<a href="javascript:void(0)">
+        	<button onclick="darkMode()" id="darkButton" class="button buttonD">Dark mode</button>
+        </a>
+        </div>
+		</li>
+        
+	</ul>
+    
+    	<!--Title Content-->
+    	<div id="myDIV"> <!--Sets border the change color-->
+    	<h1 style="text-align:center">Individual Report #?: Javier Caldwell </h1>
+        </div>
+        
+        <p></p>
+        
+<!-- formatting a table -->
+
+	<!--Header Table-->
+	<h3 id="S1" style="text-align:center">Header Table</h3>
+    
+    <div style="overflow-x: auto;">    
+    <table id="table1" style ="width:60%">
+  		<tr id="headerRow">
+   		 	<th>Name</th>
+  		 	<th>CWID</th>
+            <th>Crimson Email</th>
+            <th>Hours</th>
+  		</tr>
+  		<tr id="tr1">
+    	 	<td >Javier Caldwell</td>
+    	 	<td>12278113</td>
+            <td>JTCaldwell2@Crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+  		<tr id="tr2">
+    	 	<td>Ben Kovakas</td>
+    	 	<td>12274984</td>
+            <td>jbkovakas@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr id="tr3">
+    	 	<td>Ryan Milsap</td>
+    	 	<td>12227882</td>
+            <td>rmmilsap@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr id="tr4">
+    	 	<td>Conner Hall</td>
+    	 	<td>12215700</td>
+            <td>cchall5@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr id="tr5">
+    	 	<td>Alexander Steffey</td>
+    	 	<td>12251132</td>
+            <td>arsteffey@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+        <tr id="tr6">
+    	 	<td>Dj Dierking</td>
+    	 	<td>12063001</td>
+            <td>dddierking@crimson.ua.edu</td>
+            <td>5</td>
+  		</tr>
+	</table>
+    </div>
+	
+    <!--Task Table-->
+    <h3 id="S2" style="text-align:center">Task Distribution Table</h3>
+    
+    <div style="overflow-x: auto;">
+    <table style ="width:60%" class="center">
+  		<tr id="headerRow2">
+   		 	<th>Name</th>
+  		 	<th>Tasks</th>
+            <th>Percentage</th>
+  		</tr>
+  		<tr id="tr7">
+    	 	<td>Javier Caldwell</td>
+    	 	<td>Class Diagram</td>
+            <td>16.7%</td>
+  		</tr>
+  		<tr id ="tr8">
+    	 	<td>Ben Kovakas</td>
+    	 	<td>Sequence Diagrams</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr id = "tr9">
+    	 	<td>Ryan Milsap</td>
+    	 	<td>Sequence Diagrams</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr id = "tr10">
+    	 	<td>Conner Hall</td>
+    	 	<td>Submitter/Sequence Diagrams</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr id= "tr11">
+    	 	<td>Alexander Steffey</td>
+    	 	<td>Sequence Diagrams</td>
+            <td>16.7%</td>
+  		</tr>
+        <tr id= "tr12">
+    	 	<td>Dj Dierking</td>
+    	 	<td>Paragraph</td>
+            <td>16.7%</td>
+  		</tr>
+	</table>
+    </div>
+    
+	<!--Image Header and Image -->
+	<h3 id="S3" style="text-align:center">Individual Class Diagram</h3>
+		<p>
+			<img src = "Javier-UMLClassDiagram.png" class="responsive" Width = auto Height = auto>
+		</p>
+        
+		</body>
+
+</html>
+
