@@ -5,7 +5,6 @@ import java.util.List;
 public class MemberReport {
 	
 	private Member Member;
-	
 	private List services;
 	
 	public MemberReport(List ServiceRecords) {
