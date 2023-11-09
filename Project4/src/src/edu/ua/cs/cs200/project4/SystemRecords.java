@@ -11,6 +11,8 @@ public class SystemRecords {
   public List<MemberReport> memberReports;
   
   public SystemRecords() {
+    providerRecords = new ProviderRecords();
+    memberRecords = new MemberRecords();
     eftRecords = new ArrayList<EFTRecords>();
     summaryReports = new ArrayList<SummaryReport>();
     memberReports = new ArrayList<MemberReport>();
