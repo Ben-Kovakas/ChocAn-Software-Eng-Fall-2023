@@ -2,17 +2,40 @@
 public class EFTReport {
 
 	
-	private List eftData;
+	private string providerName;
 	
-	/** Constructor. Creates the EFT Report with the EFT records.
+	private int providerNumber;
+	
+	private double amount;
+	
+	/** Constructor. Creates the EFT Report with the EFT data.
 	 * 
-	 * @Param EFTRecords 
-	 * 					The EFTRecord list
+	 * @Param  name
+	 * 			The provider's name
+	 * 
+	 * @param number
+	 * 			The provider's number
+	 * 
+	 * @param fee
+	 * 			The fee to be paid to the provider	
 	 * 
 	 * */
-	public EFTReport(List EFTRecords) {
-		eftData = EFTRecords;
+	public EFTReport(string name, int number, double fee) {
+		providerName = name;
+		providerNumber = number;
+		amount = fee;
 	}
 
+	public string getProviderName(){
+		return providerName;
+	}
+	
+	public int getProviderNumber() {
+		return providerNumber;
+	}
+	
+	public double getAmount() {
+		return amount;
+	}
 	
 }

@@ -18,5 +18,18 @@ public class ProviderReport {
 	public SummaryReport(List ServiceRecords) {
 		services = ServiceRecords;
 	}
+	
+	public int getProviders() {
+		return providers;
+	}
+	
+	public int getTotalConsultations() {
+		return totalConsultions;
+	}
+	
+	public double getTotalFees() {
+		return totalFees;
+	}
+
 
 }

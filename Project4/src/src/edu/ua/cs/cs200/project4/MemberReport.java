@@ -1,7 +1,7 @@
 
 public class MemberReport {
 	
-	member Member;
+	private member Member;
 	
 	private List services;
 	
