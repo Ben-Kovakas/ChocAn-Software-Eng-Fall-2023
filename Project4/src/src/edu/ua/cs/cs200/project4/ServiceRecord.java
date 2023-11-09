@@ -19,28 +19,52 @@ public class ServiceRecord {
         this.memberNumber = memberNumber;
     }
 
-    // Public getter methods
+    // Getter and Setter methods
     public int getServiceCode() {
         return serviceCode;
+    }
+
+    public void setServiceCode(int serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getCurrentDate() {
         return currentDate;
     }
 
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
+    }
+
     public String getServiceDate() {
         return serviceDate;
+    }
+
+    public void setServiceDate(String serviceDate) {
+        this.serviceDate = serviceDate;
     }
 
     public String getFee() {
         return fee;
     }
 
+    public void setFee(String fee) {
+        this.fee = fee;
+    }
+
     public int getMemberName() {
         return memberName;
     }
 
+    public void setMemberName(int memberName) {
+        this.memberName = memberName;
+    }
+
     public int getMemberNumber() {
         return memberNumber;
+    }
+
+    public void setMemberNumber(int memberNumber) {
+        this.memberNumber = memberNumber;
     }
 }
