@@ -1,8 +1,9 @@
+package edu.ua.cs.cs200.project4;
 
 public class EFTReport {
 
 	
-	private string providerName;
+	private String providerName;
 	
 	private int providerNumber;
 	
@@ -20,13 +21,13 @@ public class EFTReport {
 	 * 			The fee to be paid to the provider	
 	 * 
 	 * */
-	public EFTReport(string name, int number, double fee) {
+	public EFTReport(String name, int number, double fee) {
 		providerName = name;
 		providerNumber = number;
 		amount = fee;
 	}
 
-	public string getProviderName(){
+	public String getProviderName(){
 		return providerName;
 	}
 	

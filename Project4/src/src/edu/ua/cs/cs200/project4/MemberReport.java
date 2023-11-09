@@ -1,7 +1,10 @@
+package edu.ua.cs.cs200.project4;
+
+import java.util.List;
 
 public class MemberReport {
 	
-	private member Member;
+	private Member Member;
 	
 	private List services;
 	
