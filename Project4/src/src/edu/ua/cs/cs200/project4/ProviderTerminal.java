@@ -1,21 +1,33 @@
 package edu.ua.cs.cs200.project4;
 
 public class ProviderTerminal {
-	  
+    
+    private MemberRecords memberRecords; 
+    private ProviderDirectory providerDirectory;
 
     public boolean validateMember(int memberID) {
-        //  validate a member
-        // Return true if valid, false otherwise
-        return true; 
+        if (memberID <= 0) {
+            // Log error and return or throw an IllegalArgumentException
+        }
+        return memberRecords.isValidMember(memberID);
     }
 
     public void billService(int memberID, int serviceCode) {
-        //  bill a service for a member
+        if (!validateMember(memberID)) {
+            // Handle invalid member
+        }
+        
+        // Additional checks for serviceCode...
+        
+        ServiceRecord newRecord = new ServiceRecord(memberID, serviceCode);
+        // ... create the service record and update records accordingly
     }
 
-    public void requestDirectory() {
-        //request the provider directory
+    public List<Service> requestDirectory() {
+        return providerDirectory.getServices();
     }
 
+   
+}
 
 }
