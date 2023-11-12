@@ -15,7 +15,7 @@ public class SummaryReport {
 	 * 					The provider reports.
 	 * 
 	 * */
-	public SummaryReport(List providerReports) {
+	public SummaryReport(List providerReports) { //maybe use provider records instead?
 		
 	}
 	
