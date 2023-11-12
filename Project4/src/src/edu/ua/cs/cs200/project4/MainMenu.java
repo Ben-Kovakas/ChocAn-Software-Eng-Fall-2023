@@ -3,6 +3,7 @@ package edu.ua.cs.cs200.project4;
 import java.util.Scanner;
 
 /**
+ * This class is responsible for displaying the main menu and handling the main program logic, including startup and shutdown.
  * @author cchall5
  */
 public class MainMenu {
@@ -14,6 +15,7 @@ public class MainMenu {
     Timer timer;
     SystemRecords systemRecords;
 	
+	//main logic of program - displays main menu and handles user input
 	public void main(String[] args) {
 		
 		//initialize the program
@@ -37,7 +39,7 @@ public class MainMenu {
 		}
 
 		//logic for each option
-		switch(input) {
+		switch (input) {
 			case 1:
 				//provider terminal
 				this.providerTerminal.main();
@@ -62,6 +64,7 @@ public class MainMenu {
 		
     }
 	
+	//initialize the program
 	public void initialize() {
 		
 		//TODO - persistence logic?
@@ -75,6 +78,7 @@ public class MainMenu {
 		
     }
 
+	//shutdown the program
     public void shutdown() {
     	//TODO - logic to shutdown program - persistence?
 
