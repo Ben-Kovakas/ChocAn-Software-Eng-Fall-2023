@@ -1,41 +1,35 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.List;
+
 public class ManagerTerminal {
 
-    private ReportController reportController; 
+    private ReportController reportController;
 
     public ManagerTerminal(ReportController reportController) {
         this.reportController = reportController;
     }
 
-    public void requestReport() {
-        // check if the ReportController is available and ready
+    public void requestReports() {
         if (reportController == null) {
-            
-            System.out.println("Report Controller is not available.");
+            System.out.println("Report Controller is not initialized.");
             return;
         }
-
-        // Trigger the report generation process.
-        reportController.generateManagerReport();
-        //  handle any exceptions that could be thrown by the generateManagerReport method.
-
-        // Or handle the return value or status from the report generation.
-    
+        // check the reportController status or existence here
+        List<Report> reports = reportController.generateManagerReport();
+        displayReports(reports);
     }
 
     public void displayReports(List<Report> reports) {
-        // Check if reports list is not null or empty.
         if (reports == null || reports.isEmpty()) {
-            System.out.println("No reports available to display.");
+            System.out.println("No reports to display.");
             return;
         }
 
-        // Logic to display reports.
         for (Report report : reports) {
-            System.out.println(report); // Assuming the Report class has a sensible toString() implementation.
+            System.out.println(report.toString());
         }
     }
-
- 
+    
+    // NOTES: THE REPORT IS A PLACEHOLDER UNTIL FIGURED OUT
 }
