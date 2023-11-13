@@ -11,12 +11,24 @@ public class SummaryReport {
 	
 	/** Constructor. Creates the Summary Report with the Provider reports.
 	 * 
-	 * @Param ProviderReports 
-	 * 					The provider reports.
+	 * @Param ProviderRecords 
+	 * 					The provider records.
 	 * 
 	 * */
-	public SummaryReport(List providerReports) { //maybe use provider records instead?
+	public SummaryReport(ProviderRecords ProviderRecords) { 
+		/*for(int i = 0; i <; i++) {
+			TODO get providerRecords size, add each name to count.
+		}
+		*/
 		
+		/*
+		  Same as above for consultations
+		 */
+		
+		/*
+		  Same as above for fees
+		 */
+
 	}
 	
 	public int getTotalProviders() {

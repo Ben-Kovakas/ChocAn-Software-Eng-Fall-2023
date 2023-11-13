@@ -4,8 +4,8 @@ import java.util.List;
 
 public class EFTRecords {
   
-  private List<EFTReport> eftreports;
-  public EFTRecords() {
-    
-  }
+	private List<EFTReport> eftReports;
+  
+	public EFTRecords(EFTReport tempEftReports) {
+	}
 }

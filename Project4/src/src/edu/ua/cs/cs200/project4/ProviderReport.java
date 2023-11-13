@@ -2,9 +2,7 @@ package edu.ua.cs.cs200.project4;
 
 public class ProviderReport {
 	
-	private int provider;
-	
-	private List services;
+	private Provider provider;
 	
 	private int totalConsultions;
 	
@@ -16,12 +14,19 @@ public class ProviderReport {
 	 * 					The service records.
 	 * 
 	 * */
-	public SummaryReport(List ServiceRecords) {
-		services = ServiceRecords;
-	}
+	public ProviderReport(Provider tempProvider) {
+		provider = tempProvider;
+		totalConsultations = provider.getConsultations();
+		
+		ServiceRecord tempService = provider.getServiceRecords();
+		
+		for(int i = 0; i < tempService.size(); i++) {
+			totalFees = totalFees + tempService.get(i).getFee();
+		}		
+	}	
 	
-	public int getProviders() {
-		return providers;
+	public Provider getProvider() {
+		return provider;
 	}
 	
 	public int getTotalConsultations() {
