@@ -16,6 +16,7 @@ public class ProviderController {
     public boolean validateMember(int memberID) {
     	//Search members by memberID
     	getStatus();
+    	
     }
     
     public boolean billChocAn(int memberID) {
