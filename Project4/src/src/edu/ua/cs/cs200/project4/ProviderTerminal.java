@@ -8,9 +8,9 @@ public class ProviderTerminal {
     private ProviderDirectory providerDirectory;
 
     // Constructor
-    public ProviderTerminal(ProviderRecords providerRecords, ProviderDirectory providerDirectory) {
-        this.providerRecords = providerRecords;
-        this.providerDirectory = providerDirectory;
+    public ProviderTerminal() {
+        providerRecords = new ProviderRecords();
+        providerDirectory = new ProviderDirectory();
     }
 
     // Main method for the ProviderTerminal class
