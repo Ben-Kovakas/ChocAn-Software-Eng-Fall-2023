@@ -44,24 +44,25 @@ public class MainMenu {
 			switch (input) {
 				case 1:
 					//provider terminal
-					this.providerTerminal.main();
+					ProviderTerminal providerTerminal = new ProviderTerminal();
 					break;
 				case 2:
 					//operator terminal
-					this.operatorTerminal.main();
+					OperatorTerminal operatorTerminal = new OperatorTerminal();
 					break;
 				case 3:
 					//manager terminal
-					this.managerTerminal.main();
+					ManagerTerminal managerTerminal = new ManagerTerminal();
 					break;
 				case 4:
 					//run main accounting procedure
-					this.timer.RunProcedure();
+					Timer timer = new Timer();
+					timer.RunProcedure();
 					break;
 				case 5:
 					//exit
 					go = false;
-					this.shutdown();	
+					shutdown();	
 					break;
 			}
 			s.close();
@@ -84,7 +85,7 @@ public class MainMenu {
     }
 
 	//shutdown the program
-    public void shutdown() {
+    public static void shutdown() {
     	//TODO - logic to shutdown program - persistence?
 
 		System.out.println("Goodbye!");
