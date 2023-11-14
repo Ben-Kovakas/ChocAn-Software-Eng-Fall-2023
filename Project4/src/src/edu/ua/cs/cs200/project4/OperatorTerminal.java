@@ -11,7 +11,7 @@ public class OperatorTerminal {
 	UpdateMemberController memberController;
 	UpdateProviderController providerController;
 
-  public void main() {
+  public static void main(String[] args) {
 	  
 	//initialize new objects
    	operatorTerminal = new OperatorTerminal();
