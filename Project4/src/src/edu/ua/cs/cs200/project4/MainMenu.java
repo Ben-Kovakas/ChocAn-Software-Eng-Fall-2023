@@ -9,18 +9,17 @@ import java.util.Scanner;
 public class MainMenu {
 	
 	//class objects
-	OperatorTerminal operatorTerminal;
-    ManagerTerminal managerTerminal;
-    ProviderTerminal providerTerminal;
-    Timer timer;
+	static OperatorTerminal operatorTerminal;
+	static ManagerTerminal managerTerminal;
+	static ProviderTerminal providerTerminal;
+	static Timer timer;
     SystemRecords systemRecords;
 	
 	//main logic of program - displays main menu and handles user input
 	public static void main(String[] args) {
 		
-		//initialize the program
-		MainMenu mainMenu = new MainMenu();
-		mainMenu.initialize();
+		//initialized when the program is started since this is the main function
+	    //still need to call methods later to load persistence characteristics 
 		
 		boolean go = true;
 		while (go) {
@@ -44,19 +43,19 @@ public class MainMenu {
 			switch (input) {
 				case 1:
 					//provider terminal
-					ProviderTerminal providerTerminal = new ProviderTerminal();
+					providerTerminal = new ProviderTerminal();
 					break;
 				case 2:
 					//operator terminal
-					OperatorTerminal operatorTerminal = new OperatorTerminal();
+					operatorTerminal = new OperatorTerminal();
 					break;
 				case 3:
 					//manager terminal
-					ManagerTerminal managerTerminal = new ManagerTerminal();
+					managerTerminal = new ManagerTerminal();
 					break;
 				case 4:
 					//run main accounting procedure
-					Timer timer = new Timer();
+					timer = new Timer();
 					timer.RunProcedure();
 					break;
 				case 5:
