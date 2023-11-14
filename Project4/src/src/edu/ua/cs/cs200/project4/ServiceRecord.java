@@ -5,12 +5,12 @@ public class ServiceRecord {
     private int serviceCode;
     private String currentDate;
     private String serviceDate;
-    private String fee;
-    private int memberName;
+    private double fee;
+    private String memberName;
     private int memberNumber;
 
     // Constructor
-    public ServiceRecord(int serviceCode, String currentDate, String serviceDate, String fee, int memberName, int memberNumber) {
+    public ServiceRecord(int serviceCode, String currentDate, String serviceDate, double fee, String memberName, int memberNumber) {
         this.serviceCode = serviceCode;
         this.currentDate = currentDate;
         this.serviceDate = serviceDate;
@@ -44,19 +44,19 @@ public class ServiceRecord {
         this.serviceDate = serviceDate;
     }
 
-    public String getFee() {
+    public double getFee() {
         return fee;
     }
 
-    public void setFee(String fee) {
+    public void setFee(double fee) {
         this.fee = fee;
     }
 
-    public int getMemberName() {
+    public String getMemberName() {
         return memberName;
     }
 
-    public void setMemberName(int memberName) {
+    public void setMemberName(String memberName) {
         this.memberName = memberName;
     }
 
