@@ -3,21 +3,20 @@ package edu.ua.cs.cs200.project4;
 import java.util.List;
 
 public class MemberReport {
+	private List<ServiceRecord> service;
 	
-	private Member Member;
-	private List<ServiceRecords> service;
-	
-	public MemberReport(List<ServiceRecords> ServiceRecords) {
+	public MemberReport(List<ServiceRecord> ServiceRecords) {
 		service = ServiceRecords;
 	}
 	
-	public ServiceRecords getMemberReport(String memberName){
+	public ServiceRecord getMemberReport(String memberName){
 		ServiceRecord tempService;
 		
 		for(int i = 0; i < service.size(); i++) {
-			ServiceRecord tempService = service.get(i);
+			tempService = service.get(i);
 			
 			if(tempService.getMemberName() == memberName) {
+			  System.out.println("hello");
 				return tempService;
 			}
 		}
@@ -26,11 +25,11 @@ public class MemberReport {
 
 	}
 	
-	public ServiceRecords getMemberReport(int memberNumber){
+	public ServiceRecord getMemberReport(int memberNumber){
 		ServiceRecord tempService;
 		
 		for(int i = 0; i < service.size(); i++) {
-			ServiceRecord tempService = service.get(i);
+			tempService = service.get(i);
 			
 			if(tempService.getMemberNumber() == memberNumber) {
 				return tempService;
