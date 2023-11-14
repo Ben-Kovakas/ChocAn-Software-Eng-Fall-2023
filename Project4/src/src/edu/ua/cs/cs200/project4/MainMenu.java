@@ -19,7 +19,7 @@ public class MainMenu {
 	public void main(String[] args) {
 		
 		//initialize the program
-		MainMenu mainMenu;
+		MainMenu mainMenu = new MainMenu();
 		mainMenu.initialize();
 		
 		//display login screen
@@ -61,6 +61,8 @@ public class MainMenu {
 				this.shutdown();	
 				break;
 		}
+
+		s.close();
 		
     }
 	

@@ -2,7 +2,7 @@ package edu.ua.cs.cs200.project4;
 
 public class OperatorTerminal {
 
-  public static void main(String[] args) {
+  public void main() {
     // TODO Auto-generated method stub
 
   }

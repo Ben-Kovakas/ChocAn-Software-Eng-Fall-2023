@@ -9,7 +9,7 @@ public class ManagerTerminal {
     public ManagerTerminal() {
       reportController = new ReportController();
     }
-    public static void main() {
+    public void main() {
 
     }
     public void requestReports() {
