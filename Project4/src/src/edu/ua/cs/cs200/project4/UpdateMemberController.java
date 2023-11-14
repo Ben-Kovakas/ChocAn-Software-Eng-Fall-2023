@@ -9,13 +9,17 @@ public class UpdateMemberController {
     }
 
     // Basic function to add a new member
-    public void addMember(int memberID, String name, String address, String city, String state, int zip, String status) {
+    public void addMember(int memberID, String name, String address, String city, String state, int zip, String status)
+            throws IllegalArgumentException {
+        validateInputLength(name, address, city, state, status);
         Member newMember = new Member(memberID, name, address, city, state, zip, status);
         memberRecords.addMember(newMember);
     }
 
     // Basic function to edit member data
-    public void editMemberData(int memberID, String newName, String newAddress, String newCity, String newState, int newZip, String newStatus) {
+    public void editMemberData(int memberID, String newName, String newAddress, String newCity, String newState,
+            int newZip, String newStatus) throws IllegalArgumentException {
+        validateInputLength(newName, newAddress, newCity, newState, newStatus);
         Member existingMember = memberRecords.getMember(memberID);
 
         if (existingMember != null) {
@@ -40,6 +44,15 @@ public class UpdateMemberController {
             memberRecords.removeMember(existingMember);
         } else {
             System.out.println("Member not found. Unable to delete.");
+        }
+    }
+
+    // Method to validate input lengths
+    private void validateInputLength(String name, String address, String city, String state, String status)
+            throws IllegalArgumentException {
+        if (name.length() > 50 || address.length() > 100 || city.length() > 50 || state.length() > 2
+                || status.length() > 20) {
+            throw new IllegalArgumentException("Input length exceeds limit.");
         }
     }
 }
