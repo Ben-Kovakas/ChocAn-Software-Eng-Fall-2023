@@ -6,10 +6,12 @@ public class ManagerTerminal {
 
     private ReportController reportController;
 
-    public ManagerTerminal(ReportController reportController) {
-        this.reportController = reportController;
+    public ManagerTerminal() {
+      reportController = new ReportController();
     }
+    public void main() {
 
+    }
     public void requestReports() {
         if (reportController == null) {
             System.out.println("Report Controller is not initialized.");

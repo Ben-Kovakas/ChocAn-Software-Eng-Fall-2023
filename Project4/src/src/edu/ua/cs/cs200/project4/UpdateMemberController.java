@@ -4,8 +4,12 @@ public class UpdateMemberController {
 
     private MemberRecords memberRecords;
 
-    public UpdateMemberController(MemberRecords memberRecords) {
-        this.memberRecords = memberRecords;
+//    public UpdateMemberController(MemberRecords memberRecords) {
+//        this.memberRecords = memberRecords;
+//    }
+    
+    public void main() {
+    	memberRecords = new MemberRecords();
     }
 
     // Basic function to add a new member
