@@ -54,8 +54,8 @@ public class UpdateMemberController {
     // Method to validate input lengths
     private void validateInputLength(String name, String address, String city, String state, String status)
             throws IllegalArgumentException {
-        if (name.length() > 50 || address.length() > 100 || city.length() > 50 || state.length() > 2
-                || status.length() > 20) {
+        if (name.length() > 25 || address.length() > 25 || city.length() > 14 || state.length() > 2
+                || status.length() > 20 || zip.length() > 5)  {
             throw new IllegalArgumentException("Input length exceeds limit.");
         }
     }
