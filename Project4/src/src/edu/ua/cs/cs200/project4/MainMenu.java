@@ -16,53 +16,56 @@ public class MainMenu {
     SystemRecords systemRecords;
 	
 	//main logic of program - displays main menu and handles user input
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		
 		//initialize the program
 		MainMenu mainMenu = new MainMenu();
 		mainMenu.initialize();
 		
-		//display login screen
-		System.out.println("Welcome to the ChocAn system!");
-		System.out.println("Please choose an option:");
-		System.out.println("1. Provider Terminal");
-		System.out.println("2. Operator Terminal");
-		System.out.println("3. Manager Terminal");
-		System.out.println("4. Run Main Accounting Procedure");
-		System.out.println("5. Exit");
-		
-		//read in an integer from user
-		int input = 0;
-		Scanner s = new Scanner(System.in);
-		while(input < 1 || input > 5) {
-			input = s.nextInt();
+		boolean go = true;
+		while (go) {
+			//display login screen
+			System.out.println("Welcome to the ChocAn system!");
+			System.out.println("Please choose an option:");
+			System.out.println("1. Provider Terminal");
+			System.out.println("2. Operator Terminal");
+			System.out.println("3. Manager Terminal");
+			System.out.println("4. Run Main Accounting Procedure");
+			System.out.println("5. Exit");
+			
+			//read in an integer from user
+			int input = 0;
+			Scanner s = new Scanner(System.in);
+			while(input < 1 || input > 5) {
+				input = s.nextInt();
+			}
+	
+			//logic for each option
+			switch (input) {
+				case 1:
+					//provider terminal
+					this.providerTerminal.main();
+					break;
+				case 2:
+					//operator terminal
+					this.operatorTerminal.main();
+					break;
+				case 3:
+					//manager terminal
+					this.managerTerminal.main();
+					break;
+				case 4:
+					//run main accounting procedure
+					this.timer.RunProcedure();
+					break;
+				case 5:
+					//exit
+					go = false;
+					this.shutdown();	
+					break;
+			}
+			s.close();
 		}
-
-		//logic for each option
-		switch (input) {
-			case 1:
-				//provider terminal
-				this.providerTerminal.main();
-				break;
-			case 2:
-				//operator terminal
-				this.operatorTerminal.main();
-				break;
-			case 3:
-				//manager terminal
-				this.managerTerminal.main();
-				break;
-			case 4:
-				//run main accounting procedure
-				this.timer.RunProcedure();
-				break;
-			case 5:
-				//exit
-				this.shutdown();	
-				break;
-		}
-
-		s.close();
 		
     }
 	
