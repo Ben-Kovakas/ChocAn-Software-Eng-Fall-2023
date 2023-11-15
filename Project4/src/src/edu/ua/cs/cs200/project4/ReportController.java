@@ -2,58 +2,31 @@ package edu.ua.cs.cs200.project4;
 
 public class ReportController {
 
-	public void generateSummaryReport(String name) {
+	public void generateSummaryReport() {
 		
 	}
 	
-	//maybe add version for ID number
-	public ProviderReport generateProviderReport(String name) {
-		//find Provider
-			//use Provider object to create report using report class
-				//return report
+	public ProviderReport generateProviderReport(int ID) {
 		Provider tempProvider;
 		ProviderReport tempReport;
-		boolean checker;
-		//Providers: provider list
-		for(int i = 0, i </*providerRecords list size*/; i++) {
-			if(providers.get(i).getName() == name) {
-				tempProvider = providers.get(i);
-				checker = true;
-			}
-		}
 		
-		if(checker) {
-			tempReport = new ProviderReport(tempProvider);
-			return tempReport;
-		} else {
-			//maybe output saying provider not found?
-			return null;	
-		}
+		getProvider(ID);
 		
-		
+		tempReport = new ProviderReport(tempProvider);
+		return tempReport;
 	}
 	
-	public void generateMemberReport(String name) {
-		//find Member
-			//use Member object to create report using report class
-				//return report
+	public void generateMemberReport(int ID) {
 		Member tempMember;
 		MemberReport tempReport;
-		boolean checker;
-		//Members: member list
-		for(int i = 0; i < /*memberRecords list size*/; i++) {
-			if(members.get(i).getName() == name) {
-				tempMember = members.get(i);
-				checker = true;
-			}
-		}
+		getMember(ID);
 		
-		if(checker) {
-			tempReport = new MemberReport(tempMember);
-			return tempReport;
-		} else {
-			return null;
-		}
+		tempReport = new MemberReport(tempMember);
+		return tempReport;
+	}
+	
+	public void generateEFTReport() {
+		
 	}
 	
 	public void generateAllReports() {

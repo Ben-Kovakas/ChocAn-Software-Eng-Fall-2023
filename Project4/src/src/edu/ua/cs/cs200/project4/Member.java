@@ -9,9 +9,10 @@ public class Member {
   private String state;
   private int zip;
   private String status;
+  private List<ServiceRecord> serviceRecords;
 
   // Constructor
-  public Member(int memberID, String name, String address, String city, String state, int zip, String status) {
+  public Member(int memberID, String name, String address, String city, String state, int zip, String status, List<ServiceRecord> serviceRecords) {
     this.memberID = memberID;
     this.name = name;
     this.address = address;
@@ -19,6 +20,7 @@ public class Member {
     this.state = state;
     this.zip = zip;
     this.status = status;
+    this.serviceRecords = serviceRecords;
   }
 
   // Constructor with comma-separated string argument
@@ -95,6 +97,10 @@ public class Member {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+  
+  public List<ServiceRecord> getServiceRecords() {
+      return serviceRecords;
   }
 
   public String toString() {
