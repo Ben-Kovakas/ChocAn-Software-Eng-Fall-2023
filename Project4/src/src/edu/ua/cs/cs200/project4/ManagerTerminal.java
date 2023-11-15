@@ -29,9 +29,7 @@ public class ManagerTerminal {
             System.out.println("1. Generate Summary Report");
             System.out.println("2. Generate Provider Report");
             System.out.println("3. Generate Member Report");
-            System.out.println("4. Generate EFT Report");
-            System.out.println("5. Generate All Reports");
-            System.out.println("6. Exit");
+            System.out.println("4. Exit");
 
             //get user input
             System.out.print("Enter choice: ");
@@ -45,26 +43,30 @@ public class ManagerTerminal {
                     
                 case 2:
                 	//gen the provider report
-                    reportController.generateProviderReport();
+                	System.out.print("Enter Provider ID: ");
+                	int providerID = 0;
+                    providerID = scanner.nextInt();
+                    reportController.generateProviderReport(providerID);
                     break;
                     
                 case 3:
                 	//gen the member report
-                    reportController.generateMemberReport();
+                	
+                	System.out.print("Enter Memeber ID: ");
+                	int memberID = 0;
+                    memberID = scanner.nextInt();
+                    reportController.generateMemberReport(memberID);
                     break;
                 
+              
                 case 4:
-                	//gen all reports
-                    reportController.generateAllReports();
-                    break;
-                case 5:
                     System.out.println("Exiting Manager Terminal.");
                     break;
                 default:
                 	//handle invalids
                     System.out.println("Invalid option. Please try again.");
             }
-        } while (input != 5);
+        } while (input != 4);
 
         
         //not closing scanner so it doesnt affect other parts of program
