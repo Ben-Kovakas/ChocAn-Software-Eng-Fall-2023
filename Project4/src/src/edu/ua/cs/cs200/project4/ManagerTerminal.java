@@ -68,8 +68,7 @@ public class ManagerTerminal {
             }
         } while (input != 4);
 
-        
-        //not closing scanner so it doesnt affect other parts of program
+        scanner.close();        
       
     }
 }
