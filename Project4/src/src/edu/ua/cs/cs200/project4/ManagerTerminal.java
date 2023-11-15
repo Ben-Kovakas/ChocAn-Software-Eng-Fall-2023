@@ -52,7 +52,7 @@ public class ManagerTerminal {
                 case 3:
                 	//gen the member report
                 	
-                	System.out.print("Enter Memeber ID: ");
+                	System.out.print("Enter Member ID: ");
                 	int memberID = 0;
                     memberID = scanner.nextInt();
                     reportController.generateMemberReport(memberID);
