@@ -13,12 +13,14 @@ public class ProviderController {
     	this.members = members;
     }
     
+    //TODO write validate member (no arguments)
     public boolean validateMember(int memberID) {
     	//Search members by memberID
     	getStatus();
     	
     }
     
+    //TODO write bill ChocAn (includes validate member)
     public boolean billChocAn(int memberID) {
     	validateMember(memberID);
     	System.out.println("Enter the date of service (MM-DD-YYYY)");
@@ -27,6 +29,7 @@ public class ProviderController {
     	//Search and Print service
     }
     
+    //TODO write request directory (deliver as file, will update directory class)
     public requestProviderDirectory() {
     	return providerDirectory.getDirectory();
     }

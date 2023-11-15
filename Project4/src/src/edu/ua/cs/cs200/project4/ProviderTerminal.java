@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class ProviderTerminal {
     
+	//Classes
 	private ProviderTerminal providerTerminal = new providerTerminal();
 	private ProviderController providerController = new providerController();
 }
 
-// Main method for the ProviderTerminal class
+// Main logic for the ProviderTerminal class
 public static void main(String args[]) {
 	
 	ProviderTerminal providerTerminal = new ProviderTerminal()
@@ -44,7 +45,7 @@ public static void main(String args[]) {
 			case 3:
 				requestProviderDirectory()
 				break;
-			case 4:
+			case 4: //Return to main menu??
 				go = false;
 				break;
 			}

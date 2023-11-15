@@ -3,7 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProviderDirectory {
-
+	
+	//Map structures to order services and codes
     private Map<String, Integer> serviceNameToCode;
     private Map<Integer, ServiceInfo> serviceCodeToInfo;
 
@@ -17,6 +18,7 @@ public class ProviderDirectory {
         // Add more services as needed
     }
 
+    //Add and search methods
     public void addService(String serviceName, int serviceCode, double fee) {
         serviceNameToCode.put(serviceName, serviceCode);
         serviceCodeToInfo.put(serviceCode, new ServiceInfo(serviceName, fee));
@@ -29,7 +31,8 @@ public class ProviderDirectory {
     public ServiceInfo getServiceInfo(int serviceCode) {
         return serviceCodeToInfo.get(serviceCode);
     }
-
+    
+    //Provider Service info
     public static class ServiceInfo {
         private String serviceName;
         private double fee;
