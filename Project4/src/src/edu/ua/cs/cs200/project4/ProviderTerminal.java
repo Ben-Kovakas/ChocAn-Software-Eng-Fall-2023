@@ -4,57 +4,65 @@ import java.util.Scanner;
 
 public class ProviderTerminal {
     
-    private ProviderRecords providerRecords;
-    private ProviderDirectory providerDirectory;
+	//Classes
+	private ProviderTerminal providerTerminal = new providerTerminal();
+	private ProviderController providerController = new providerController();
+}
 
-    // Constructor
-    public ProviderTerminal() {
-        providerRecords = new ProviderRecords();
-        providerDirectory = new ProviderDirectory();
-    }
-
-    // Main method for the ProviderTerminal class
-    public static void main() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter provider number: ");
-        int providerNumber = scanner.nextInt();
-
-        // Validate the provider number
-        if(validateProvider(providerNumber)) {
-            System.out.println("Provider number is valid.");
-            // Proceed with other operations for the provider terminal
-            // ...
-        } else {
-            System.out.println("Invalid provider number.");
-        }
-
-        scanner.close();
-    }
-
-    // Validates that a provider exists
-    public boolean validateProvider(int providerID) {
-        // Use the getProvider() method to check if a provider exists
-        return providerRecords.getProvider(providerID) != null;
-    }
-
-    // Logic for billing service
-    public void billService(int memberID, int serviceCode) {
-        if (!validateProvider(serviceCode)) {
-            System.out.println("Invalid service code or provider does not exist.");
-            return;
-        }
-
-        // Additional logic for billing service
-        // ...
-    }
-
-    // Request the provider directory
-    public void requestDirectory() {
-        // This could print out the provider directory or return it
-        // Depending on how you want to handle it
-    	// we might need to add the getservices to providerdirectory, or i could change how i do it
-        System.out.println(providerDirectory.getServices());
-    }
-
-    
+// Main logic for the ProviderTerminal class
+public static void main(String args[]) {
+	
+	ProviderTerminal providerTerminal = new ProviderTerminal()
+	providerTerminal.startTerminal();
+	
+	public void startTerminal() {
+	
+		boolean go = true;
+		while (go) {
+			//display provider terminal
+			System.out.println("Welcome to the ChocAn Provider Terminal!");
+			System.out.println("Please choose an option:");
+			System.out.println("1. Validate Member");
+			System.out.println("2. Bill ChocAn");
+			System.out.println("3. Request Provider Directory");
+			System.out.println("4. Exit");
+		
+			//read in an integer from user
+			int input = 0;
+			Scanner s = new Scanner(System.in);
+			while(input < 1 || input > 5) {
+				input = s.nextInt();
+			}
+		
+			//handle user input
+			switch (input) {
+			case 1:
+				validateMember();
+				break;
+			case 2:
+				billChocAn();
+				break;
+			case 3:
+				requestProviderDirectory()
+				break;
+			case 4: //Return to main menu??
+				go = false;
+				break;
+			}
+		
+			s.close();
+		} 
+	}
+	
+	public void validateMemeber() {
+		providerController.main();
+	}
+	
+	public void billChocAn() {
+		providerController.main();
+	}
+	
+	public void requestProviderDirectory() {
+		providerController.main();
+	}
 }

@@ -15,19 +15,17 @@ public class SummaryReport {
 	 * 					The provider records.
 	 * 
 	 * */
-	public SummaryReport(ProviderRecords ProviderRecords) { 
+	public void SummaryReport() { 
 		/*for(int i = 0; i <; i++) {
-			TODO get providerRecords size, add each name to count.
-		}
-		*/
-		
-		/*
-		  Same as above for consultations
-		 */
-		
-		/*
-		  Same as above for fees
-		 */
+		//cycle all providers
+			//add consultations
+			 * if provider consultations are 0, do not add to list
+			//add fees
+			 *if provider fees are 0, do not add to list
+			//add total amount to pay (based on week)
+			//list all provider names
+			 */
+			//Maybe have provider records make list public
 
 	}
 	
