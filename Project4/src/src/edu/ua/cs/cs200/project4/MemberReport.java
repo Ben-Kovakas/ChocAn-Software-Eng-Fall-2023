@@ -4,12 +4,15 @@ import java.util.List;
 
 public class MemberReport {
 	private List<ServiceRecord> service;
+	private Member member;
 	
-	public MemberReport(List<ServiceRecord> ServiceRecords) {
+	//CHANGE member should have list of services in itself.
+	public MemberReport(List<ServiceRecord> ServiceRecords, Member newMember) {
 		service = ServiceRecords;
+		member = newMember;
 	}
 	
-	public ServiceRecord getMemberReport(String memberName){
+	public ServiceRecord getMemberService(String memberName){
 		ServiceRecord tempService;
 		
 		for(int i = 0; i < service.size(); i++) {
@@ -25,7 +28,7 @@ public class MemberReport {
 
 	}
 	
-	public ServiceRecord getMemberReport(int memberNumber){
+	public ServiceRecord getMemberService(int memberNumber){
 		ServiceRecord tempService;
 		
 		for(int i = 0; i < service.size(); i++) {
