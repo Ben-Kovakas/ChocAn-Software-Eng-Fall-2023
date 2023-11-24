@@ -34,7 +34,7 @@ public class ProviderController {
         } 	
     }
     
-    //TODO write bill ChocAn (includes validate member)
+    //TODO write bill ChocAn
     public boolean billChocAn() {
     	if (!validateMember()) {
             return false;
@@ -73,6 +73,7 @@ public class ProviderController {
         scanner.nextLine();
         String comments = scanner.nextLine();
 
+        //TODO fix write a record
         // Get current date and time
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
         Date currentDate = new Date();
@@ -99,6 +100,7 @@ public class ProviderController {
         System.out.print("Enter fee: ");
         int inputFee = scanner.next();
 
+        //TODO properly set up provider's service record
         ServiceRecord serviceRecord = new ServiceRecord(inputServiceCode, inputCurrentDate, inputServiceDate, inputFee, inputMemberName, inputMemberNumber);
 
         return true;
