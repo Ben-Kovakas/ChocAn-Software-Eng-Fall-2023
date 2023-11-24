@@ -42,7 +42,7 @@ public class ProviderTerminal {
       case 3:
         requestProviderDirectory();
         break;
-      case 4: //Return to main menu??
+      case 4:
         go = false;
         break;
       }
