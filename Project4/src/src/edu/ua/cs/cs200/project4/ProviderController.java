@@ -34,8 +34,7 @@ public class ProviderController {
         } 	
     }
     
-    //TODO write bill ChocAn
-    public boolean billChocAn() {
+    public boolean billChocAn(int providerID) {
     	if (!validateMember()) {
             return false;
         }
@@ -73,17 +72,13 @@ public class ProviderController {
         scanner.nextLine();
         String comments = scanner.nextLine();
 
-        //TODO fix write a record
-        // Get current date and time
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
-        Date currentDate = new Date();
-        String currentDateTime = dateFormat.format(currentDate);
-
-        // Get provider number and member number
-        int providerNumber = providerRecords.getProviderNumber(); // You need to implement this method
-        int memberNumber = memberRecords.getMemberNumber(); // You need to implement this method
-
-        
+        //TODO fix write a record, same as ServiceRecord??
+        // Current date and time (MM–DD–YYYY HH:MM:SS). 
+        //Date service was provided (MM–DD–YYYY). 
+        //Provider number (9 digits).
+        //Member number (9 digits). 
+        //Service code (6 digits).
+        //Comments (100 characters) (optional). 
 
         double fee = providerDirectory.getServiceFee(serviceCode);
         System.out.println("Fee: $" + fee);
@@ -98,11 +93,21 @@ public class ProviderController {
         System.out.print("Enter service code: ");
         int inputServiceCode = scanner.next();
         System.out.print("Enter fee: ");
-        int inputFee = scanner.next();
+        double inputFee = scanner.next();
 
-        //TODO properly set up provider's service record
         ServiceRecord serviceRecord = new ServiceRecord(inputServiceCode, inputCurrentDate, inputServiceDate, inputFee, inputMemberName, inputMemberNumber);
-
+        Member member = memberRecords.getMember(memberID);
+        if (member != NULL) {
+        	List<ServiceRecord> memberServiceRecords = member.getServiceRecords();
+            memberServiceRecords.add(serviceRecord);
+        }
+        
+        Provider provider = providerRecords.getProvider(providerID);
+        if (provider != NULL) {
+        	List<ServiceRecord> providerServiceRecords = provider.getServiceRecords();
+            providerServiceRecords.add(serviceRecord);
+        }
+        
         return true;
     }
     

@@ -15,9 +15,15 @@ public class ProviderTerminal {
   public static void startTerminal() {
 
     boolean go = true;
+    Scanner s = new Scanner(System.in);
+    
     while (go) {
       //display provider terminal
       System.out.println("Welcome to the ChocAn Provider Terminal!");
+      
+      System.out.println("Please enter your provider ID number: ");
+      int providerID = s.nextInt();
+      
       System.out.println("Please choose an option:");
       System.out.println("1. Validate Member");
       System.out.println("2. Bill ChocAn");
@@ -26,7 +32,6 @@ public class ProviderTerminal {
 
       //read in an integer from user
       int input = 0;
-      Scanner s = new Scanner(System.in);
       while(input < 1 || input > 5) {
         input = s.nextInt();
       }
@@ -53,12 +58,12 @@ public class ProviderTerminal {
 
   public static void validateMember() {
     //finish implementing
-    providerController.validateMember(0);
+    providerController.validateMember();
   }
 
-  public static void billChocAn() {
+  public static void billChocAn(int providerID) {
     //finish implementing
-    providerController.billChocAn(0);
+    providerController.billChocAn(providerID);
   }
 
   public static void requestProviderDirectory() {
