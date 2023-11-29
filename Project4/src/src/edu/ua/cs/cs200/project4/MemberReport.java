@@ -6,9 +6,8 @@ public class MemberReport {
 	private List<ServiceRecord> service;
 	private Member member;
 	
-	//CHANGE member should have list of services in itself.
-	public MemberReport(List<ServiceRecord> ServiceRecords, Member newMember) {
-		service = ServiceRecords;
+	public MemberReport(Member newMember) {
+		service = newMember.getServiceRecords();
 		member = newMember;
 	}
 	
