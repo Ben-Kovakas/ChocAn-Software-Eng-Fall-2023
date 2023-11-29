@@ -74,12 +74,12 @@ public class MainMenu {
 		
 		//TODO - persistence logic?
 		
-		//initialize class objects
-		operatorTerminal = new OperatorTerminal();
-		managerTerminal = new ManagerTerminal();
-		providerTerminal = new ProviderTerminal();
-		systemRecords = new SystemRecords();
-		timer = new Timer();
+		//initialize class objects - done in main()
+//		operatorTerminal = new OperatorTerminal();
+//		managerTerminal = new ManagerTerminal();
+//		providerTerminal = new ProviderTerminal();
+//		systemRecords = new SystemRecords();
+//		timer = new Timer();
 		
     }
 

@@ -7,16 +7,11 @@ import java.util.Scanner;
  */
 public class OperatorTerminal {
 	
-	OperatorTerminal operatorTerminal;
+	OperatorTerminal operatorTerminal = new OperatorTerminal();
 	UpdateMemberController memberController;
 	UpdateProviderController providerController;
 
-  public void main() {
-	  
-	//initialize new objects
-   	operatorTerminal = new OperatorTerminal();
-	memberController = new UpdateMemberController();
-	providerController = new UpdateProviderController();
+  public static void main(String[] args) {
 	
 	//operator terminal menu
 	boolean go = true;
@@ -39,10 +34,10 @@ public class OperatorTerminal {
 		//handle user input
 		switch (input) {
 		case 1:
-			updateMemberRecords();
+			operatorTerminal.updateMemberRecords();
 			break;
 		case 2:
-			updateProviderRecords();
+			operatorTerminal.updateProviderRecords();
 			break;
 		case 3:
 			go = false;
@@ -55,11 +50,11 @@ public class OperatorTerminal {
   }
   
   public void updateMemberRecords() {
-	  memberController.main();
+	  memberController = new UpdateMemberController();
   }
   
   public void updateProviderRecords() {
-	  providerController.main();
+	  providerController = new UpdateProviderController();
   }
 
 }

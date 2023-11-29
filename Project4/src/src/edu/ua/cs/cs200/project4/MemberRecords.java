@@ -19,5 +19,10 @@ public class MemberRecords {
   public void addMember(Member member) {
     
   }
+
+  public void removeMember(Member existingMember) {
+	// TODO Auto-generated method stub
+	
+  }
   
 }

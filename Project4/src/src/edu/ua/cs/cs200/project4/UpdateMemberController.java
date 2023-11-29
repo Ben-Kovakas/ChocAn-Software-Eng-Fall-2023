@@ -8,7 +8,7 @@ public class UpdateMemberController {
 //        this.memberRecords = memberRecords;
 //    }
     
-    public void main() {
+    public static void main() {
     	memberRecords = new MemberRecords();
     }
 
