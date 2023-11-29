@@ -18,7 +18,7 @@ public class ProviderReport {
 		provider = tempProvider;
 		totalConsultations = provider.getConsultations();
 		
-		ServiceRecord tempService = provider.getServiceRecords();
+		List<ServiceRecord> tempService = provider.getServiceRecords();
 		
 		for(int i = 0; i < tempService.size(); i++) {
 			totalFees = totalFees + tempService.get(i).getFee();
