@@ -23,7 +23,7 @@ public class UpdateProviderController {
         Provider existingProvider = providerRecords.getProvider(providerID);
 
         if (existingProvider != null) {
-            // Update provider data
+            // Update provider datas
             existingProvider.setName(newName);
             existingProvider.setAddress(newAddress);
             existingProvider.setCity(newCity);
