@@ -1,5 +1,8 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UpdateProviderController {
 
     private ProviderRecords providerRecords;
@@ -12,7 +15,8 @@ public class UpdateProviderController {
     public void addProvider(int providerID, String name, String address, String city, String state, int zip, String status)
             throws IllegalArgumentException {
         validateInputLength(name, address, city, state, status);
-        Provider newProvider = new Provider(providerID, name, address, city, state, zip, consultations,serviceRecords );
+        List<ServiceRecord> serviceRecords = new ArrayList<ServiceRecord>();
+        Provider newProvider = new Provider(providerID, name, address, city, state, zip, 0 , serviceRecords );
         providerRecords.addProvider(newProvider);
     }
 
@@ -29,7 +33,7 @@ public class UpdateProviderController {
             existingProvider.setCity(newCity);
             existingProvider.setState(newState);
             existingProvider.setZipCode(newZip);
-            existingProvider.setStatus(newStatus);
+            
         } else {
             System.out.println("Provider not found. Unable to edit data.");
         }
@@ -52,7 +56,7 @@ public class UpdateProviderController {
             throws IllegalArgumentException {
         if (name.length() > 25 || address.length() > 25 || city.length() > 14 || state.length() > 2
                 || status.length() > 20) {
-            throw new IllegalArgumentException("Input length exceeds limit.");
+            throw new IllegalArgumentException("Input length exceeds limit.");  //may need to add more parameters here
         }
     }
 }
