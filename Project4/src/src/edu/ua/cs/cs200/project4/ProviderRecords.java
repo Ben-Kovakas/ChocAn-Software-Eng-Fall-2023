@@ -20,6 +20,10 @@ public class ProviderRecords {
     providers.add(provider);
     //TODO parse through the list of providers and find the right one
   }
+  public void removeProvider(Provider provider) {
+    providers.remove(provider);
+    //TODO parse through the list of providers and find the right one
+  }
   
   public List<Provider> getAllProviders() {
     return null;
