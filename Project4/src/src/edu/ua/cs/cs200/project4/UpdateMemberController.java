@@ -15,7 +15,7 @@ public class UpdateMemberController {
     // Basic function to add a new member
     public void addMember(int memberID, String name, String address, String city, String state, int zip, String status)
             throws IllegalArgumentException {
-        validateInputLength(name, address, city, state, status);
+        validateInputLength(name, address, city, state, zip, status);
         Member newMember = new Member(memberID, name, address, city, state, zip, status, null);
         memberRecords.addMember(newMember);
     }
@@ -52,10 +52,10 @@ public class UpdateMemberController {
     }
 
     // Method to validate input lengths
-    private void validateInputLength(String name, String address, String city, String state, String status)
+    private void validateInputLength(String name, String address, String city, String state, int zip, String status)
             throws IllegalArgumentException {
         if (name.length() > 25 || address.length() > 25 || city.length() > 14 || state.length() > 2
-                || status.length() > 20 || zip.length() > 5)  {
+                || status.length() > 20 || String.valueOf(zip).length() != 5)  {
             throw new IllegalArgumentException("Input length exceeds limit.");
         }
     }
