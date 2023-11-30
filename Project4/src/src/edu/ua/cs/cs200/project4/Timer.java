@@ -8,6 +8,7 @@ public class Timer {
 	
 	ReportController reportController;
 	
+	//runs the main accounting procedure, generating all reports
 	public void RunProcedure() {
 		
 		reportController = new ReportController();
