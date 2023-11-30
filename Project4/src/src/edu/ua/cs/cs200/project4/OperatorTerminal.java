@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class OperatorTerminal {
 	
-	OperatorTerminal operatorTerminal = new OperatorTerminal();
+	static OperatorTerminal operatorTerminal = new OperatorTerminal();
 	UpdateMemberController memberController;
 	UpdateProviderController providerController;
 
@@ -49,10 +49,12 @@ public class OperatorTerminal {
 
   }
   
+  //creates controller to handle updating a member
   public void updateMemberRecords() {
 	  memberController = new UpdateMemberController();
   }
   
+  //creates controller to handle updating a provider
   public void updateProviderRecords() {
 	  providerController = new UpdateProviderController();
   }

@@ -2,7 +2,7 @@ package edu.ua.cs.cs200.project4;
 
 public class UpdateMemberController {
 
-    private MemberRecords memberRecords;
+    private static MemberRecords memberRecords;
 
 //    public UpdateMemberController(MemberRecords memberRecords) {
 //        this.memberRecords = memberRecords;
@@ -16,7 +16,7 @@ public class UpdateMemberController {
     public void addMember(int memberID, String name, String address, String city, String state, int zip, String status)
             throws IllegalArgumentException {
         validateInputLength(name, address, city, state, status);
-        Member newMember = new Member(memberID, name, address, city, state, zip, status);
+        Member newMember = new Member(memberID, name, address, city, state, zip, status, null);
         memberRecords.addMember(newMember);
     }
 
