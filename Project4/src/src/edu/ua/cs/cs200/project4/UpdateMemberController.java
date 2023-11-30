@@ -39,7 +39,7 @@ public class UpdateMemberController {
         }
     }
 
-    // Basic function to delete a member
+    // Basic function to  member
     public void deleteMember(int memberID) {
         Member existingMember = memberRecords.getMember(memberID);
 
