@@ -12,7 +12,7 @@ public class UpdateProviderController {
     public void addProvider(int providerID, String name, String address, String city, String state, int zip, String status)
             throws IllegalArgumentException {
         validateInputLength(name, address, city, state, status);
-        Provider newProvider = new Provider(providerID, name, address, city, state, zip, status);
+        Provider newProvider = new Provider(providerID, name, address, city, state, zip, consultations,serviceRecords );
         providerRecords.addProvider(newProvider);
     }
 
@@ -23,12 +23,12 @@ public class UpdateProviderController {
         Provider existingProvider = providerRecords.getProvider(providerID);
 
         if (existingProvider != null) {
-            // Update provider datas
+            // Update provider data
             existingProvider.setName(newName);
             existingProvider.setAddress(newAddress);
             existingProvider.setCity(newCity);
             existingProvider.setState(newState);
-            existingProvider.setZip(newZip);
+            existingProvider.setZipCode(newZip);
             existingProvider.setStatus(newStatus);
         } else {
             System.out.println("Provider not found. Unable to edit data.");
