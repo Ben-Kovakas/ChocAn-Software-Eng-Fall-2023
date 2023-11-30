@@ -16,6 +16,11 @@ public class ProviderRecords {
     //TODO parse through the list of providers and find the right one
   }
   
+  public void addProvider(Provider provider) {
+    providers.add(provider);
+    //TODO parse through the list of providers and find the right one
+  }
+  
   public List<Provider> getAllProviders() {
     return null;
     //TODO parse through the list of providers and find the right one
