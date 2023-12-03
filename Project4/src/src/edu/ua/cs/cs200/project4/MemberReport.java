@@ -2,44 +2,33 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.List;
 
+/**
+ * Creates a Member Report
+ * 
+ * @Author Javier Caldwell
+ * @version 1.0
+ */
 public class MemberReport {
-	private List<ServiceRecord> service;
+	
+	private List<ServiceRecord> services;
+	
 	private Member member;
 	
+	/** Constructor. Creates the Member Report using a member
+	 * @param  newMember
+	 * 					the inputed member
+	 * */
 	public MemberReport(Member newMember) {
-		service = newMember.getServiceRecords();
+		services = newMember.getServiceRecords();
 		member = newMember;
 	}
 	
-	public ServiceRecord getMemberService(String memberName){
-		ServiceRecord tempService;
-		
-		for(int i = 0; i < service.size(); i++) {
-			tempService = service.get(i);
-			
-			if(tempService.getMemberName() == memberName) {
-			  System.out.println("hello");
-				return tempService;
-			}
-		}
-		
-		return null;
-
-	}
-	
-	public ServiceRecord getMemberService(int memberNumber){
-		ServiceRecord tempService;
-		
-		for(int i = 0; i < service.size(); i++) {
-			tempService = service.get(i);
-			
-			if(tempService.getMemberNumber() == memberNumber) {
-				return tempService;
-			}
-		}
-		
-		return null;
-
+	/**
+	 * Gets the service records
+	 * @return a List of ServiceRecords
+	 */
+	public List<ServiceRecord> getMemberServices(){
+		return services;
 	}
 	
 }

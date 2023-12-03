@@ -1,6 +1,11 @@
 package edu.ua.cs.cs200.project4;
 
-
+/**
+ * Creates a Summary Report
+ * 
+ * @Author Javier Caldwell
+ * @version 1.0
+ */
 public class SummaryReport {
 	
 	private int totalProviders;
@@ -9,14 +14,11 @@ public class SummaryReport {
 	
 	private double totalFees;
 	
-	/** Constructor. Creates the Summary Report
-	 * 
-	 *
+	/** Constructor. Creates the Summary Report using the global list of providers
 	 * 
 	 * */
 	public void SummaryReport() {
-		
-		totalProviders = 0;
+
 		totalConsultations = 0;
 		totalFees = 0;
 		
@@ -33,27 +35,30 @@ public class SummaryReport {
 					}
 				}
 		}
-		/*
-			//cycle all providers
-			//add consultations
-			 * if provider consultations are 0, do not add to list
-			//add fees
-			 *if provider fees are 0, do not add to list
-			//add total amount to pay (based on week)
-			//list all provider names
-			 
-			//Maybe have provider records make list public
-			*/
+
+		totalProviders = tempProviderList.size();
 	}
 	
+	/**
+	 * Gets the total number of providers
+	 * @return a int
+	 */
 	public int getTotalProviders() {
 		return totalProviders;
 	}
 	
+	/**
+	 * Gets the total number of consultations
+	 * @return a int
+	 */
 	public int getTotalConsultations() {
 		return totalConsultions;
 	}
 	
+	/**
+	 * Gets the total amount of fees
+	 * @return a double
+	 */
 	public double getTotalFees() {
 		return totalFees;
 	}

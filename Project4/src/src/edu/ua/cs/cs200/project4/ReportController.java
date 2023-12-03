@@ -1,11 +1,26 @@
 package edu.ua.cs.cs200.project4;
 
+/**
+ * Manages the creation of all types of reports
+ * 
+ * @Author Javier Caldwell
+ * @version 1.0
+ */
 public class ReportController {
 
-	public void generateSummaryReport() {
-		
+	/**
+	 * Generates a Summary report
+	 * @return a SummaryReport
+	 */
+	public SummaryReport generateSummaryReport() {
+		SummaryReport tempReport = new SummaryReport;
+		return tempReport;
 	}
 	
+	/**
+	 * Generates a Provider report
+	 * @return a ProviderReport
+	 */
 	public ProviderReport generateProviderReport(int ID) {
 		Provider tempProvider;
 		ProviderReport tempReport;
@@ -16,6 +31,10 @@ public class ReportController {
 		return tempReport;
 	}
 	
+	/**
+	 * Generates a Manager report
+	 * @return a ManagerReport
+	 */
 	public void generateMemberReport(int ID) {
 		Member tempMember;
 		MemberReport tempReport;
@@ -23,20 +42,6 @@ public class ReportController {
 		
 		tempReport = new MemberReport(tempMember);
 		return tempReport;
-	}
-	
-	public void generateEFTReport() {
-		
-	}
-	
-	public void generateAllReports() {
-		//open all reports individuallly
-			//repeat steps as above, for each report
-			//Maybe return list of reports?
-		
-		for(int i = 0, i </*providerRecords list size*/; i++) {
-			
-		}
 	}
 	
 }
