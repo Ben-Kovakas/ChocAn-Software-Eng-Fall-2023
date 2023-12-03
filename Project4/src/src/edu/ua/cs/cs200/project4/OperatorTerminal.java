@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author cchall5
+ * The operator terminal class. Handles operator functions: updating members and providers.
  */
 public class OperatorTerminal {
 	
