@@ -1,5 +1,7 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.List;
+
 /**
  * Manages the creation of all types of reports
  * 
@@ -7,13 +9,18 @@ package edu.ua.cs.cs200.project4;
  * @version 1.0
  */
 public class ReportController {
+	
+	SummaryReport SumReport;
+	List<ProviderReport> ProReports;
+	List<MemberReport> MemReports;
+	
 
 	/**
 	 * Generates a Summary report
 	 * @return a SummaryReport
 	 */
 	public SummaryReport generateSummaryReport() {
-		SummaryReport tempReport = new SummaryReport;
+		SummaryReport tempReport = new SummaryReport();
 		return tempReport;
 	}
 	
@@ -25,7 +32,7 @@ public class ReportController {
 		Provider tempProvider;
 		ProviderReport tempReport;
 		
-		getProvider(ID);
+		tempProvider = getProvider(ID);
 		
 		tempReport = new ProviderReport(tempProvider);
 		return tempReport;
@@ -35,13 +42,48 @@ public class ReportController {
 	 * Generates a Manager report
 	 * @return a ManagerReport
 	 */
-	public void generateMemberReport(int ID) {
+	public MemberReport generateMemberReport(int ID) {
 		Member tempMember;
 		MemberReport tempReport;
-		getMember(ID);
+		
+		tempMember = MemberRecords.getMember(ID);
 		
 		tempReport = new MemberReport(tempMember);
 		return tempReport;
 	}
 	
+	/**
+	 * Generates all reports
+	 *
+	 */
+	public void generateAllReports() {
+		generateSummaryReport();
+		
+		ProviderReport tempReport;
+		List<Provider> tempList = ProviderRecords.getAllProviders();
+		
+		for(int i = 0; i <tempList.size(); i++) {
+			tempReport = new ProviderReport(tempList.get(i));
+			ProReports.add(tempReport);
+		}
+		
+		tempList = MemberRecords.getAllMembers();
+		
+		for(int i = 0; i <tempList.size(); i++) {
+			tempReport = new MemberReport(tempList.get(i));
+			MemReports.add(tempReport);
+		}
+	}
+	
+	public SummaryReport getSummaryReport() {
+		return SumReport;
+	}
+	
+	public List<ProviderReport> getProviderReports() {
+		return ProReports;
+	}
+	
+	public List<MemberReport> getMemberReports() {
+		return MemReports;
+	}
 }
