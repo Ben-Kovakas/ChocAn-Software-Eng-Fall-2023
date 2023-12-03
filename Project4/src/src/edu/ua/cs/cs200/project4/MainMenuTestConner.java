@@ -39,11 +39,10 @@ public class MainMenuTestConner {
     }
 
     @Test
-    public void testMainMethod() {
-        // Simulate user input (e.g., choosing option 5 to exit)
+    public void testMainMethodExit() {
+        // option 5 to exit
         provideInput("5\n");
 
-        // Call the main method
         MainMenu.main(new String[]{});
 
         // Verify the output

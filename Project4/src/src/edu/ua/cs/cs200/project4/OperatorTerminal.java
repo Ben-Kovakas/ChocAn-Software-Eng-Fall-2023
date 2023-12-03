@@ -40,6 +40,7 @@ public class OperatorTerminal {
 			operatorTerminal.updateProviderRecords();
 			break;
 		case 3:
+			System.out.println("Closing Operator Terminal.");
 			go = false;
 			break;
 		}
