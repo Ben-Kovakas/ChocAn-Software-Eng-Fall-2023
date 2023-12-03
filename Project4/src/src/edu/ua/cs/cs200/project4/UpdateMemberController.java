@@ -23,7 +23,7 @@ public class UpdateMemberController {
     // Basic function to edit member data
     public void editMemberData(int memberID, String newName, String newAddress, String newCity, String newState,
             int newZip, String newStatus) throws IllegalArgumentException {
-        validateInputLength(newName, newAddress, newCity, newState, newStatus);
+        validateInputLength(newName, newAddress, newCity, newState, newZip, newStatus);
         Member existingMember = memberRecords.getMember(memberID);
 
         if (existingMember != null) {

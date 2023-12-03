@@ -24,7 +24,7 @@ public class MainMenu {
 		boolean go = true;
 		while (go) {
 			//display login screen
-			System.out.println("Welcome to the ChocAn system!");
+			initialize();
 			System.out.println("Please choose an option:");
 			System.out.println("1. Provider Terminal");
 			System.out.println("2. Operator Terminal");
@@ -70,7 +70,7 @@ public class MainMenu {
     }
 	
 	//initialize the program
-	public void initialize() {
+	public static void initialize() {
 		
 		//TODO - persistence logic?
 		
@@ -80,6 +80,8 @@ public class MainMenu {
 //		providerTerminal = new ProviderTerminal();
 //		systemRecords = new SystemRecords();
 //		timer = new Timer();
+		
+		System.out.println("Welcome to the ChocAn System!");
 		
     }
 
