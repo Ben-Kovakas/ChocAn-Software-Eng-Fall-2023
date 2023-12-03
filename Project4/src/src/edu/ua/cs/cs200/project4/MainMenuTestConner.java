@@ -15,8 +15,6 @@ import org.junit.Test;
  * @author cchall5
  */
 public class MainMenuTestConner {
-
-	private MainMenu mainMenu;
 	
 	private final PrintStream originalOut = System.out;
     private final InputStream originalIn = System.in;
