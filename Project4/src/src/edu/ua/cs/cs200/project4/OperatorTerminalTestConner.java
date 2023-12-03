@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * @author cchall5
  */
-public class OperatorTerminalTest {
+public class OperatorTerminalTestConner {
 
 	@Before
 	public void setUp() throws Exception {

@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * @author cchall5
  */
-public class MainMenuTest {
+public class MainMenuTestConner {
 
 	@Before
 	public void setUp() throws Exception {

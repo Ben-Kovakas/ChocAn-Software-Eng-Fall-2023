@@ -1,5 +1,7 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.Scanner;
+
 public class ProviderController {
     private ProviderDirectory providerDirectory;
     private MemberRecords memberRecords;
