@@ -2,28 +2,40 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.Scanner;
 
-//Class that interacts with the manager
+/**
+ * The {@code ManagerTerminal} class represents the interface for the system manager.
+ * It allows a manager to generate various reports about the state of the ChocAn system.
+ * 
+ * @author rmmilsap
+ */
 public class ManagerTerminal {
 
     private ReportController reportController;
 
-    
-    //constructor for ManagerTerminal, and initializes the ReportController
+    /**
+     * Constructs a {@code ManagerTerminal} and initializes the associated {@code ReportController}.
+     */
     public ManagerTerminal() {
         reportController = new ReportController();
     }
-//main - calls the requestReport
+
+    /**
+     * The main method that invokes the report request method.
+     * It acts as an entry point for the manager's interactions.
+     */
     public void main() {
-        requestReport(); 
+        requestReport();
     }
-//Presents the report generation menu to the manager 
+
+    /**
+     * Displays a menu for the manager to generate specific reports.
+     * Handles the user input to select the type of report to generate.
+     */
     public void requestReport() {
         Scanner scanner = new Scanner(System.in);
         int input = 0;
-        
-//Loop until the manager decides to exit
+
         do {
-        	//display the option menu
             System.out.println("\n--- Manager Terminal ---");
             System.out.println("Please choose an option:");
             System.out.println("1. Generate Summary Report");
@@ -31,44 +43,33 @@ public class ManagerTerminal {
             System.out.println("3. Generate Member Report");
             System.out.println("4. Exit");
 
-            //get user input
             System.out.print("Enter choice: ");
             input = scanner.nextInt();
-// switch statement in order to go with what the user selects
+
             switch (input) {
                 case 1:
-                	// gen the summary report
                     reportController.generateSummaryReport();
                     break;
-                    
                 case 2:
-                	//gen the provider report
-                	System.out.print("Enter Provider ID: ");
-                	int providerID = 0;
-                    providerID = scanner.nextInt();
+                    System.out.print("Enter Provider ID: ");
+                    int providerID = scanner.nextInt();
                     reportController.generateProviderReport(providerID);
                     break;
-                    
                 case 3:
-                	//gen the member report
-                	
-                	System.out.print("Enter Member ID: ");
-                	int memberID = 0;
-                    memberID = scanner.nextInt();
+                    System.out.print("Enter Member ID: ");
+                    int memberID = scanner.nextInt();
                     reportController.generateMemberReport(memberID);
                     break;
-                
-              
                 case 4:
                     System.out.println("Exiting Manager Terminal.");
                     break;
                 default:
-                	//handle invalids
                     System.out.println("Invalid option. Please try again.");
             }
         } while (input != 4);
 
-        scanner.close();        
-      
-    }
+        scanner.close();
+        }
+
+    
 }
