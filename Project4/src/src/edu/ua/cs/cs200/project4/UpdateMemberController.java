@@ -2,14 +2,14 @@ package edu.ua.cs.cs200.project4;
 
 /**
  * The UpdateMemberController class manages operations related to members in the system.
- * Author: Ben Kovakas
+ * @author Ben Kovakas
  */
 public class UpdateMemberController {
 
     private static MemberRecords memberRecords;
 
     /**
-     * A
+     * 
      */
     public static void main() {
         memberRecords = new MemberRecords();

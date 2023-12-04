@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 
  *The UpdateProviderController class manages operations related to providers in the system.
- *Author: Ben Kovakas
+ *@author: Ben Kovakas
  */
 public class UpdateProviderController {
 
