@@ -47,6 +47,7 @@ public class ReportController {
 		MemberReport tempReport;
 		
 		tempMember = MemberRecords.getMember(ID);
+		  
 		
 		tempReport = new MemberReport(tempMember);
 		return tempReport;

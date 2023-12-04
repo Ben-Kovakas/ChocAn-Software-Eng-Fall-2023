@@ -33,7 +33,8 @@ public class ProviderController {
         } else if (status.equals("SUSPENDED")) {
             System.out.println("Member is suspended. Services not allowed.");
             return false;
-        } 	
+        } 
+        return false;
     }
     
     public boolean billChocAn(int providerID) {

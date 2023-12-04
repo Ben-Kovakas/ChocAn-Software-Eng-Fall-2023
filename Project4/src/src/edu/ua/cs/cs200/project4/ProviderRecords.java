@@ -25,7 +25,7 @@ public class ProviderRecords {
     //TODO parse through the list of providers and find the right one
   }
   
-  public List<Provider> getAllProviders() {
+  public static List<Provider> getAllProviders() {
     return null;
     //TODO parse through the list of providers and find the right one
   }
