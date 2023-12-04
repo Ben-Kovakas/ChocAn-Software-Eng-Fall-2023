@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * @author Alexander Steffey
  */
+
 public class Provider {
 	private int providerID;
     private String name;

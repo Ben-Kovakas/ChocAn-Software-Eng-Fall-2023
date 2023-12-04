@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * @author Alexander Steffey
  */
+
 public class ProviderTerminal {
 
   //Classes

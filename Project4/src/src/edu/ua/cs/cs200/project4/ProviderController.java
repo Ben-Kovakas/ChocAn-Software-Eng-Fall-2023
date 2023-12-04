@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * @author Alexander Steffey
  */
+
 public class ProviderController {
     private ProviderDirectory providerDirectory;
     private MemberRecords memberRecords;
@@ -71,7 +72,7 @@ public class ProviderController {
             return false;
         }
 
-        //Confirm service
+        //Confirm services
         System.out.println("Please choose an option:");
         System.out.println("1. Verify");
         System.out.println("2. Cancel");
