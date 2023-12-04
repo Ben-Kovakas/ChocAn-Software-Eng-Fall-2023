@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="src">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-jupiter-api_5.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-jupiter-engine_5.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-jupiter-migrationsupport_5.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-jupiter-params_5.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-commons_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-engine_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-launcher_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-runner_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-suite-api_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-suite-engine_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-platform-suite-commons_1.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/junit-vintage-engine_5.9.3.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/org.opentest4j_1.2.0.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/org.apiguardian.api_1.1.2.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
+        <pathelement location="../../../../../../Applications/Eclipse.app/Contents/Eclipse/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="src.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.MainMenu.classpath">
+        <path refid="src.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="src.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="MainMenu">
+        <java classname="edu.ua.cs.cs200.project4.MainMenu" failonerror="true" fork="yes">
+            <classpath refid="run.MainMenu.classpath"/>
+        </java>
+    </target>
+</project>

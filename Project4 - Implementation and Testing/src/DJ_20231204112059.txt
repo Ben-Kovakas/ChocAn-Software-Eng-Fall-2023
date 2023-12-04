@@ -1,0 +1,10 @@
+Provider Report
+
+Provider ID: 123456
+Name: DJ
+Address: Dierking
+State: NC
+Zip: 27265
+
+Total Consultations: 0
+Total Fees: 0.0
