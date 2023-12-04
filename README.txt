@@ -32,4 +32,5 @@ This folder contains multiple subfolders. '/src' contains the project's source c
 '/header' contains the instructor-required header table. '/taskdistribution' contains the
 instructor-required task distribution table. '/release' contains the executable JAR file.
 '/manual' contains a brief user manual for the software product. The build.xml is not in a
-subfolder, but is the ANT script for the project.
+subfolder, but is the ANT script for the project. Note that any extraneous text files (i.e.
+'members.txt' or 'providers.txt') are there for the purposes of persistence only.
