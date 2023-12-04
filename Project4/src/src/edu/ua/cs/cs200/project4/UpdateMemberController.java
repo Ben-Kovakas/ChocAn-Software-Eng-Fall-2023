@@ -8,7 +8,7 @@ public class UpdateMemberController {
     private static MemberRecords memberRecords;
 
     /**
-     * Initializes the member records.
+     * Author Ben Kovakas
      */
     public static void main() {
         memberRecords = new MemberRecords();

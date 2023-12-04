@@ -11,7 +11,7 @@ public class UpdateProviderController {
     private ProviderRecords providerRecords;
 
     /**
-     * Initializes the provider records.
+     * Author Ben Kovakas
      */
     public void main() {
         providerRecords = new ProviderRecords();
