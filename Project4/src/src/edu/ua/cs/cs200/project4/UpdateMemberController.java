@@ -2,6 +2,7 @@ package edu.ua.cs.cs200.project4;
 
 /**
  * The UpdateMemberController class manages operations related to members in the system.
+ * @author Ben Kovakas
  */
 public class UpdateMemberController {
   /**

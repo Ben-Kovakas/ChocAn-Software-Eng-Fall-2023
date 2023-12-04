@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The UpdateProviderController class manages operations related to providers in the system.
+ * 
+ *The UpdateProviderController class manages operations related to providers in the system.
+ *@author: Ben Kovakas
  */
 public class UpdateProviderController {
 
