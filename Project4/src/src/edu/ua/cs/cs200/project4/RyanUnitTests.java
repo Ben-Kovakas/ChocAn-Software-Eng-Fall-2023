@@ -46,6 +46,16 @@ public class RyanUnitTests {
 
         System.setIn(original);
     }
-
+ // Additional test for generating a summary report directly from ReportController
+    @Test
+    public void testGenerateSummaryReport() {
+        
+        ReportController reportController = new ReportController();
+        SummaryReport summaryReport = reportController.generateSummaryReport();
+        
+        assertNotNull("Summary report should not be null", summaryReport);
+        
+    }
     
+
 }
