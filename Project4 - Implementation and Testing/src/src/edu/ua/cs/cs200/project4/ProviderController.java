@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class ProviderController {
   private ProviderDirectory providerDirectory;
   private MemberRecords memberRecords;
-  private ProviderRecords providerRecords;
+  public ProviderRecords providerRecords;
 
   public ProviderController() {
     providerDirectory = new ProviderDirectory();
