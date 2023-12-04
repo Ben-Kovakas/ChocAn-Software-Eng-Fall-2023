@@ -30,5 +30,4 @@ public class MemberReport {
 	public List<ServiceRecord> getMemberServices(){
 		return services;
 	}
-	
 }

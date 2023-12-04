@@ -1,4 +1,10 @@
+package edu.ua.cs.cs200.project4;
+
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,7 +13,7 @@ import org.junit.Test;
  */
 
 
-public class ProviderDirectoryTest {
+public class ZanderUnitTests {
 
     private ProviderDirectory providerDirectory;
     private Member member;

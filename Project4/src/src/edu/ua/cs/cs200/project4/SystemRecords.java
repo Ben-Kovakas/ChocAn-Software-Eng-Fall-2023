@@ -8,7 +8,7 @@ public class SystemRecords {
   public MemberRecords memberRecords;
   public List<SummaryReport> summaryReports;
   public List<MemberReport> memberReports;
-  
+
   public SystemRecords() {
     providerRecords = new ProviderRecords();
     memberRecords = new MemberRecords();

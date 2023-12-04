@@ -100,9 +100,9 @@ public class Member {
   public void setStatus(String status) {
     this.status = status;
   }
-  
+
   public List<ServiceRecord> getServiceRecords() {
-      return serviceRecords;
+    return serviceRecords;
   }
 
   public String toString() {

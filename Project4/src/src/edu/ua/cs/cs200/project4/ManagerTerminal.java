@@ -1,6 +1,19 @@
 package edu.ua.cs.cs200.project4;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /**
  * The {@code ManagerTerminal} class represents the interface for the system manager.
@@ -10,28 +23,76 @@ import java.util.Scanner;
  */
 public class ManagerTerminal {
 
-    private ReportController reportController;
+  private static ReportController reportController;
 
-    /**
-     * Constructs a {@code ManagerTerminal} and initializes the associated {@code ReportController}.
-     */
-    public ManagerTerminal() {
-        reportController = new ReportController();
-    }
 
-    /**
-     * The main method that invokes the report request method.
-     * It acts as an entry point for the manager's interactions.
-     */
-    public void main() {
-        requestReport();
-    }
+  /**
+   * Constructs a {@code ManagerTerminal} and initializes the associated {@code ReportController}.
+   */
+  public ManagerTerminal() {
+    reportController = new ReportController();
+  }
+  /**
+   * The main method that invokes the report request method.
+   * It acts as an entry point for the manager's interactions.
+   */
+  public static void main(String[] args) {
+    requestReport(); 
+  }
+
+  public static JPanel createManagerPanel(JFrame myFrame) {
+    JPanel providerPanel = new JPanel();
+
+    JPanel buttonPanel = new JPanel();
+    buttonPanel.setLayout(new GridLayout(3, 3, 5, 5));
+
+    JButton summaryReportButton = new JButton("Generate Summary Report");
+    JButton providerReportButton = new JButton("Generate Provider Report");
+    JButton memberReportButton = new JButton("Generate Member Report");
+    JButton exitButton = new JButton("Exit");
+
+    buttonPanel.add(summaryReportButton);
+    buttonPanel.add(providerReportButton);
+    buttonPanel.add(memberReportButton);
+    buttonPanel.add(exitButton);
+
+    summaryReportButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        reportController.generateSummaryReport();
+      }
+    });
+    
+    providerReportButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+      }
+    });
+    
+    memberReportButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+      }
+    });
+
+    exitButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        myFrame.dispose();
+      }
+    });
+
+    providerPanel.setLayout(new BorderLayout());
+    providerPanel.add(buttonPanel, BorderLayout.CENTER);
+
+    return providerPanel;
+  }
 
     /**
      * Displays a menu for the manager to generate specific reports.
      * Handles the user input to select the type of report to generate.
      */
-    public void requestReport() {
+    public static void requestReport() {
         Scanner scanner = new Scanner(System.in);
         int input = 0;
 
