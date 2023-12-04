@@ -5,15 +5,15 @@ package edu.ua.cs.cs200.project4;
  * @author cchall5
  */
 public class Timer {
-	
-	ReportController reportController;
-	
-	//runs the main accounting procedure, generating all reports
-	public void RunProcedure() {
-		
-		reportController = new ReportController();
-		reportController.generateAllReports();
-		
-	}
-	
+
+  ReportController reportController;
+
+  //runs the main accounting procedure, generating all reports
+  public void RunProcedure() {
+
+    reportController = new ReportController();
+    reportController.generateAllReports();
+
+  }
+
 }
