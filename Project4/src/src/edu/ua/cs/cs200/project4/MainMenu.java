@@ -44,52 +44,52 @@ public class MainMenu {
     //initialized when the program is started since this is the main function
     //still need to call methods later to load persistence characteristics 
 
-//    boolean go = true;
-//    while (go) {
-//      //display login screen
-//      GUI();
-//      initialize();
-//      System.out.println("Please choose an option:");
-//      System.out.println("1. Provider Terminal");
-//      System.out.println("2. Operator Terminal");
-//      System.out.println("3. Manager Terminal");
-//      System.out.println("4. Run Main Accounting Procedure");
-//      System.out.println("5. Exit");
-//
-//      //read in an integer from user
-//      int input = 0;
-//      Scanner s = new Scanner(System.in);
-//      while(input < 1 || input > 5) {
-//        input = s.nextInt();
-//      }
-//
-//      //logic for each option
-//      switch (input) {
-//      case 1:
-//        //provider terminal
-//        providerTerminal = new ProviderTerminal();
-//        break;
-//      case 2:
-//        //operator terminal
-//        operatorTerminal = new OperatorTerminal();
-//        break;
-//      case 3:
-//        //manager terminal
-//        managerTerminal = new ManagerTerminal();
-//        break;
-//      case 4:
-//        //run main accounting procedure
-//        timer = new Timer();
-//        timer.RunProcedure();
-//        break;
-//      case 5:
-//        //exit
-//        go = false;
-//        shutdown();	
-//        break;
-//      }
-//      s.close();
-//    }
+    boolean go = true;
+    while (go) {
+      //display login screen
+      GUI();
+      initialize();
+      System.out.println("Please choose an option:");
+      System.out.println("1. Provider Terminal");
+      System.out.println("2. Operator Terminal");
+      System.out.println("3. Manager Terminal");
+      System.out.println("4. Run Main Accounting Procedure");
+      System.out.println("5. Exit");
+
+      //read in an integer from user
+      int input = 0;
+      Scanner s = new Scanner(System.in);
+      while(input < 1 || input > 5) {
+        input = s.nextInt();
+      }
+
+      //logic for each option
+      switch (input) {
+      case 1:
+        //provider terminal
+        providerTerminal = new ProviderTerminal();
+        break;
+      case 2:
+        //operator terminal
+        operatorTerminal = new OperatorTerminal();
+        break;
+      case 3:
+        //manager terminal
+        managerTerminal = new ManagerTerminal();
+        break;
+      case 4:
+        //run main accounting procedure
+        timer = new Timer();
+        timer.RunProcedure();
+        break;
+      case 5:
+        //exit
+        go = false;
+        shutdown();	
+        break;
+      }
+      s.close();
+    }
   }
     //initialize the program
     public static void initialize() {

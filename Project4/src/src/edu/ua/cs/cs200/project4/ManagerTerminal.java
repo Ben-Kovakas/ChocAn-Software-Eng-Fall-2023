@@ -87,8 +87,13 @@ public class ManagerTerminal {
 
           try {
             int providerID = Integer.parseInt(providerIDField.getText());
-            reportController.generateProviderReport(providerID);
-            JOptionPane.showMessageDialog(null, "Provider Report Generated!");
+            if (reportController.providerRecords.getProvider(providerID) != null) {
+              reportController.generateProviderReport(providerID).printToFile();
+              JOptionPane.showMessageDialog(null, "Provider Report Generated!");
+            }
+            else {
+              throw new IllegalArgumentException();
+            }
           } catch (IllegalArgumentException ex) {
             // Handle invalid input or illegal argument exception
             JOptionPane.showMessageDialog(null, "Invalid input. Please enter valid information.", "Input Error", JOptionPane.ERROR_MESSAGE);
@@ -118,8 +123,13 @@ public class ManagerTerminal {
 
           try {
             int memberID = Integer.parseInt(memberIDField.getText());
-            reportController.generateMemberReport(memberID);
-            JOptionPane.showMessageDialog(null, "Member Report Generated!");
+            if (reportController.memberRecords.getMember(memberID) != null) {
+              reportController.generateMemberReport(memberID);
+              JOptionPane.showMessageDialog(null, "Member Report Generated!");
+            }
+            else {
+              throw new IllegalArgumentException();
+            }
           } catch (IllegalArgumentException ex) {
             // Handle invalid input or illegal argument exception
             JOptionPane.showMessageDialog(null, "Invalid input. Please enter valid information.", "Input Error", JOptionPane.ERROR_MESSAGE);
