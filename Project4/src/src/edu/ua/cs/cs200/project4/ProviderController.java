@@ -87,7 +87,7 @@ public class ProviderController {
         scanner.nextLine();
         String comments = scanner.nextLine();
 
-        //TODO fix write a record, same as SummaryReport
+        //TODO fix write a record, same as ProviderReport
         // Current date and time (MM–DD–YYYY HH:MM:SS). 
         //Date service was provided (MM–DD–YYYY). 
         //Provider number (9 digits).
