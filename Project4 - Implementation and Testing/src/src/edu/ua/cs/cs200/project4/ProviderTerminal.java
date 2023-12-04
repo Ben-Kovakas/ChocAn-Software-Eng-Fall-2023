@@ -30,10 +30,6 @@ public class ProviderTerminal {
   public static void main(String args[]) {
   }
 
-  // DJ
-  // Create the Panel for the Provider Terminal
-  private static final String CORRECT_PASSWORD = "123456"; // Replace with your actual password
-
   public static JPanel createProviderPanel(JFrame myFrame) {
     JPanel providerPanel = new JPanel();
 
@@ -41,7 +37,7 @@ public class ProviderTerminal {
     String enteredPassword = getPasswordFromUser();
 
     // Check if the entered password is correct
-    if (enteredPassword == null || !enteredPassword.equals(CORRECT_PASSWORD)) {
+    if (enteredPassword == null || null == providerController.providerRecords.getProvider(Integer.parseInt(enteredPassword))) {
       JOptionPane.showMessageDialog(null, "Incorrect password. Access denied.", "Authentication Error", JOptionPane.ERROR_MESSAGE);
       JPanel buttonPanel = new JPanel();
       JButton exitButton = new JButton("Exit");
@@ -207,7 +203,7 @@ public class ProviderTerminal {
         validateMember();
         break;
       case 2:
-        billChocAn(0);
+        billChocAn(0, 0);
         break;
       case 3:
         requestProviderDirectory();
@@ -225,9 +221,9 @@ public class ProviderTerminal {
     providerController.validateMember();
   }
 
-  public static void billChocAn(int providerID) {
+  public static void billChocAn(int providerID, int memberID) {
     //finish implementing
-    providerController.billChocAn(providerID);
+    providerController.billChocAn(providerID, memberID);
   }
 
   public static void requestProviderDirectory() {

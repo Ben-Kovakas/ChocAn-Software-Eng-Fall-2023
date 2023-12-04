@@ -15,6 +15,7 @@ public class ProviderRecords {
   }
 
   public Provider getProvider(int providerID) {
+    loadProvidersFromFile();
     for (Provider provider : providers) {
       if (provider.getProviderID() == providerID) {
         return provider;
@@ -26,11 +27,13 @@ public class ProviderRecords {
   public void addProvider(Provider provider) {
     providers.add(provider);
     saveProvidersToFile(); // Save the updated list to the file
+    loadProvidersFromFile();
   }
 
   public void removeProvider(Provider provider) {
     providers.remove(provider);
     saveProvidersToFile(); // Save the updated list to the file
+    loadProvidersFromFile();
   }
 
   public List<Provider> getAllProviders() {
