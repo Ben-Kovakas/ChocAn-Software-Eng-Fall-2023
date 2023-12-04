@@ -203,7 +203,7 @@ public class ProviderTerminal {
         validateMember();
         break;
       case 2:
-        billChocAn(0);
+        billChocAn(0, 0);
         break;
       case 3:
         requestProviderDirectory();
@@ -221,9 +221,9 @@ public class ProviderTerminal {
     providerController.validateMember();
   }
 
-  public static void billChocAn(int providerID) {
+  public static void billChocAn(int providerID, int memberID) {
     //finish implementing
-    providerController.billChocAn(providerID);
+    providerController.billChocAn(providerID, memberID);
   }
 
   public static void requestProviderDirectory() {

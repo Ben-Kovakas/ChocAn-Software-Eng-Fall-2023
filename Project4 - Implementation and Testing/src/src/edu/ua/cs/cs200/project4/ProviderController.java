@@ -1,5 +1,6 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.List;
 import java.util.Scanner;
 
 import java.awt.GridLayout;
@@ -68,7 +69,7 @@ public class ProviderController {
   }
 
   //Main logic of Bill ChocAn use case
-  public boolean billChocAn(int providerID) {
+  public boolean billChocAn(int providerID, int memberID) {
     if (!validateMember()) {
       return false;
     }
@@ -118,31 +119,31 @@ public class ProviderController {
     //Comments (100 characters) (optional). 
 
     //Enter service record info
-    double fee = providerDirectory.getServiceFee(serviceCode);
+    double fee = providerDirectory.getServiceInfo(serviceCode).getFee();
     System.out.println("Fee: $" + fee);
     System.out.print("Enter the current date (MM-DD-YYYY): ");
     String inputCurrentDate = scanner.next();
     System.out.print("Enter the date of service (MM-DD-YYYY): ");
-    String inputServicetDate = scanner.next();
+    String inputServiceDate = scanner.next();
     System.out.print("Enter member name: ");
     String inputMemberName = scanner.next();
     System.out.print("Enter member number: ");
-    int inputMemberNumber = scanner.next();
+    int inputMemberNumber = Integer.parseInt(scanner.next());
     System.out.print("Enter service code: ");
-    int inputServiceCode = scanner.next();
+    int inputServiceCode = Integer.parseInt(scanner.next());
     System.out.print("Enter fee: ");
-    double inputFee = scanner.next();
+    double inputFee = Integer.parseInt(scanner.next());
 
     //Save service record info
     ServiceRecord serviceRecord = new ServiceRecord(inputServiceCode, inputCurrentDate, inputServiceDate, inputFee, inputMemberName, inputMemberNumber);
     Member member = memberRecords.getMember(memberID);
-    if (member != NULL) {
+    if (member != null) {
       List<ServiceRecord> memberServiceRecords = member.getServiceRecords();
       memberServiceRecords.add(serviceRecord);
     }
 
     Provider provider = providerRecords.getProvider(providerID);
-    if (provider != NULL) {
+    if (provider != null) {
       List<ServiceRecord> providerServiceRecords = provider.getServiceRecords();
       providerServiceRecords.add(serviceRecord);
     }
