@@ -2,6 +2,9 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.Scanner;
 
+/**
+ * @author Alexander Steffey
+ */
 public class ProviderTerminal {
 
   //Classes

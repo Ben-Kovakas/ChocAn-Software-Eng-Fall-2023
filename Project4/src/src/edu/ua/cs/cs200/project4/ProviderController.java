@@ -2,6 +2,9 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.Scanner;
 
+/**
+ * @author Alexander Steffey
+ */
 public class ProviderController {
     private ProviderDirectory providerDirectory;
     private MemberRecords memberRecords;
@@ -13,19 +16,23 @@ public class ProviderController {
     	providerRecords = new ProviderRecords();
     }
     
+    //Main logic of Validate Member use case
     public boolean validateMember() {
     	Scanner scanner = new Scanner(System.in);
     	
+    	//Enter memberID
     	System.out.print("Enter Member ID: ");
         int memberID = scanner.nextInt();
         
         Member member = memberRecords.getMember(memberID);
         
+        //If no member found, print error
         if (member == null) {
             System.out.println("Error: Invalid member");
             return false;
         }
         
+        //Return member status
         String status = member.getStatus();
         if (status.equals("VALID")) {
             System.out.println("Member validated");
@@ -37,13 +44,15 @@ public class ProviderController {
         return false;
     }
     
+    //Main logic of Bill ChocAn use case
     public boolean billChocAn(int providerID) {
     	if (!validateMember()) {
             return false;
         }
 
         Scanner scanner = new Scanner(System.in);
-
+        
+        //Find service code
         System.out.print("Enter the service name: ");
         String serviceName = scanner.nextLine();
         
@@ -53,7 +62,8 @@ public class ProviderController {
             return false;
         }
         System.out.println("Service code: " + serviceCode);
-
+        
+        //Confirm service code
         System.out.print("Enter the service code: ");
         int EnteredCode = scanner.nextInt();
         if (EnteredCode != serviceCode) {
@@ -61,6 +71,7 @@ public class ProviderController {
             return false;
         }
 
+        //Confirm service
         System.out.println("Please choose an option:");
         System.out.println("1. Verify");
         System.out.println("2. Cancel");
@@ -82,7 +93,8 @@ public class ProviderController {
         //Member number (9 digits). 
         //Service code (6 digits).
         //Comments (100 characters) (optional). 
-
+        
+        //Enter service record info
         double fee = providerDirectory.getServiceFee(serviceCode);
         System.out.println("Fee: $" + fee);
         System.out.print("Enter the current date (MM-DD-YYYY): ");
@@ -98,6 +110,7 @@ public class ProviderController {
         System.out.print("Enter fee: ");
         double inputFee = scanner.next();
 
+        //Save service record info
         ServiceRecord serviceRecord = new ServiceRecord(inputServiceCode, inputCurrentDate, inputServiceDate, inputFee, inputMemberName, inputMemberNumber);
         Member member = memberRecords.getMember(memberID);
         if (member != NULL) {

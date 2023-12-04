@@ -2,6 +2,9 @@ package edu.ua.cs.cs200.project4;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Alexander Steffey
+ */
 public class ProviderDirectory {
 	
 	//Map structures to order services and codes

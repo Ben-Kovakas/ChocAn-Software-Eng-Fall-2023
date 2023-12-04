@@ -2,6 +2,9 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.List;
 
+/**
+ * @author Alexander Steffey
+ */
 public class Provider {
 	private int providerID;
     private String name;
