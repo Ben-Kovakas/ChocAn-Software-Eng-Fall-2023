@@ -60,7 +60,7 @@ public class ManagerTerminal {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          reportController.generateSummaryReport();
+          reportController.generateSummaryReport().printSummaryToFile();
           JOptionPane.showMessageDialog(null, "Summary Report Generated!");
         } catch (IllegalArgumentException ex) {
           // Handle invalid input or illegal argument exception
@@ -124,7 +124,7 @@ public class ManagerTerminal {
           try {
             int memberID = Integer.parseInt(memberIDField.getText());
             if (reportController.memberRecords.getMember(memberID) != null) {
-              reportController.generateMemberReport(memberID);
+              reportController.generateMemberReport(memberID).printToFile();
               JOptionPane.showMessageDialog(null, "Member Report Generated!");
             }
             else {
