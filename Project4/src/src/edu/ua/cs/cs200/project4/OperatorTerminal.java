@@ -30,39 +30,39 @@ public class OperatorTerminal {
   public static void main(String[] args) {
 	
 	//operator terminal menu
-//	boolean go = true;
-//	while (go) {
-//		
-//		//display menu
-//		System.out.println("Welcome to the ChocAn Operator Terminal!");
-//		System.out.println("Please choose an option:");
-//		System.out.println("1. Update Member");
-//		System.out.println("2. Update Provider");
-//		System.out.println("3. Exit");
-//		
-//		//read in an integer from user
-//		int input = 0;
-//		Scanner s = new Scanner(System.in);
-//		while(input < 1 || input > 3) {
-//			input = s.nextInt();
-//		}
-//		
-//		//handle user input
-//		switch (input) {
-//		case 1:
-//			operatorTerminal.updateMemberRecords();
-//			break;
-//		case 2:
-//			operatorTerminal.updateProviderRecords();
-//			break;
-//		case 3:
-//			System.out.println("Closing Operator Terminal.");
-//			go = false;
-//			break;
-//		}
-//		
-//		s.close();
-//	}
+	boolean go = true;
+	while (go) {
+		
+		//display menu
+		System.out.println("Welcome to the ChocAn Operator Terminal!");
+		System.out.println("Please choose an option:");
+		System.out.println("1. Update Member");
+		System.out.println("2. Update Provider");
+		System.out.println("3. Exit");
+		
+		//read in an integer from user
+		int input = 0;
+		Scanner s = new Scanner(System.in);
+		while(input < 1 || input > 3) {
+			input = s.nextInt();
+		}
+		
+		//handle user input
+		switch (input) {
+		case 1:
+			updateMemberRecords();
+			break;
+		case 2:
+			updateProviderRecords();
+			break;
+		case 3:
+			System.out.println("Closing Operator Terminal.");
+			go = false;
+			break;
+		}
+		
+		s.close();
+	}
   }
   public static JPanel createOperatorPanel(JFrame myFrame) {
     JPanel providerPanel = new JPanel();
@@ -216,7 +216,7 @@ public class OperatorTerminal {
             panel1.add(memberIDField);
 
             int result1 = JOptionPane.showConfirmDialog(
-                null, panel1, "Add Member", JOptionPane.OK_CANCEL_OPTION);
+                null, panel1, "Delete Member", JOptionPane.OK_CANCEL_OPTION);
 
             if (result1 == JOptionPane.OK_OPTION) {
               // User clicked OK, process the input

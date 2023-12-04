@@ -56,6 +56,7 @@ public class UpdateMemberController {
       existingMember.setState(newState);
       existingMember.setZip(newZip);
       existingMember.setStatus(newStatus);
+      memberRecords.saveMembersToFile();
     } else {
       System.out.println("Member not found. Unable to edit data.");
     }

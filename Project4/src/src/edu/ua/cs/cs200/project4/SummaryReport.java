@@ -21,7 +21,7 @@ public class SummaryReport {
   /** Constructor. Creates the Summary Report using the global list of providers
    * 
    * */
-  public void SummaryReport() {
+  public SummaryReport() {
 
     totalConsultions = 0;
     totalFees = 0;

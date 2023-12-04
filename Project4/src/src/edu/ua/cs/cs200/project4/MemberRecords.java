@@ -51,7 +51,7 @@ public class MemberRecords {
         }
     }
 
-    private void saveMembersToFile() {
+    public void saveMembersToFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter("src/members.txt"))) {
             for (Member member : members) {
                 writer.println(member.toString());
