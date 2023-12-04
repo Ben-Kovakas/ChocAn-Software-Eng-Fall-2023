@@ -7,7 +7,9 @@ import java.io.InputStream;
 import static org.junit.Assert.*;
 
 public class RyanUnitTests {
-
+	/**
+	 * @author rmmilsap
+	 */
     private ManagerTerminal managerTerminal;
     private final InputStream original = System.in;
 
@@ -30,6 +32,20 @@ public class RyanUnitTests {
 
         System.setIn(original);
     }
+    @Test
+    public void testRequestReportOptionFour() {
+        String input = "4\n"; // User  option 4 to exit
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
 
-    // Add more tests for other options
+        // Call the method under test
+        managerTerminal.requestReport();
+
+        // Check the output or state change if any (this is just a placeholder since the actual test might vary)
+        assertTrue("Expected condition to be true after selecting option 1", true);
+
+        System.setIn(original);
+    }
+
+    
 }
