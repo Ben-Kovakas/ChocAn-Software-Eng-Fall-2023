@@ -1,7 +1,10 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.ArrayList;
 import java.util.List;
-
+/* 
+* @author dddierking
+*/
 public class Member {
   // Private attributes
   private int memberID;
@@ -37,6 +40,7 @@ public class Member {
       this.state = attributes[4];
       this.zip = Integer.parseInt(attributes[5]);
       this.status = attributes[6];
+      this.serviceRecords = new ArrayList<ServiceRecord>();
     } else {
       // Handle incorrect input length (throw an exception, log an error, etc.)
       // For simplicity, we'll just set default values or leave attributes

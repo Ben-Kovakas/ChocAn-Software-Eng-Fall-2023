@@ -15,6 +15,7 @@ public class MemberRecords {
     }
 
     public Member getMember(int memberID) {
+      loadMembersFromFile();
         for (Member member : members) {
             if (member.getMemberID() == memberID) {
                 return member;
@@ -26,6 +27,7 @@ public class MemberRecords {
     public void addMember(Member member) {
         members.add(member);
         saveMembersToFile(); // Save the updated list to the file
+        loadMembersFromFile();
     }
 
     public void removeMember(int memberID) {
@@ -33,6 +35,7 @@ public class MemberRecords {
         if (existingMember != null) {
             members.remove(existingMember);
             saveMembersToFile(); // Save the updated list to the file
+            loadMembersFromFile();
         }
     }
     
@@ -41,7 +44,7 @@ public class MemberRecords {
     }
     
     public void loadMembersFromFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/members.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("members.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 members.add(new Member(line));
@@ -52,7 +55,7 @@ public class MemberRecords {
     }
 
     public void saveMembersToFile() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("src/members.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("members.txt"))) {
             for (Member member : members) {
                 writer.println(member.toString());
             }

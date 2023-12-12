@@ -1,0 +1,10 @@
+Provider Report
+
+Provider ID: 10101
+Name: p
+Address: p
+State: pp
+Zip: 90909
+
+Total Consultations: 0
+Total Fees: 0.0

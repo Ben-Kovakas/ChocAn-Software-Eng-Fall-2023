@@ -47,7 +47,6 @@ public class MainMenu {
     boolean go = true;
     while (go) {
       //display login screen
-      GUI();
       initialize();
       System.out.println("Please choose an option:");
       System.out.println("1. Provider Terminal");
@@ -116,7 +115,7 @@ public class MainMenu {
       addButtonToPanel("Provider Terminal");
       addButtonToPanel("Operator Terminal");
       addButtonToPanel("Manager Terminal");
-      addButtonToPanel("Map");
+      addButtonToPanel("MAP");
       addButtonToPanel("Exit");
 
       frame.setLayout(new BorderLayout());
@@ -141,6 +140,10 @@ public class MainMenu {
       if ("Exit".equals(buttonText)) {
         frame.dispose();
         System.exit(0);
+      } else if ("MAP".equals(buttonText)){
+        //run main accounting procedure
+        timer = new Timer();
+        timer.RunProcedure();
       } else {
         openNewTerminal(buttonText);
       }
@@ -156,19 +159,10 @@ public class MainMenu {
           terminalFrame.add(OperatorTerminal.createOperatorPanel(terminalFrame));
         } else if ("Manager Terminal".equals(terminalType)) {
           terminalFrame.add(ManagerTerminal.createManagerPanel(terminalFrame));
-        } else if ("Map".equals(terminalType)) {
-          terminalFrame.add(createMapPanel());
         }
 
         terminalFrame.setLocationRelativeTo(null);
         terminalFrame.setVisible(true);
-      }
-
-      private static JPanel createMapPanel() {
-        JPanel panel = new JPanel();
-        JLabel label = new JLabel("Welcome to the Map!");
-        panel.add(label);
-        return panel;
       }
 
       //shutdown the program

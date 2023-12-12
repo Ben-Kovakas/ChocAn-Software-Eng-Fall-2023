@@ -113,7 +113,9 @@ public class ProviderTerminal {
 
               try {
                   textArea.append(providerController.validateMember(Integer.parseInt(userInput)) + "\n");
-                  providerController.billChocAn();
+                  if (providerController.validateMember(Integer.parseInt(userInput)) == "Member validated") {
+                    providerController.billChocAnGUI(Integer.parseInt(userInput), Integer.parseInt(enteredPassword));
+                  }
               } catch (NumberFormatException ex) {
                   // Handle the case where the user input is not a valid int
                   JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
@@ -140,6 +142,7 @@ public class ProviderTerminal {
       @Override
       public void actionPerformed(ActionEvent e) {
         textArea.append("Requesting Provider Directory...\n");
+        textArea.append(providerController.requestProviderDirectory());
       }
     });
 

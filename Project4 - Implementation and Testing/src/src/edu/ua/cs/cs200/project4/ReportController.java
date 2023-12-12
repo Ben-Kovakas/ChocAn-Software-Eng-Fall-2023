@@ -1,5 +1,6 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.ArrayList;
 import java.util.List;
 /**
  * Manages the creation of all types of reports
@@ -10,8 +11,8 @@ import java.util.List;
 public class ReportController {
 
   SummaryReport SumReport;
-  List<ProviderReport> ProReports;
-  List<MemberReport> MemReports;
+  List<ProviderReport> ProReports = new ArrayList<ProviderReport>();
+  List<MemberReport> MemReports = new ArrayList<MemberReport>();;
   MemberRecords memberRecords = new MemberRecords();
   ProviderRecords providerRecords = new ProviderRecords();
   
@@ -23,6 +24,7 @@ public class ReportController {
    */
   public SummaryReport generateSummaryReport() {
     SummaryReport tempReport = new SummaryReport();
+    tempReport.printSummaryToFile();
     return tempReport;
   }
 
@@ -69,12 +71,14 @@ public class ReportController {
 
     for(int i = 0; i <tempProvList.size(); i++) {
       tempProvReport = new ProviderReport(tempProvList.get(i));
+      tempProvReport.printToFile();
       ProReports.add(tempProvReport);
     }
 
 
     for(int i = 0; i <tempMemList.size(); i++) {
       tempMemReport = new MemberReport(tempMemList.get(i));
+      tempMemReport.printToFile();
       MemReports.add(tempMemReport);
     }
   }

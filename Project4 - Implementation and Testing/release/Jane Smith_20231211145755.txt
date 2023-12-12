@@ -1,0 +1,10 @@
+Provider Report
+
+Provider ID: 111111111
+Name: Jane Smith
+Address: 1
+State: NC
+Zip: 11111
+
+Total Consultations: 0
+Total Fees: 0.0

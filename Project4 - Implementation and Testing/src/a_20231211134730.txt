@@ -1,0 +1,10 @@
+Provider Report
+
+Provider ID: 999999
+Name: a
+Address: a
+State: aa
+Zip: 99999
+
+Total Consultations: 0
+Total Fees: 0.0

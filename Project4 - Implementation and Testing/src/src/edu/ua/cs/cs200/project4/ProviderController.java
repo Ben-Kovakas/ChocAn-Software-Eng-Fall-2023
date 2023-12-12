@@ -4,12 +4,16 @@ import java.util.List;
 import java.util.Scanner;
 
 import java.awt.GridLayout;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import edu.ua.cs.cs200.project4.ProviderDirectory.ServiceInfo;
 /**
  * @author Alexander Steffey
  */
@@ -151,17 +155,18 @@ public class ProviderController {
     return true;
   }
 
-  public boolean billChocAn() {
+  public boolean billChocAnGUI(int memberID, int providerID) {
+    ServiceInfo nameInfo;
     JPanel panel = new JPanel(new GridLayout(0, 2));
 
-    JTextField memberField = new JTextField();
+    JTextField dateField = new JTextField();
     JTextField serviceCodeField = new JTextField();
     JTextField commentsField = new JTextField();
-
-    panel.add(new JLabel("Member ID:"));
-    panel.add(memberField);
+    
     panel.add(new JLabel("Service Code:"));
     panel.add(serviceCodeField);
+    panel.add(new JLabel("Date of Service: (MM-DD-YYYY)"));
+    panel.add(dateField);
     panel.add(new JLabel("Comments:"));
     panel.add(commentsField);
 
@@ -170,21 +175,50 @@ public class ProviderController {
 
     if (result == JOptionPane.OK_OPTION) {
       // User clicked OK, process the input
-      String memberID = memberField.getText();
       String serviceCode = serviceCodeField.getText();
       String comments = commentsField.getText();
+      String date = dateField.getText();
+      nameInfo = providerDirectory.getServiceInfo(Integer.parseInt(serviceCode));
+      if (nameInfo == null) {
+        JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
+      }
+      else {
+      panel.add(new JLabel("Service Name:"));
+      panel.add(new JLabel(nameInfo.getServiceName()));
 
-      // Process the input, e.g., call your billChocAn method with these values
-      //billChocAn(Integer.parseInt(memberID), Integer.parseInt(serviceCode), comments);
+      int result1 = JOptionPane.showConfirmDialog(
+          null, panel, "Enter Bill ChocAn Information", JOptionPane.YES_NO_OPTION);
+      }
+      if (result == JOptionPane.YES_OPTION) {
+        //Save service record info
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mm-dd-yyyy HH:MM:ss");
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        String formattedDateTime = currentDateTime.format(formatter);
+        ServiceRecord serviceRecord = new ServiceRecord(Integer.parseInt(serviceCode), formattedDateTime, date, providerDirectory.getServiceInfo(Integer.parseInt(serviceCode)).getFee(), memberRecords.getMember(memberID).getName(), memberID);
+        Member member = memberRecords.getMember(memberID);
+        if (member != null) {
+          List<ServiceRecord> memberServiceRecords = member.getServiceRecords();
+          memberServiceRecords.add(serviceRecord);
+        }
+
+        Provider provider = providerRecords.getProvider(providerID);
+        if (provider != null) {
+          List<ServiceRecord> providerServiceRecords = provider.getServiceRecords();
+          providerServiceRecords.add(serviceRecord);
+        }
+        JOptionPane.showMessageDialog(null, "ChocAn Billed! Record Saved", "Success!", JOptionPane.OK_OPTION);
+      }
+      
     } else {
       // User clicked Cancel or closed the dialog
     }
+    
     return true;
   }
 
   //TODO write request directory (deliver as file, will update directory class)
   //DJ is working on this
-  public void requestProviderDirectory() {
-    //return providerDirectory.getDirectory();
+  public String requestProviderDirectory() {
+    return providerDirectory.getEntriesAlphabetically();
   }
 }

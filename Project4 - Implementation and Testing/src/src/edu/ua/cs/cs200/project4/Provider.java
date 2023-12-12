@@ -1,5 +1,6 @@
 package edu.ua.cs.cs200.project4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +42,7 @@ public class Provider {
       this.state = attributes[4];
       this.zipCode = Integer.parseInt(attributes[5]);
       this.consultations = Integer.parseInt(attributes[6]);
+      this.serviceRecords = new ArrayList<ServiceRecord>();
     } else {
       // Handle incorrect input length (throw an exception, log an error, etc.)
       // For simplicity, we'll just set default values or leave attributes
