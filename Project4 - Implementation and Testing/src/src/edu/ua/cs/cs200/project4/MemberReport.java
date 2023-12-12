@@ -56,4 +56,8 @@ public class MemberReport {
           e.printStackTrace();
       }
   }
+    
+    public String toString() {
+    	
+    }
 }

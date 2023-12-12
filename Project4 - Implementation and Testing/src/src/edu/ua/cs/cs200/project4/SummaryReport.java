@@ -123,5 +123,9 @@ public class SummaryReport {
     } catch (IOException e) {
         e.printStackTrace();
     }
-}
+  }
+  
+  public String toString() {
+	
+  }
 }
