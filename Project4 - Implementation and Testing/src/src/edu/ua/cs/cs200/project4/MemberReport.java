@@ -57,7 +57,18 @@ public class MemberReport {
       }
   }
     
+    @Override
     public String toString() {
     	
+    	StringBuilder reportString = new StringBuilder();
+    	
+    	reportString.append("Member ID: ").append(member.getMemberID()).append("\n");
+    	reportString.append("Name: ").append(member.getName()).append("\n");
+    	reportString.append("Address: ").append(member.getAddress()).append("\n");
+    	reportString.append("City: ").append(member.getCity()).append("\n");
+    	reportString.append("State: ").append(member.getState()).append("\n");
+    	reportString.append("ZIP Code: ").append(member.getZip()).append("\n");
+    	
+    	return reportString.toString();
     }
 }

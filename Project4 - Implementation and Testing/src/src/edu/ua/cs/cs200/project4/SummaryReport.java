@@ -125,7 +125,55 @@ public class SummaryReport {
     }
   }
   
+  @Override
   public String toString() {
-	
+	  
+	  StringBuilder reportString = new StringBuilder();
+	  
+	// Get the current date
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+	    LocalDateTime currentDateTime = LocalDateTime.now();
+	    String formattedDateTime = currentDateTime.format(formatter);
+
+        // Write summary header
+        reportString.append("Summary Report - " + formattedDateTime);
+
+        // Variables for overall summary
+        int overallTotalProviders = 0;
+        int overallTotalConsultations = 0;
+        double overallTotalFees = 0;
+
+        // Iterate through the providers
+        List<Provider> providers = providerRecords.getAllProviders();
+        for (Provider provider : providers) {
+            int providerConsultations = provider.getConsultations();
+            List<ServiceRecord> serviceRecords = provider.getServiceRecords();
+            double providerTotalFees;
+            if (serviceRecords != null)
+              providerTotalFees = serviceRecords.stream().mapToDouble(ServiceRecord::getFee).sum();
+            else
+              providerTotalFees = 0;
+
+            // Write provider details to the file
+            reportString.append("Provider: ").append(provider.getName()).append("\n");
+            reportString.append("Consultations: ").append(providerConsultations).append("\n");
+            reportString.append("Total Fees: $").append(providerTotalFees).append("\n");
+            reportString.append("\n"); // Separate providers
+
+            // Update overall summary
+            if (providerConsultations > 0) {
+                overallTotalProviders++;
+                overallTotalConsultations += providerConsultations;
+                overallTotalFees += providerTotalFees;
+            }
+        }
+
+        // Write overall summary to the file
+        reportString.append("Overall Total Providers: ").append(overallTotalProviders).append("\n");
+        reportString.append("Overall Total Consultations: ").append(overallTotalConsultations).append("\n");
+        reportString.append("Overall Total Fees: $").append(overallTotalFees).append("\n");
+	  
+	  
+	  return reportString.toString();
   }
 }

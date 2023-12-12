@@ -62,25 +62,44 @@ public class ReportController {
    *
    */
   public void generateAllReports() {
-    generateSummaryReport();
+//    generateSummaryReport();
+//
+//    ProviderReport tempProvReport;
+//    MemberReport tempMemReport;
+//    List<Provider> tempProvList = providerRecords.getAllProviders();
+//    List<Member> tempMemList = memberRecords.getAllMembers();
+//
+//    for(int i = 0; i <tempProvList.size(); i++) {
+//      tempProvReport = new ProviderReport(tempProvList.get(i));
+//      tempProvReport.printToFile();
+//      ProReports.add(tempProvReport);
+//    }
+//
+//
+//    for(int i = 0; i <tempMemList.size(); i++) {
+//      tempMemReport = new MemberReport(tempMemList.get(i));
+//      tempMemReport.printToFile();
+//      MemReports.add(tempMemReport);
+//    }
+	  
+	  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+      LocalDateTime currentDateTime = LocalDateTime.now();
+      String formattedDateTime = currentDateTime.format(formatter);
 
-    ProviderReport tempProvReport;
-    MemberReport tempMemReport;
-    List<Provider> tempProvList = providerRecords.getAllProviders();
-    List<Member> tempMemList = memberRecords.getAllMembers();
+      String fileName = "ALL_Reports_" + formattedDateTime + ".txt";
+      
+      try (FileWriter writer = new FileWriter(fileName)) {
+          
+    	  //summary report
+    	  writer.write(SumReport.toString());
+    	  
+    	  //provider
+    	  
 
-    for(int i = 0; i <tempProvList.size(); i++) {
-      tempProvReport = new ProviderReport(tempProvList.get(i));
-      tempProvReport.printToFile();
-      ProReports.add(tempProvReport);
-    }
-
-
-    for(int i = 0; i <tempMemList.size(); i++) {
-      tempMemReport = new MemberReport(tempMemList.get(i));
-      tempMemReport.printToFile();
-      MemReports.add(tempMemReport);
-    }
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+      
   }
 
   public SummaryReport getSummaryReport() {
