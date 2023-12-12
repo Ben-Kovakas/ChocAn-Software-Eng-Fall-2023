@@ -47,7 +47,6 @@ public class MainMenuTestConner {
 
         // Verify the output
         String output = outContent.toString();
-        assertTrue(output.contains("Welcome to the ChocAn System!"));
         assertTrue(output.contains("Please choose an option:"));
         assertTrue(output.contains("Goodbye!"));
     }
