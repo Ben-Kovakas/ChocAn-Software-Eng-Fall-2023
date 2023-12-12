@@ -171,7 +171,7 @@ public class SummaryReport {
         // Write overall summary to the file
         reportString.append("Overall Total Providers: ").append(overallTotalProviders).append("\n");
         reportString.append("Overall Total Consultations: ").append(overallTotalConsultations).append("\n");
-        reportString.append("Overall Total Fees: $").append(overallTotalFees).append("\n");
+        reportString.append("Overall Total Fees: $").append(overallTotalFees).append("\n\n");
 	  
 	  
 	  return reportString.toString();

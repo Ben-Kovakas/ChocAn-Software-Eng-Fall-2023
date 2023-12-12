@@ -2,6 +2,14 @@ package edu.ua.cs.cs200.project4;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 /**
  * Manages the creation of all types of reports
  * 
@@ -15,8 +23,6 @@ public class ReportController {
   List<MemberReport> MemReports = new ArrayList<MemberReport>();;
   MemberRecords memberRecords = new MemberRecords();
   ProviderRecords providerRecords = new ProviderRecords();
-  
-
 
   /**
    * Generates a Summary report
@@ -62,25 +68,6 @@ public class ReportController {
    *
    */
   public void generateAllReports() {
-//    generateSummaryReport();
-//
-//    ProviderReport tempProvReport;
-//    MemberReport tempMemReport;
-//    List<Provider> tempProvList = providerRecords.getAllProviders();
-//    List<Member> tempMemList = memberRecords.getAllMembers();
-//
-//    for(int i = 0; i <tempProvList.size(); i++) {
-//      tempProvReport = new ProviderReport(tempProvList.get(i));
-//      tempProvReport.printToFile();
-//      ProReports.add(tempProvReport);
-//    }
-//
-//
-//    for(int i = 0; i <tempMemList.size(); i++) {
-//      tempMemReport = new MemberReport(tempMemList.get(i));
-//      tempMemReport.printToFile();
-//      MemReports.add(tempMemReport);
-//    }
 	  
 	  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
       LocalDateTime currentDateTime = LocalDateTime.now();
@@ -93,8 +80,27 @@ public class ReportController {
     	  //summary report
     	  writer.write(SumReport.toString());
     	  
-    	  //provider
-    	  
+    	  //providers
+        writer.write("Provider Reports\n");
+        List<Provider> tempProvList = providerRecords.getAllProviders();
+        ProviderReport tempProvReport;
+        String currProvider;
+        for(int i = 0; i <tempProvList.size(); i++) {
+          tempProvReport = new ProviderReport(tempProvList.get(i));
+          currProvider = tempProvReport.toString();
+          writer.write(currProvider);
+        }
+
+        //members
+        writer.write("Member Reports\n");
+        List<Member> tempMemList = memberRecords.getAllMembers();
+        MemberReport tempMemReport;
+        String currMember;
+        for(int i = 0; i <tempMemList.size(); i++) {
+          tempMemReport = new MemberReport(tempMemList.get(i));
+          currMember = tempMemReport.toString();
+          writer.write(currMember);
+        }
 
       } catch (IOException e) {
           e.printStackTrace();

@@ -98,7 +98,7 @@ public class ProviderReport {
     reportString.append("Provider ID: ").append(provider.getProviderID()).append("\n");
     reportString.append("Provider Name: ").append(provider.getName()).append("\n");
     reportString.append("Total Consultations: ").append(totalConsultations).append("\n");
-    reportString.append("Total Fees: $").append(totalFees).append("\n");
+    reportString.append("Total Fees: $").append(totalFees).append("\n\n");
 
     return reportString.toString();
   }

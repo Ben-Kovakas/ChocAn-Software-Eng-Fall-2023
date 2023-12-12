@@ -67,7 +67,7 @@ public class MemberReport {
     	reportString.append("Address: ").append(member.getAddress()).append("\n");
     	reportString.append("City: ").append(member.getCity()).append("\n");
     	reportString.append("State: ").append(member.getState()).append("\n");
-    	reportString.append("ZIP Code: ").append(member.getZip()).append("\n");
+    	reportString.append("ZIP Code: ").append(member.getZip()).append("\n\n");
     	
     	return reportString.toString();
     }
