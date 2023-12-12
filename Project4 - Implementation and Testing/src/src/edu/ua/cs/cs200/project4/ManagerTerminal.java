@@ -124,7 +124,7 @@ public class ManagerTerminal {
           try {
             int memberID = Integer.parseInt(memberIDField.getText());
             if (reportController.memberRecords.getMember(memberID) != null) {
-              reportController.generateMemberReport(memberID).printToFile();
+              reportController.generateMemberReport().printToFile();
               JOptionPane.showMessageDialog(null, "Member Report Generated!");
             }
             else {
