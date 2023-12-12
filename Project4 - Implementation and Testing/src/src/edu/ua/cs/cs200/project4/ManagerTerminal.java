@@ -178,14 +178,16 @@ public class ManagerTerminal {
                     reportController.generateSummaryReport();
                     break;
                 case 2:
-                    System.out.print("Enter Provider ID: ");
-                    int providerID = scanner.nextInt();
-                    reportController.generateProviderReport(providerID);
+                    // System.out.print("Enter Provider ID: ");
+                    // int providerID = scanner.nextInt();
+                    // reportController.generateProviderReport(providerID);
+                    reportController.generateProviderReport();
                     break;
                 case 3:
-                    System.out.print("Enter Member ID: ");
-                    int memberID = scanner.nextInt();
-                    reportController.generateMemberReport(memberID);
+                    // System.out.print("Enter Member ID: ");
+                    // int memberID = scanner.nextInt();
+                    // reportController.generateMemberReport(memberID);
+                    reportController.generateMemberReport();
                     break;
                 case 4:
                     System.out.println("Exiting Manager Terminal.");

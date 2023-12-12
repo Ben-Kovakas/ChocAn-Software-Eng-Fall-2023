@@ -36,31 +36,77 @@ public class ReportController {
 
   /**
    * Generates a Provider report
-   * @return a ProviderReport
    */
-  public ProviderReport generateProviderReport(int ID) {
-    Provider tempProvider;
-    ProviderReport tempReport;
+  public void generateProviderReport() {
+    // Provider tempProvider;
+    // ProviderReport tempReport;
 
-    tempProvider = providerRecords.getProvider(ID);
+    // tempProvider = providerRecords.getProvider(ID);
 
-    tempReport = new ProviderReport(tempProvider);
-    return tempReport;
+    // tempReport = new ProviderReport(tempProvider);
+    // return tempReport;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+      LocalDateTime currentDateTime = LocalDateTime.now();
+      String formattedDateTime = currentDateTime.format(formatter);
+
+      String fileName = "ALL_Reports_" + formattedDateTime + ".txt";
+      
+      try (FileWriter writer = new FileWriter(fileName)) {
+    	  
+    	  //providers
+        writer.write("Provider Reports\n");
+        List<Provider> tempProvList = providerRecords.getAllProviders();
+        ProviderReport tempProvReport;
+        String currProvider;
+        for(int i = 0; i <tempProvList.size(); i++) {
+          tempProvReport = new ProviderReport(tempProvList.get(i));
+          currProvider = tempProvReport.toString();
+          writer.write(currProvider);
+        }
+
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+
   }
 
   /**
-   * Generates a Manager report
-   * @return a ManagerReport
+   * Generates a Member report
    */
-  public MemberReport generateMemberReport(int ID) {
-    Member tempMember;
-    MemberReport tempReport;
+  public void generateMemberReport() {
+    // Member tempMember;
+    // MemberReport tempReport;
 
-    tempMember = memberRecords.getMember(ID);
+    // tempMember = memberRecords.getMember(ID);
 
 
-    tempReport = new MemberReport(tempMember);
-    return tempReport;
+    // tempReport = new MemberReport(tempMember);
+    // return tempReport;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+      LocalDateTime currentDateTime = LocalDateTime.now();
+      String formattedDateTime = currentDateTime.format(formatter);
+
+      String fileName = "ALL_Reports_" + formattedDateTime + ".txt";
+      
+      try (FileWriter writer = new FileWriter(fileName)) {
+
+        //members
+        writer.write("Member Reports\n");
+        List<Member> tempMemList = memberRecords.getAllMembers();
+        MemberReport tempMemReport;
+        String currMember;
+        for(int i = 0; i <tempMemList.size(); i++) {
+          tempMemReport = new MemberReport(tempMemList.get(i));
+          currMember = tempMemReport.toString();
+          writer.write(currMember);
+        }
+
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+
   }
 
   /**
