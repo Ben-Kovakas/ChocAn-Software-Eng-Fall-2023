@@ -5,10 +5,6 @@ package edu.ua.cs.cs200.project4;
  * @author Ben Kovakas
  */
 public class UpdateMemberController {
-  /**
-   * Initializes the member records.
-   */
-  private static MemberRecords memberRecords = new MemberRecords();
 
   public static void main(String[] args) {
   }
@@ -28,7 +24,7 @@ public class UpdateMemberController {
       throws IllegalArgumentException {
     validateInputLength(name, address, city, state, zip, status);
     Member newMember = new Member(memberID, name, address, city, state, zip, status, null);
-    memberRecords.addMember(newMember);
+    MainMenu.systemRecords.memberRecords.addMember(newMember);
 
   }
   /**
@@ -46,7 +42,7 @@ public class UpdateMemberController {
   public void editMemberData(int memberID, String newName, String newAddress, String newCity, String newState,
       int newZip, String newStatus) throws IllegalArgumentException {
     validateInputLength(newName, newAddress, newCity, newState, newZip, newStatus);
-    Member existingMember = memberRecords.getMember(memberID);
+    Member existingMember = MainMenu.systemRecords.memberRecords.getMember(memberID);
 
     if (existingMember != null) {
       // Update member data
@@ -56,7 +52,7 @@ public class UpdateMemberController {
       existingMember.setState(newState);
       existingMember.setZip(newZip);
       existingMember.setStatus(newStatus);
-      memberRecords.saveMembersToFile();
+      MainMenu.systemRecords.memberRecords.saveMembersToFile();
     } else {
       System.out.println("Member not found. Unable to edit data.");
     }
@@ -69,11 +65,11 @@ public class UpdateMemberController {
    * @param memberID The ID of the member to be deleted.
    */
   public void deleteMember(int memberID) {
-    Member existingMember = memberRecords.getMember(memberID);
+    Member existingMember = MainMenu.systemRecords.memberRecords.getMember(memberID);
 
     if (existingMember != null) {
       // Remove the member from the records
-      memberRecords.removeMember(memberID);
+      MainMenu.systemRecords.memberRecords.removeMember(memberID);
     } else {
       System.out.println("Member not found. Unable to delete.");
     }

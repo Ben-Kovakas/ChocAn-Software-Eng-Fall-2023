@@ -1,17 +1,2 @@
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,Jane Doe,456 Second St,New City,NY,54321,Inactive
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,Jane Doe,456 Second St,New City,NY,54321,Inactive
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,Jane Doe,456 Second St,New City,NY,54321,Inactive
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,Jane Doe,456 Second St,New City,NY,54321,Inactive
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active
+1,mmm,mmm,mmm,mm,55555,VALID
+999999999,DAniel,1131 Jackson Ave,Tuscaloosa,AL,35401,VALID

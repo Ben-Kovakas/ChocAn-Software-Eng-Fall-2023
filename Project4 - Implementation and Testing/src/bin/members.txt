@@ -1,4 +1,0 @@
-2,JHGJ,jhbjhb,hjbjhb,NC,27265,VALID
-4,DJ,3232,hukhkj,NC,11111,VALID
-1,John Doe,123 Main St,City,ST,12345,Active
-1,John Doe,123 Main St,City,ST,12345,Active

@@ -1,7 +1,2 @@
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
-1,John Doe,123 Main St,City,ST,12345,0
+123456789,JANE,pp,pp,pp,99999,0
+987654321,Damn Son,w,w,ww,66666,0

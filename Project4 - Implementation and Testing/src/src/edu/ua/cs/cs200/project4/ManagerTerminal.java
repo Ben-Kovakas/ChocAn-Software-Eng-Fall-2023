@@ -59,7 +59,7 @@ public class ManagerTerminal {
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
-          reportController.generateSummaryReport().printSummaryToFile();
+          reportController.generateSummaryReport();
           JOptionPane.showMessageDialog(null, "Summary Report Generated!");
         } catch (IllegalArgumentException ex) {
           // Handle invalid input or illegal argument exception

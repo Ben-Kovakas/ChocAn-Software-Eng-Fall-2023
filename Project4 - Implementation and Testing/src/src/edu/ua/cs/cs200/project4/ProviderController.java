@@ -25,9 +25,6 @@ public class ProviderController {
   public ProviderRecords providerRecords;
 
   public ProviderController() {
-    providerDirectory = new ProviderDirectory();
-    memberRecords = new MemberRecords();
-    providerRecords = new ProviderRecords();
   }
   public String validateMember(int memberID) {
     Member member = memberRecords.getMember(memberID);

@@ -32,7 +32,6 @@ public class ProviderRecords {
    * @return The provider with the specified ID, or null if not found.
    */
   public Provider getProvider(int providerID) {
-    loadProvidersFromFile();
     for (Provider provider : providers) {
       if (provider.getProviderID() == providerID) {
         return provider;
@@ -49,7 +48,6 @@ public class ProviderRecords {
   public void addProvider(Provider provider) {
     providers.add(provider);
     saveProvidersToFile();
-    loadProvidersFromFile();
   }
 
   /**
@@ -60,7 +58,6 @@ public class ProviderRecords {
   public void removeProvider(Provider provider) {
     providers.remove(provider);
     saveProvidersToFile();
-    loadProvidersFromFile();
   }
 
   /**
@@ -89,10 +86,11 @@ public class ProviderRecords {
   /**
    * Saves providers to the file.
    */
-  private void saveProvidersToFile() {
+  public void saveProvidersToFile() {
     try (PrintWriter writer = new PrintWriter(new FileWriter("providers.txt"))) {
       for (Provider provider : providers) {
         writer.println(provider.toString());
+        System.out.println(provider.toString());
       }
     } catch (IOException e) {
       e.printStackTrace();

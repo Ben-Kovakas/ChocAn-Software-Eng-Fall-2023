@@ -21,8 +21,6 @@ public class SummaryReport {
 
   private double totalFees;
 
-  ProviderRecords providerRecords = new ProviderRecords();
-
   /** Constructor. Creates the Summary Report using the global list of providers
    * 
    * */
@@ -31,7 +29,7 @@ public class SummaryReport {
     totalConsultions = 0;
     totalFees = 0;
 
-    List<Provider> tempProviderList = providerRecords.getAllProviders();
+    List<Provider> tempProviderList = MainMenu.systemRecords.providerRecords.getAllProviders();
     Provider tempProvider;
     for(int i = 0; i < tempProviderList.size(); i++) {
       tempProvider = tempProviderList.get(i);
@@ -90,7 +88,7 @@ public class SummaryReport {
         double overallTotalFees = 0;
 
         // Iterate through the providers
-        List<Provider> providers = providerRecords.getAllProviders();
+        List<Provider> providers = MainMenu.systemRecords.providerRecords.getAllProviders();
         for (Provider provider : providers) {
             int providerConsultations = provider.getConsultations();
             List<ServiceRecord> serviceRecords = provider.getServiceRecords();
@@ -144,7 +142,7 @@ public class SummaryReport {
         double overallTotalFees = 0;
 
         // Iterate through the providers
-        List<Provider> providers = providerRecords.getAllProviders();
+        List<Provider> providers = MainMenu.systemRecords.providerRecords.getAllProviders();
         for (Provider provider : providers) {
             int providerConsultations = provider.getConsultations();
             List<ServiceRecord> serviceRecords = provider.getServiceRecords();

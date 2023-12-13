@@ -18,11 +18,9 @@ import java.util.List;
  */
 public class ReportController {
 
-  SummaryReport SumReport;
+  SummaryReport SumReport = new SummaryReport();
   List<ProviderReport> ProReports = new ArrayList<ProviderReport>();
-  List<MemberReport> MemReports = new ArrayList<MemberReport>();;
-  MemberRecords memberRecords = new MemberRecords();
-  ProviderRecords providerRecords = new ProviderRecords();
+  List<MemberReport> MemReports = new ArrayList<MemberReport>();
 
   /**
    * Generates a Summary report
@@ -50,13 +48,13 @@ public class ReportController {
       LocalDateTime currentDateTime = LocalDateTime.now();
       String formattedDateTime = currentDateTime.format(formatter);
 
-      String fileName = "ALL_Reports_" + formattedDateTime + ".txt";
+      String fileName = "ALL_Provider_Reports_" + formattedDateTime + ".txt";
       
       try (FileWriter writer = new FileWriter(fileName)) {
     	  
     	  //providers
         writer.write("Provider Reports\n");
-        List<Provider> tempProvList = providerRecords.getAllProviders();
+        List<Provider> tempProvList = MainMenu.systemRecords.providerRecords.getAllProviders();
         ProviderReport tempProvReport;
         String currProvider;
         for(int i = 0; i <tempProvList.size(); i++) {
@@ -88,13 +86,13 @@ public class ReportController {
       LocalDateTime currentDateTime = LocalDateTime.now();
       String formattedDateTime = currentDateTime.format(formatter);
 
-      String fileName = "ALL_Reports_" + formattedDateTime + ".txt";
+      String fileName = "ALL_Member_Reports_" + formattedDateTime + ".txt";
       
       try (FileWriter writer = new FileWriter(fileName)) {
 
         //members
         writer.write("Member Reports\n");
-        List<Member> tempMemList = memberRecords.getAllMembers();
+        List<Member> tempMemList = MainMenu.systemRecords.memberRecords.getAllMembers();
         MemberReport tempMemReport;
         String currMember;
         for(int i = 0; i <tempMemList.size(); i++) {
@@ -128,7 +126,7 @@ public class ReportController {
     	  
     	  //providers
         writer.write("Provider Reports\n");
-        List<Provider> tempProvList = providerRecords.getAllProviders();
+        List<Provider> tempProvList = MainMenu.systemRecords.providerRecords.getAllProviders();
         ProviderReport tempProvReport;
         String currProvider;
         for(int i = 0; i <tempProvList.size(); i++) {
@@ -139,7 +137,7 @@ public class ReportController {
 
         //members
         writer.write("Member Reports\n");
-        List<Member> tempMemList = memberRecords.getAllMembers();
+        List<Member> tempMemList = MainMenu.systemRecords.memberRecords.getAllMembers();
         MemberReport tempMemReport;
         String currMember;
         for(int i = 0; i <tempMemList.size(); i++) {

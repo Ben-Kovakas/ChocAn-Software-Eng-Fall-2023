@@ -1,8 +1,0 @@
-Member Report
-
-Member ID: 4
-Name: DJ
-Address: 3232
-City: hukhkj
-State: NC
-ZIP Code: 11111

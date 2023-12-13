@@ -27,11 +27,11 @@ import javax.swing.SwingConstants;
 public class MainMenu {
 
   //class objects
+  public static SystemRecords systemRecords = new SystemRecords();
   static OperatorTerminal operatorTerminal = new OperatorTerminal();
   static ManagerTerminal managerTerminal = new ManagerTerminal();
   static ProviderTerminal providerTerminal = new ProviderTerminal();
   static Timer timer = new Timer();
-  SystemRecords systemRecords;
   
   public static JFrame frame;
   public static JPanel mainPanel;

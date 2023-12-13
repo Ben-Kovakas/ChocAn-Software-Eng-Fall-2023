@@ -10,8 +10,6 @@ import java.util.List;
  */
 public class UpdateProviderController {
 
-  private ProviderRecords providerRecords = new ProviderRecords();;
-
 /**
  * Initializes the provider records.
  */
@@ -35,7 +33,7 @@ public class UpdateProviderController {
     validateInputLength(name, address, city, state, status);
     List<ServiceRecord> serviceRecords = new ArrayList<ServiceRecord>();
     Provider newProvider = new Provider(providerID, name, address, city, state, zip, 0 , serviceRecords );
-    providerRecords.addProvider(newProvider);
+    MainMenu.systemRecords.providerRecords.addProvider(newProvider);
   }
 
   /**
@@ -53,7 +51,7 @@ public class UpdateProviderController {
   public void editProviderData(int providerID, String newName, String newAddress, String newCity, String newState,
       int newZip, String newStatus) throws IllegalArgumentException {
     validateInputLength(newName, newAddress, newCity, newState, newStatus);
-    Provider existingProvider = providerRecords.getProvider(providerID);
+    Provider existingProvider = MainMenu.systemRecords.providerRecords.getProvider(providerID);
 
     if (existingProvider != null) {
       // Update provider data
@@ -62,7 +60,7 @@ public class UpdateProviderController {
       existingProvider.setCity(newCity);
       existingProvider.setState(newState);
       existingProvider.setZipCode(newZip);
-
+      MainMenu.systemRecords.providerRecords.saveProvidersToFile();
     } else {
       System.out.println("Provider not found. Unable to edit data.");
     }
@@ -74,11 +72,11 @@ public class UpdateProviderController {
      * @param providerID The ID of the provider to be deleted.
      */
     public void deleteProvider(int providerID) {
-        Provider existingProvider = providerRecords.getProvider(providerID);
+        Provider existingProvider = MainMenu.systemRecords.providerRecords.getProvider(providerID);
 
         if (existingProvider != null) {
             // Remove the provider from the records
-            providerRecords.removeProvider(existingProvider);
+          MainMenu.systemRecords.providerRecords.removeProvider(existingProvider);
         } else {
             System.out.println("Provider not found. Unable to delete.");
         }

@@ -59,7 +59,7 @@ public class ProviderDirectory {
     return result.toString();
   }
   public void saveRecordToFile() {
-    try (PrintWriter writer = new PrintWriter(new FileWriter("src/providerDirectory.txt"))) {
+    try (PrintWriter writer = new PrintWriter(new FileWriter("providerDirectory.txt"))) {
         writer.println(getEntriesAlphabetically());
     } catch (IOException e) {
         e.printStackTrace();

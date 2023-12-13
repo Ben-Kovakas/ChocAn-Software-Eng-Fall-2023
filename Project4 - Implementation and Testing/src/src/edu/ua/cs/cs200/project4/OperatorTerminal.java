@@ -146,7 +146,7 @@ public class OperatorTerminal {
 
                 // Add member logic
                 memberController.editMemberData(memberID, name, address, city, state, zip, status);
-                JOptionPane.showMessageDialog(null, "Member added successfully!");
+                JOptionPane.showMessageDialog(null, "Member edited successfully!");
               } catch (IllegalArgumentException ex) {
                 // Handle invalid input or illegal argument exception
                 JOptionPane.showMessageDialog(null, "Invalid input. Please enter valid information.", "Input Error", JOptionPane.ERROR_MESSAGE);
