@@ -1,0 +1,13 @@
+Provider Reports
+Provider Report:
+Provider ID: 123456789
+Provider Name: JANE
+Total Consultations: 0
+Total Fees: $0.0
+
+Provider Report:
+Provider ID: 987654321
+Provider Name: Damn Son
+Total Consultations: 0
+Total Fees: $0.0
+

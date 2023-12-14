@@ -19,6 +19,23 @@ public class ServiceRecord {
     this.memberNumber = memberNumber;
   }
 
+  //Constructor with string representation
+  public ServiceRecord(String inputString) {
+    String[] attributes = inputString.split(",");
+
+    if (attributes.length == 6) {
+      this.serviceCode = Integer.parseInt(attributes[0]);
+      this.currentDate = attributes[1];
+      this.serviceDate = attributes[2];
+      this.fee = Double.parseDouble(attributes[3]);
+      this.memberName = attributes[4];
+      this.memberNumber = Integer.parseInt(attributes[5]);
+    } else {
+      // Handle incorrect input length (throw an exception, log an error, etc.)
+      // For simplicity, we'll just set default values or leave attributes
+      // uninitialized.
+    }
+  }
   // Getter and Setter methods
   public int getServiceCode() {
     return serviceCode;
@@ -66,5 +83,10 @@ public class ServiceRecord {
 
   public void setMemberNumber(int memberNumber) {
     this.memberNumber = memberNumber;
+  }
+
+  @Override
+  public String toString() {
+    return serviceCode + "," + currentDate + "," + serviceDate + "," + fee + "," + memberName + "," + memberNumber;
   }
 }

@@ -30,19 +30,28 @@ public class Provider {
     this.serviceRecords = serviceRecords;
   }
 
-  // Constructor with comma-separated string argument
+  //Constructor with string representation
   public Provider(String inputString) {
-    String[] attributes = inputString.split(",");
+    String[] parts = inputString.split(",");
 
-    if (attributes.length == 7) {
-      this.providerID = Integer.parseInt(attributes[0]);
-      this.name = attributes[1];
-      this.address = attributes[2];
-      this.city = attributes[3];
-      this.state = attributes[4];
-      this.zipCode = Integer.parseInt(attributes[5]);
-      this.consultations = Integer.parseInt(attributes[6]);
-      this.serviceRecords = new ArrayList<ServiceRecord>();
+    if (parts.length >= 7) {
+      this.providerID = Integer.parseInt(parts[0]);
+      this.name = parts[1];
+      this.address = parts[2];
+      this.city = parts[3];
+      this.state = parts[4];
+      this.zipCode = Integer.parseInt(parts[5]);
+      this.consultations = Integer.parseInt(parts[6]);
+      this.serviceRecords = new ArrayList<>();
+
+      // Parse service records if available
+      if (parts.length > 7) {
+        String[] serviceRecordsString = parts[7].split(";");
+        for (String serviceRecordString : serviceRecordsString) {
+          ServiceRecord serviceRecord = new ServiceRecord(serviceRecordString);
+          this.serviceRecords.add(serviceRecord);
+        }
+      }
     } else {
       // Handle incorrect input length (throw an exception, log an error, etc.)
       // For simplicity, we'll just set default values or leave attributes
@@ -111,7 +120,22 @@ public class Provider {
     return serviceRecords;
   }
 
+  @Override
   public String toString() {
-    return providerID + "," + name + "," + address + "," + city + "," + state + "," + zipCode + "," + consultations;
+    StringBuilder result = new StringBuilder();
+
+    // Append provider information
+    result.append(providerID).append(",").append(name).append(",").append(address)
+    .append(",").append(city).append(",").append(state).append(",")
+    .append(zipCode).append(",").append(consultations).append(",");
+
+    if (serviceRecords != null) {
+      // Append service records
+      for (ServiceRecord record : serviceRecords) {
+        result.append(record.toString()).append(";");
+      }
+    }
+
+    return result.toString();
   }
 }

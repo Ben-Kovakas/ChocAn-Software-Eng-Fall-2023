@@ -49,7 +49,7 @@ public class ProviderTerminal {
         }
       });
       providerPanel.setLayout(new BorderLayout());
-      providerPanel.add(buttonPanel, BorderLayout.WEST);
+      providerPanel.add(buttonPanel, BorderLayout.CENTER);
       return providerPanel; // Do not proceed if the password is incorrect
     }
 

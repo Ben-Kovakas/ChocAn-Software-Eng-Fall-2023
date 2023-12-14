@@ -3,8 +3,8 @@ package edu.ua.cs.cs200.project4;
 import java.util.ArrayList;
 import java.util.List;
 /* 
-* @author dddierking
-*/
+ * @author dddierking
+ */
 public class Member {
   // Private attributes
   private int memberID;
@@ -30,17 +30,27 @@ public class Member {
 
   // Constructor with comma-separated string argument
   public Member(String inputString) {
-    String[] attributes = inputString.split(",");
+    String[] parts = inputString.split(",");
 
-    if (attributes.length == 7) {
-      this.memberID = Integer.parseInt(attributes[0]);
-      this.name = attributes[1];
-      this.address = attributes[2];
-      this.city = attributes[3];
-      this.state = attributes[4];
-      this.zip = Integer.parseInt(attributes[5]);
-      this.status = attributes[6];
-      this.serviceRecords = new ArrayList<ServiceRecord>();
+    if (parts.length >= 7) {
+      this.memberID = Integer.parseInt(parts[0]);
+      this.name = parts[1];
+      this.address = parts[2];
+      this.city = parts[3];
+      this.state = parts[4];
+      this.zip = Integer.parseInt(parts[5]);
+      this.status = parts[6];
+
+      // Parse service records if available
+      this.serviceRecords = new ArrayList<>();
+
+      if (parts.length > 7) {
+        String[] serviceRecordsString = parts[7].split(";");
+        for (String serviceRecordString : serviceRecordsString) {
+          ServiceRecord serviceRecord = new ServiceRecord(serviceRecordString);
+          this.serviceRecords.add(serviceRecord);
+        }
+      }
     } else {
       // Handle incorrect input length (throw an exception, log an error, etc.)
       // For simplicity, we'll just set default values or leave attributes
@@ -109,7 +119,22 @@ public class Member {
     return serviceRecords;
   }
 
+  @Override
   public String toString() {
-    return memberID + "," + name + "," + address + "," + city + "," + state + "," + zip + "," + status;
+    StringBuilder result = new StringBuilder();
+
+    // Append member information
+    result.append(memberID).append(",").append(name).append(",").append(address)
+    .append(",").append(city).append(",").append(state).append(",")
+    .append(zip).append(",").append(status).append(",");
+
+    if (serviceRecords != null) {
+      // Append service records
+      for (ServiceRecord record : serviceRecords) {
+        result.append(record.toString()).append(";");
+      }
+    }
+
+    return result.toString();
   }
 }

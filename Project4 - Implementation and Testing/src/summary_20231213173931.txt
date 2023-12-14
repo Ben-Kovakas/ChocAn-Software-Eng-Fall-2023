@@ -1,0 +1,12 @@
+Summary Report - 20231213173931
+Provider: JANE
+Consultations: 0
+Total Fees: $0.0
+
+Provider: Damn Son
+Consultations: 0
+Total Fees: $0.0
+
+Overall Total Providers: 0
+Overall Total Consultations: 0
+Overall Total Fees: $0.0

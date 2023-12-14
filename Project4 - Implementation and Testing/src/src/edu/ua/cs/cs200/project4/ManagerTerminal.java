@@ -41,7 +41,25 @@ public class ManagerTerminal {
 
   public static JPanel createManagerPanel(JFrame myFrame) {
     JPanel providerPanel = new JPanel();
-
+    // Ask for the password using a JOptionPane
+    String enteredPassword = getPasswordFromUser();
+    String password = "password";
+    // Check if the entered password is correct
+    if (enteredPassword == null || !enteredPassword.equals(password)) {
+      JOptionPane.showMessageDialog(null, "Incorrect password. Access denied.", "Authentication Error", JOptionPane.ERROR_MESSAGE);
+      JPanel buttonPanel = new JPanel();
+      JButton exitButton = new JButton("Exit");
+      buttonPanel.add(exitButton);
+      exitButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          myFrame.dispose();
+        }
+      });
+      providerPanel.setLayout(new BorderLayout());
+      providerPanel.add(buttonPanel, BorderLayout.CENTER);
+      return providerPanel; // Do not proceed if the password is incorrect
+    }
     JPanel buttonPanel = new JPanel();
     buttonPanel.setLayout(new GridLayout(3, 3, 5, 5));
 
@@ -67,7 +85,7 @@ public class ManagerTerminal {
         }
       }
     });
-    
+
     providerReportButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -102,12 +120,12 @@ public class ManagerTerminal {
         //   // User clicked Cancel or closed the dialog
         // }
 
-          reportController.generateProviderReport();
-          JOptionPane.showMessageDialog(null, "Provider Report Generated!");
+        reportController.generateProviderReport();
+        JOptionPane.showMessageDialog(null, "Provider Report Generated!");
 
       }
     });
-    
+
     memberReportButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -142,8 +160,8 @@ public class ManagerTerminal {
         //   // User clicked Cancel or closed the dialog
         // }
 
-          reportController.generateMemberReport();
-          JOptionPane.showMessageDialog(null, "Member Report Generated!");
+        reportController.generateMemberReport();
+        JOptionPane.showMessageDialog(null, "Member Report Generated!");
 
       }
     });
@@ -161,51 +179,55 @@ public class ManagerTerminal {
     return providerPanel;
   }
 
-    /**
-     * Displays a menu for the manager to generate specific reports.
-     * Handles the user input to select the type of report to generate.
-     */
-    public static void requestReport() {
-        Scanner scanner = new Scanner(System.in);
-        int input = 0;
+  /**
+   * Displays a menu for the manager to generate specific reports.
+   * Handles the user input to select the type of report to generate.
+   */
+  public static void requestReport() {
+    Scanner scanner = new Scanner(System.in);
+    int input = 0;
 
-        do {
-            System.out.println("\n--- Manager Terminal ---");
-            System.out.println("Please choose an option:");
-            System.out.println("1. Generate Summary Report");
-            System.out.println("2. Generate Provider Report");
-            System.out.println("3. Generate Member Report");
-            System.out.println("4. Exit");
+    do {
+      System.out.println("\n--- Manager Terminal ---");
+      System.out.println("Please choose an option:");
+      System.out.println("1. Generate Summary Report");
+      System.out.println("2. Generate Provider Report");
+      System.out.println("3. Generate Member Report");
+      System.out.println("4. Exit");
 
-            System.out.print("Enter choice: ");
-            input = scanner.nextInt();
+      System.out.print("Enter choice: ");
+      input = scanner.nextInt();
 
-            switch (input) {
-                case 1:
-                    reportController.generateSummaryReport();
-                    break;
-                case 2:
-                    // System.out.print("Enter Provider ID: ");
-                    // int providerID = scanner.nextInt();
-                    // reportController.generateProviderReport(providerID);
-                    reportController.generateProviderReport();
-                    break;
-                case 3:
-                    // System.out.print("Enter Member ID: ");
-                    // int memberID = scanner.nextInt();
-                    // reportController.generateMemberReport(memberID);
-                    reportController.generateMemberReport();
-                    break;
-                case 4:
-                    System.out.println("Exiting Manager Terminal.");
-                    break;
-                default:
-                    System.out.println("Invalid option. Please try again.");
-            }
-        } while (input != 4);
+      switch (input) {
+      case 1:
+        reportController.generateSummaryReport();
+        break;
+      case 2:
+        // System.out.print("Enter Provider ID: ");
+        // int providerID = scanner.nextInt();
+        // reportController.generateProviderReport(providerID);
+        reportController.generateProviderReport();
+        break;
+      case 3:
+        // System.out.print("Enter Member ID: ");
+        // int memberID = scanner.nextInt();
+        // reportController.generateMemberReport(memberID);
+        reportController.generateMemberReport();
+        break;
+      case 4:
+        System.out.println("Exiting Manager Terminal.");
+        break;
+      default:
+        System.out.println("Invalid option. Please try again.");
+      }
+    } while (input != 4);
 
-        scanner.close();
-        }
+    scanner.close();
+  }
 
-    
+  private static String getPasswordFromUser() {
+    // Prompt the user for the password using a JOptionPane
+    return JOptionPane.showInputDialog(null, "Enter Manager Password:", "Password Protection", JOptionPane.PLAIN_MESSAGE);
+  }
+
 }
