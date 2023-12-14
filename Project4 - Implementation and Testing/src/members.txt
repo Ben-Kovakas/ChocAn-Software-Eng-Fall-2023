@@ -1,2 +1,4 @@
-1,mmm,mmm,mmm,mm,55555,VALID
-999999999,DAniel,1131 Jackson Ave,Tuscaloosa,AL,35401,VALID
+999999999,DAniel,1131 Jackson Ave,Tuscaloosa,AL,35401,VALID,
+1,a,a,a,aa,11111,valid,
+1,John Doe,123 Main St,City,ST,12345,Active,
+1,John Doe,123 Main St,City,ST,12345,Active,

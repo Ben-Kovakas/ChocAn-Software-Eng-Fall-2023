@@ -1,0 +1,13 @@
+Provider Reports
+Provider Report:
+Provider ID: 222222222
+Provider Name: b
+Total Consultations: 0
+Total Fees: $0.0
+
+Provider Report:
+Provider ID: 888888888
+Provider Name: TEST
+Total Consultations: 1
+Total Fees: $100.0
+

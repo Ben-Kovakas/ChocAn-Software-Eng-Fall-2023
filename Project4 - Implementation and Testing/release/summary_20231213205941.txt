@@ -1,0 +1,12 @@
+Summary Report - 20231213205941
+Provider: b
+Consultations: 0
+Total Fees: $0.0
+
+Provider: TEST
+Consultations: 1
+Total Fees: $100.0
+
+Overall Total Providers: 1
+Overall Total Consultations: 1
+Overall Total Fees: $100.0

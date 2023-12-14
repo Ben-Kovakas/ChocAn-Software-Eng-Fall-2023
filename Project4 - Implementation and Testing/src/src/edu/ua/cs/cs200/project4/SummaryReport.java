@@ -134,7 +134,7 @@ public class SummaryReport {
 	    String formattedDateTime = currentDateTime.format(formatter);
 
         // Write summary header
-        reportString.append("Summary Report - " + formattedDateTime);
+        reportString.append("Summary Report - " + formattedDateTime + "\n");
 
         // Variables for overall summary
         int overallTotalProviders = 0;

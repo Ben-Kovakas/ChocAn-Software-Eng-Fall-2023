@@ -1,0 +1,48 @@
+Summary Report - 20231213205913
+Provider: b
+Consultations: 0
+Total Fees: $0.0
+
+Provider: TEST
+Consultations: 1
+Total Fees: $100.0
+
+Overall Total Providers: 1
+Overall Total Consultations: 1
+Overall Total Fees: $100.0
+
+Provider Reports
+Provider Report:
+Provider ID: 222222222
+Provider Name: b
+Total Consultations: 0
+Total Fees: $0.0
+
+Provider Report:
+Provider ID: 888888888
+Provider Name: TEST
+Total Consultations: 1
+Total Fees: $100.0
+
+Member Reports
+Member ID: 1
+Name: z
+Address: a
+City: a
+State: aa
+ZIP Code: 11111
+
+Member ID: 2
+Name: b
+Address: b
+City: b
+State: bb
+ZIP Code: 22222
+
+Member ID: 999999999
+Name: Jane Smith
+Address: hh
+City: hh
+State: hh
+ZIP Code: 99999
+

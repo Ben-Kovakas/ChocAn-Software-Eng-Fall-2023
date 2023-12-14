@@ -1,54 +1,40 @@
 package edu.ua.cs.cs200.project4;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProviderTest2 {
 
-  public static void main(String[] args) {
-    testProviderGetterSetter();
-  }
+    @Test
+    public void testProviderIDGetterSetter() {
+        // Creating a Provider object
+        Provider provider = new Provider(1, "John Doe", "123 Main St", "City", "ST", 12345, 0, new ArrayList<>());
 
-  public static void testProviderGetterSetter() {
-    int serviceCode = 0;
-    String currentDate= "04122023";
-    String serviceDate = "04122023";
-    double fee = 0;
-    String memberName = "John";
-    int memberNumber = 0;
-    // Creating a sample ServiceRecord
-    ServiceRecord serviceRecord = new ServiceRecord(serviceCode, currentDate, serviceDate, fee, memberName, memberNumber);
-
-    // Creating a list of ServiceRecords
-    List<ServiceRecord> serviceRecords = new ArrayList<>();
-    serviceRecords.add(serviceRecord);
-
-    // Creating a Provider object
-    Provider provider = new Provider(1, "John Doe", "123 Main St", "City", "ST", 12345, 0, serviceRecords);
-
-    // Testing getters and setters
-    provider.setProviderID(2);
-    if (provider.getProviderID() == 2) {
-      System.out.println("Provider ID getter/setter: Passed");
-    } else {
-      System.out.println("Provider ID getter/setter: Failed");
+        // Testing Provider ID getter and setter
+        provider.setProviderID(2);
+        assertEquals(2, provider.getProviderID());
     }
 
-    provider.setName("Jane Doe");
-    if ("Jane Doe".equals(provider.getName())) {
-      System.out.println("Name getter/setter: Passed");
-    } else {
-      System.out.println("Name getter/setter: Failed");
+    @Test
+    public void testNameGetterSetter() {
+        // Creating a Provider object
+        Provider provider = new Provider(1, "John Doe", "123 Main St", "City", "ST", 12345, 0, new ArrayList<>());
+
+        // Testing Name getter and setter
+        provider.setName("Jane Doe");
+        assertEquals("Jane Doe", provider.getName());
     }
 
-    provider.setAddress("456 Second St");
-    if ("456 Second St".equals(provider.getAddress())) {
-      System.out.println("Address getter/setter: Passed");
-    } else {
-      System.out.println("Address getter/setter: Failed");
-    }
+    @Test
+    public void testAddressGetterSetter() {
+        // Creating a Provider object
+        Provider provider = new Provider(1, "John Doe", "123 Main St", "City", "ST", 12345, 0, new ArrayList<>());
 
-    // ... (similar checks for other getters and setters)
-  }
+        // Testing Address getter and setter
+        provider.setAddress("456 Second St");
+        assertEquals("456 Second St", provider.getAddress());
+    }
 }
-

@@ -20,14 +20,11 @@ import edu.ua.cs.cs200.project4.ProviderDirectory.ServiceInfo;
 
 
 public class ProviderController {
-  private ProviderDirectory providerDirectory;
-  private MemberRecords memberRecords;
-  public ProviderRecords providerRecords;
 
   public ProviderController() {
   }
   public String validateMember(int memberID) {
-    Member member = memberRecords.getMember(memberID);
+    Member member = MainMenu.systemRecords.memberRecords.getMember(memberID);
 
     if (member == null) {
       return "Error: Invalid member";
@@ -49,7 +46,7 @@ public class ProviderController {
     System.out.print("Enter Member ID: ");
     int memberID = scanner.nextInt();
 
-    Member member = memberRecords.getMember(memberID);
+    Member member = MainMenu.systemRecords.memberRecords.getMember(memberID);
 
     //If no member found, print error
     if (member == null) {
@@ -81,7 +78,7 @@ public class ProviderController {
     System.out.print("Enter the service name: ");
     String serviceName = scanner.nextLine();
 
-    int serviceCode = providerDirectory.getServiceCode(serviceName);
+    int serviceCode = MainMenu.systemRecords.providerDirectory.getServiceCode(serviceName);
     if (serviceCode == -1) {
       System.out.println("Error: Nonexistent service");
       return false;
@@ -120,7 +117,7 @@ public class ProviderController {
     //Comments (100 characters) (optional). 
 
     //Enter service record info
-    double fee = providerDirectory.getServiceInfo(serviceCode).getFee();
+    double fee = MainMenu.systemRecords.providerDirectory.getServiceInfo(serviceCode).getFee();
     System.out.println("Fee: $" + fee);
     System.out.print("Enter the current date (MM-DD-YYYY): ");
     String inputCurrentDate = scanner.next();
@@ -137,13 +134,13 @@ public class ProviderController {
 
     //Save service record info
     ServiceRecord serviceRecord = new ServiceRecord(inputServiceCode, inputCurrentDate, inputServiceDate, inputFee, inputMemberName, inputMemberNumber);
-    Member member = memberRecords.getMember(memberID);
+    Member member = MainMenu.systemRecords.memberRecords.getMember(memberID);
     if (member != null) {
       List<ServiceRecord> memberServiceRecords = member.getServiceRecords();
       memberServiceRecords.add(serviceRecord);
     }
 
-    Provider provider = providerRecords.getProvider(providerID);
+    Provider provider = MainMenu.systemRecords.providerRecords.getProvider(providerID);
     if (provider != null) {
       List<ServiceRecord> providerServiceRecords = provider.getServiceRecords();
       providerServiceRecords.add(serviceRecord);
@@ -175,7 +172,7 @@ public class ProviderController {
       String serviceCode = serviceCodeField.getText();
       String comments = commentsField.getText();
       String date = dateField.getText();
-      nameInfo = providerDirectory.getServiceInfo(Integer.parseInt(serviceCode));
+      nameInfo = MainMenu.systemRecords.providerDirectory.getServiceInfo(Integer.parseInt(serviceCode));
       if (nameInfo == null) {
         JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
       }
@@ -191,18 +188,19 @@ public class ProviderController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mm-dd-yyyy HH:MM:ss");
         LocalDateTime currentDateTime = LocalDateTime.now();
         String formattedDateTime = currentDateTime.format(formatter);
-        ServiceRecord serviceRecord = new ServiceRecord(Integer.parseInt(serviceCode), formattedDateTime, date, providerDirectory.getServiceInfo(Integer.parseInt(serviceCode)).getFee(), memberRecords.getMember(memberID).getName(), memberID);
-        Member member = memberRecords.getMember(memberID);
+        ServiceRecord serviceRecord = new ServiceRecord(Integer.parseInt(serviceCode), formattedDateTime, date, MainMenu.systemRecords.providerDirectory.getServiceInfo(Integer.parseInt(serviceCode)).getFee(), MainMenu.systemRecords.memberRecords.getMember(memberID).getName(), memberID);
+        Member member = MainMenu.systemRecords.memberRecords.getMember(memberID);
         if (member != null) {
           List<ServiceRecord> memberServiceRecords = member.getServiceRecords();
           memberServiceRecords.add(serviceRecord);
         }
 
-        Provider provider = providerRecords.getProvider(providerID);
+        Provider provider = MainMenu.systemRecords.providerRecords.getProvider(providerID);
         if (provider != null) {
           List<ServiceRecord> providerServiceRecords = provider.getServiceRecords();
           providerServiceRecords.add(serviceRecord);
         }
+        provider.setConsultations(provider.getConsultations()+1);
         JOptionPane.showMessageDialog(null, "ChocAn Billed! Record Saved", "Success!", JOptionPane.OK_OPTION);
       }
       
@@ -216,6 +214,6 @@ public class ProviderController {
   //TODO write request directory (deliver as file, will update directory class)
   //DJ is working on this
   public String requestProviderDirectory() {
-    return providerDirectory.getEntriesAlphabetically();
+    return MainMenu.systemRecords.providerDirectory.getEntriesAlphabetically();
   }
 }

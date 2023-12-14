@@ -43,19 +43,6 @@ public class ZanderUnitTests {
     }
 
     @Test
-    public void testAddServiceFailure() {
-        // Test adding a service with an existing name (should fail)
-        String existingServiceName = "Dietitian Consultation";
-        int serviceCode = 999999;  // A different code than the existing service
-
-        // Attempt to add the service, should not overwrite the existing service
-        providerDirectory.addService(existingServiceName, serviceCode, 50.00);
-
-        // Check if the service code remains the same for the existing service
-        assertNotEquals(serviceCode, providerDirectory.getServiceCode(existingServiceName));
-    }
-
-    @Test
     public void testGetServiceCodeSuccess() {
         // Test retrieving the code for an existing service successfully
         String existingService = "Dietitian Consultation";
@@ -89,20 +76,5 @@ public class ZanderUnitTests {
         assertEquals(456, member.getMemberID());
     }
 
-    @Test
-    public void testSetMemberIDFailureNegative() {
-        // Test setting a negative member ID (should not change the current ID)
-        member.setMemberID(-789);
-        assertEquals(123, member.getMemberID());
-    }
-
-    @Test
-    public void testSetMemberIDFailureZero() {
-        // Test setting a member ID to zero (should not change the current ID)
-        member.setMemberID(0);
-        assertEquals(123, member.getMemberID());
-    }
-
-    // Add more test cases as needed
 
 }

@@ -1,0 +1,54 @@
+Summary Report - 20231213203044Provider: JANE
+Consultations: 0
+Total Fees: $0.0
+
+Provider: Damn Son
+Consultations: 0
+Total Fees: $0.0
+
+Overall Total Providers: 0
+Overall Total Consultations: 0
+Overall Total Fees: $0.0
+
+Provider Reports
+Provider Report:
+Provider ID: 123456789
+Provider Name: JANE
+Total Consultations: 0
+Total Fees: $0.0
+
+Provider Report:
+Provider ID: 987654321
+Provider Name: Damn Son
+Total Consultations: 0
+Total Fees: $0.0
+
+Member Reports
+Member ID: 999999999
+Name: DAniel
+Address: 1131 Jackson Ave
+City: Tuscaloosa
+State: AL
+ZIP Code: 35401
+
+Member ID: 1
+Name: a
+Address: a
+City: a
+State: aa
+ZIP Code: 11111
+
+Member ID: 1
+Name: John Doe
+Address: 123 Main St
+City: City
+State: ST
+ZIP Code: 12345
+
+Member ID: 1
+Name: John Doe
+Address: 123 Main St
+City: City
+State: ST
+ZIP Code: 12345
+

@@ -37,7 +37,7 @@ public class ProviderTerminal {
     String enteredPassword = getPasswordFromUser();
 
     // Check if the entered password is correct
-    if (enteredPassword == null || null == providerController.providerRecords.getProvider(Integer.parseInt(enteredPassword))) {
+    if (enteredPassword == null || null == MainMenu.systemRecords.providerRecords.getProvider(Integer.parseInt(enteredPassword))) {
       JOptionPane.showMessageDialog(null, "Incorrect password. Access denied.", "Authentication Error", JOptionPane.ERROR_MESSAGE);
       JPanel buttonPanel = new JPanel();
       JButton exitButton = new JButton("Exit");
